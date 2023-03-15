@@ -2,252 +2,365 @@
 layout: default
 ---
 
-<div class="container">
+<div class="container" xmlns="http://www.w3.org/1999/html">
     <div class='work-table-of-contents'>
         <ul>
-            <li><a href='#overview'>Overview</a></li>
-            <li><a href='#research'>Research</a></li>
-            <li><a href='#ideation'>Ideation</a></li>
-            <li><a href='#wireframes'>Wireframes</a></li>
-            <li><a href='#testing'>Testing</a></li>
-            <li><a href='#finaldesigns'>Final Designs</a></li>
-            <li><a href='#takeaways'>Takeaways</a></li>
+            <li><a id="overview-link" class='work-table-of-contents-link' href='#overview'>Overview</a></li>
+            <li><a id="research-link" class='work-table-of-contents-link' href='#research'>Research</a></li>
+            <li><a id="ideation-link" class='work-table-of-contents-link' href='#ideation'>Ideation</a></li>
+            <li><a id="wireframes-link" class='work-table-of-contents-link' href='#wireframes'>Wireframes</a></li>
+            <li><a id="testing-link" class='work-table-of-contents-link' href='#testing'>Testing</a></li>
+            <li><a id="finaldesigns-link" class='work-table-of-contents-link' href='#finaldesigns'>Final Designs</a>
+            </li>
+            <li><a id="takeaways-link" class='work-table-of-contents-link' href='#takeaways'>Takeaways</a></li>
         </ul>
     </div>
     <div class='work-splash'>
+        <div class='wrapper work-splash-icons'>
+            <div>
+                <a class='work-splash-icon'>
+                    <span class='work-splash-icon-rev'>{% include cta.svg %}</span><span> Back</span>
+                </a>
+                <a class='work-splash-icon'>
+                    <span>Next: {{ page.nextPage }} </span>
+                    <span>{% include cta.svg %}</span>
+                </a>
+            </div>
+        </div>
         <div class='wrapper work-wrapper'>
-            <h2 id='overview'></h2>
             <div class='work-image'>
                 <img src='/assets/{{ page.title }}/prototype.png' />
             </div>
-            <div class='work-image work-logo'>
+            <div class='work-image work-splash-logo'>
                 <img src='/assets/{{ page.title }}/logo.png' />
             </div>
-            <p>{{ page.description }}</p>
         </div>
     </div>
-    <div class='wrapper work-wrapper work-section-container'>
+    <div class='work-section-container'>
+        <!--Overview-->
         <div>
-            <div class='work-cols'>
-                <div>
-                    <p>Deliverable</p>
-                    <p>{{ page.overview.deliverable }}</p>
+            <h2 class='work-link hidden' id='overview'></h2>
+            <div class='work-overview-container wrapper work-wrapper'>
+                <div class='work-cols'>
+                    <div>
+                        <p class='work-bold'>Deliverable</p>
+                        <p>{{ page.overview.deliverable }}</p>
+                    </div>
+                    <div>
+                        <p class='work-bold'>Role</p>
+                        <ul>
+                            {% for role in page.overview.roles %}
+                            <li>{{ role }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div>
+                        <p class='work-bold'>Duration</p>
+                        <p>{{ page.overview.duration }}</p>
+                    </div>
+                    <div>
+                        <p class='work-bold'>Tool</p>
+                        <p>{{ page.overview.tool }}</p>
+                    </div>
                 </div>
                 <div>
-                    <p>Role</p>
-                    <ul>
-                        {% for role in page.overview.roles %}
-                        <li>{{ role }}</li>
-                        {% endfor %}
-                    </ul>
+                    <h2 class='work-header'>Project Vision</h2>
+                    {% for line in page.description %}
+                    <p>{{ line | markdownify }}</p>
+                    {% endfor %}
                 </div>
                 <div>
-                    <p>Duration</p>
-                    <p>{{ page.overview.duration }}</p>
-                </div>
-                <div>
-                    <p>Tool</p>
-                    <p>{{ page.overview.tool }}</p>
-                </div>
-            </div>
-            <div class='work-cols'>
-                <div>
-                    <h2>The Problem</h2>
+                    <h2 class='work-header'>The Problem</h2>
                     <p>{{ page.overview.problem | markdownify }}</p>
                 </div>
                 <div>
-                    <h2>The Solution</h2>
+                    <h2 class='work-header'>The Solution</h2>
                     <p>{{ page.overview.solution.tag }}</p>
-                    <ul>
-                        {% for solution in page.overview.solution.items %}
-                        <li>{{ solution }}</li>
+                    <div class='work-cols work-cols-even work-overview-solutions'>
+                        {% for solution in page.overview.solution.examples %}
+                        <div>
+                            <img src='/assets/{{page.title}}/{{solution.image}}'>
+                            <p>{{ solution.example }}</p>
+                        </div>
                         {% endfor %}
-                    </ul>
+                    </div>
                 </div>
             </div>
         </div>
+        <!--Research-->
         <div>
-            <h2 id='research'>Research</h2>
-            <div class='work-cols'>
-                <div>
-                    <p>{{ page.research.description | markdownify }}</p>
-                </div>
-                <div>
-                    <ul>
-                        {% for question in page.research.questions %}
-                        <li>{{ question }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-            <h4>Target User Groups</h4>
-            <p>{{ page.research.target.description | markdownify }}</p>
-            <div class='work-cols'>
-                {% for persona in page.research.personas %}
-                <div>
-                    <div class='work-blurb'>
-                        <span>{{ persona.name }}</span>
-                        <span>{{ persona.quote }}</span>
-                        <span>{{ persona.age }}</span>
-                        <span>{{ persona.job }}</span>
-                    </div>
-                    <p>Goals: </p>
-                    <ul>
-                        {% for goal in persona.goals %}
-                        <li>{{ goal }}</li>
-                        {% endfor %}
-                    </ul>
-                    <p>Needs: </p>
-                    <ul>
-                        {% for need in persona.needs %}
-                        <li>{{ need }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                {% endfor %}
-            </div>
-            <div class='work-user-journey'>
-                User journey map
-            </div>
-            <div class='work-cols'>
-                <div>
-                    <p>Key challenges</p>
-                    <ul>
-                        {% for challenge in page.research.challenges %}
-                        <li>{{ challenge }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <div>
-                    <p>Investment opportunities</p>
-                    <ul>
-                        {% for opportunity in page.research.opportunities %}
-                        <li>{{ opportunity }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-            <div>
-                <p>Competitive Analysis</p>
+            <div class='wrapper work-wrapper'>
+                <h2 class='work-link work-header' id='research'>Research</h2>
                 <div class='work-cols'>
                     <div>
-                        <p>{{ page.research.competitive_analysis.summary }}</p>
-                        <div class='work-analysis-logos'>
-                            {% for competitor in page.research.competitive_analysis.competitors %}
-                            <img src='/assets/{{page.title}}/{{competitor}}'>
-                            {% endfor %}
-                        </div>
+                        <p>{{ page.research.description | markdownify }}</p>
                     </div>
                     <div>
-                        <p>Key pain points list</p>
-                        <ul>
-                            {% for point in page.research.competitive_analysis.pain_points %}
-                            <li>{{ point }}</li>
+                        <ul class='work-research-questions work-list'>
+                            {% for question in page.research.questions %}
+                            <li>{{ question }}</li>
                             {% endfor %}
                         </ul>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div>
-            <h2 id='ideation'>Ideation</h2>
-            <p>{{ page.ideation.summary | markdownify }}</p>
-            <p>Assumptions/Project vision list</p>
-            <p>Sitemap/Information Architecture</p>
-            <img src='/assets/kali.jpg'>
-            <p>Paper Sketches</p>
-            <div class='work-cols'>
-                <div>
-                    <img src='/assets/kali.jpg'>
-                    <p>Explanation of exercise used (crazy eights) or ideas</p>
-                </div>
-                <div>
-                    <img src='/assets/kali.jpg'>
-                    <p>Explanation of exercise used (crazy eights) or ideas</p>
-                </div>
-                <div>
-                    <img src='/assets/kali.jpg'>
-                    <p>Explanation of exercise used (crazy eights) or ideas</p>
-                </div>
-            </div>
-        </div>
-        <div>
-            <h2 id='wireframes'>Wireframes</h2>
-            <p>{{ page.wireframes.summary }}</p>
-            <img src='/assets/{{page.title}}/wireframe.png'>
-        </div>
-        <div>
-            <h2 id='testing'>Testing</h2>
-            <div class='work-cols'>
-                <div>
-                    {% for note in page.testing.notes %}
-                    <p>{{ note | markdownify }}</p>
+                <h4 class='work-subheader'>Target User Groups</h4>
+                <p>{{ page.research.target.description | markdownify }}</p>
+                <div class='work-cols work-cols-even work-research-cols-border'>
+                    {% for persona in page.research.personas %}
+                    <div>
+                        <div class='work-research-blurb'>
+                            <img src='/assets/{{page.title}}/{{persona.image}}'>
+                            <div>
+                                <p>{{ persona.name }}, <span>{{ persona.age }}</span></p>
+                                <p>{{ persona.job }}</p>
+                            </div>
+                        </div>
+                        <p class='work-quote'>"{{ persona.quote }}"</p>
+                        <div>
+                            <table class='work-table work-research-persona-table'>
+                                <tr>
+                                    <td class='work-table-key'>Goals:</td>
+                                    <td class='work-table-value'>
+                                        <ul class='work-list'>
+                                            {% for goal in persona.goals %}
+                                            <li>{{ goal }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class='work-table-key'>Needs:</td>
+                                    <td class='work-table-value'>
+                                        <ul class='work-list'>
+                                            {% for need in persona.needs %}
+                                            <li>{{ need }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                     {% endfor %}
                 </div>
+            </div>
+        </div>
+        <div>
+            <div class='wrapper work-wrapper'>
                 <div>
-                    <p>Study type</p><span>{{ page.testing.study_type }}</span>
-                    <p>Location</p><span>{{ page.testing.location }}</span>
-                    <p>Participants</p><span>{{ page.testing.participants }}</span>
-                    <p>Length</p><span>{{ page.testing.length }}</span>
+                    <h4 class='work-subheader'>{{ page.research.user_journey.title }}</h4>
+                    <img class='work-research-journey-image'
+                         src='/assets/{{ page.title }}/{{page.research.user_journey.image}}'>
+                </div>
+                <div class='work-cols'>
+                    <div>
+                        <p class='work-bold'>Key Challenges:</p>
+                        <ul class='work-list'>
+                            {% for challenge in page.research.challenges %}
+                            <li>{{ challenge }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div>
+                        <p class='work-bold'>Investment Opportunities:</p>
+                        <ul class='work-list'>
+                            {% for opportunity in page.research.opportunities %}
+                            <li>{{ opportunity }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <h4 class='work-subheader'>Competitive Analysis</h4>
+                    <div class='work-cols'>
+                        <div>
+                            <p>{{ page.research.competitive_analysis.summary }}</p>
+                            <div class='work-research-logos'>
+                                {% for competitor in page.research.competitive_analysis.competitors %}
+                                <img src='/assets/{{page.title}}/{{competitor}}'>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div>
+                            <p class='work-bold'>Pain Points</p>
+                            <ul class='work-list work-research-pain-points'>
+                                {% for point in page.research.competitive_analysis.pain_points %}
+                                <li>{{ point }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class='work-testing-protoype'>
-                <div class='work-testing-prototype-image'>
-                    <img src='/assets/cook.png'>
+        </div>
+        <!--Ideation-->
+        <div>
+            <div class='wrapper work-wrapper'>
+                <h2 class='work-link work-header' id='ideation'>Ideation</h2>
+                <p>{{ page.ideation.summary | markdownify }}</p>
+                <div class='work-cols work-ideation-diagram'>
+                    <div>
+                        <img src='/assets/{{page.title}}/ideation_before.png'>
+                    </div>
+                    <span>{% include cta-colored.svg %}</span>
+                    <div>
+                        <img src='/assets/{{page.title}}/ideation_after.png'>
+                    </div>
                 </div>
-                <div class='work-testing-protoype-tasks'>
-                    <p>{{ page.testing.test.name }}</p>
-                    <ul>
-                        {% for task in page.testing.test.tasks %}
-                        <li>{{ task }}</li>
+                <div class='work-cols'>
+                    <p>{{ page.ideation.before }}</p>
+                    <p>{{ page.ideation.after }}</p>
+                </div>
+            </div>
+        </div>
+        <!--Wireframes-->
+        <div>
+            <div class='wrapper work-wrapper'>
+                <h2 class='work-link work-header' id='wireframes'>Wireframes</h2>
+                <p>{{ page.wireframes.summary }}</p>
+                <img src='/assets/{{page.title}}/wireframe.png'>
+            </div>
+        </div>
+        <!--Testing-->
+        <div>
+            <div class='wrapper work-wrapper'>
+                <h2 class='work-link work-header' id='testing'>Testing</h2>
+                <div class='work-cols'>
+                    <div>
+                        {% for note in page.testing.notes %}
+                        <p>{{ note | markdownify }}</p>
+                        {% endfor %}
+                    </div>
+                    <div>
+                        <table class='work-table work-testing-details'>
+                            <tr>
+                                <td class='work-table-key'>Study type</td>
+                                <td class='work-table-value'>{{ page.testing.study_type }}</td>
+                            </tr>
+                            <tr>
+                                <td class='work-table-key'>Location</td>
+                                <td class='work-table-value'>{{ page.testing.location }}</td>
+                            </tr>
+                            <tr>
+                                <td class='work-table-key'>Participants</td>
+                                <td class='work-table-value'>{{ page.testing.participants }}</td>
+                            </tr>
+                            <tr>
+                                <td class='work-table-key'>Length</td>
+                                <td class='work-table-value'>{{ page.testing.length }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class='work-cols work-testing-body'>
+                    <div class='work-testing-image'>
+                        <img src='/assets/{{page.title}}/{{page.testing.image}}'>
+                    </div>
+                    <div>
+                        <h4 class='work-subheader'>Thinking Aloud Test</h4>
+                        <table class='work-table work-testing-table'>
+                            {% for test in page.testing.tests %}
+                            <tr>
+                                <td class='work-table-key'>Task {{ forloop.index }}</td>
+                                <td class='work-table-value'>{{ test }}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+                <div>
+                    <h4 class='work-subheader'>Insights</h4>
+                    <ul class='work-list'>
+                        {% for insight in page.testing.insights %}
+                        <li>{{ insight | markdownify }}</li>
                         {% endfor %}
                     </ul>
                 </div>
             </div>
-            <div>
-                <p>Insights</p>
-                <ul>
-                    {% for insight in page.testing.insights %}
-                    <li>{{ insight }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
         </div>
+        <!--Final Designs-->
+        {% for design in page.final_designs %}
         <div>
-            <h2 id='finaldesigns'>Final Designs</h2>
-            <div>
-                {% for design in page.final_designs %}
-                <div class='work-cols'>
+            <div class='wrapper work-wrapper'>
+                {% if forloop.index0 < 1 %}
+                <h2 class='work-link work-header' id='finaldesigns'>Final Designs</h2>
+                {% endif %}
+                <div class='work-cols work-designs-container work-designs-{{forloop.index0 | modulo: 2}}'>
+                    <div class='work-design-side work-design-gap'></div>
                     <div>
-                        <img src='/assets/{{page.title}}/{{design.image}}'>
-                    </div>
-                    <div>
-                        <h3>{{ design.title }}</h3>
+                        <h4 class='work-subheader'>{{ design.title }}</h4>
                         <p>{{ design.summary }}</p>
                     </div>
+                    <div class='work-design-side work-design-img'>
+                        <img src='/assets/{{page.title}}/{{design.image}}'>
+                    </div>
                 </div>
-                {% endfor %}
             </div>
         </div>
+        {% endfor %}
+        <!--Takeaways-->
         <div>
-            <h2 id='takeaways'>Takeaways</h2>
-            <p>{{ page.takeaways.summary | markdownify }}</p>
-            <p>{{ page.takeaways.quote.text }}</p>
-            <p>{{ page.takeaways.quote.quoted }}</p>
-            <div>
-                {% for lesson in page.takeaways.lessons %}
-                <div class='work-takeaway'>
-                    <p>{{ lesson.lesson }}</p>
-                    <p>{{ lesson.learning }}</p>
+            <div class='wrapper work-wrapper'>
+                <h2 class='work-link work-header' id='takeaways'>Takeaways</h2>
+                <div>
+                    <p>{{ page.takeaways.summary | markdownify }}</p>
                 </div>
-                {% endfor %}
+                <div>
+                    <table class='work-table'>
+                        {% for lesson in page.takeaways.lessons %}
+                        <tr>
+                            <td class='work-table-key'>{{ lesson.lesson }}</td>
+                            <td class='work-table-value'>{{ lesson.learning }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <div>
+                    <h4 class='work-subheader'>Next Steps:</h4>
+                    <ul class='work-list'>
+                        {% for step in page.takeaways.next_steps %}
+                        <li>{{ step }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
             </div>
-            <p>Next Steps:</p>
-            <ul>
-                {% for step in page.takeaways.next_steps %}
-                <li>{{ step }}</li>
-                {% endfor %}
-            </ul>
         </div>
     </div>
 </div>
+
+<script>
+  const anchorClass = '.work-link'
+  const linkClass = '.work-table-of-contents-link'
+  const activeClass = 'work-table-of-contents-active'
+
+  let up = 0
+  window.onscroll = function (e) {
+    up = this.oldScroll > this.scrollY ? 1 : -1;
+    this.oldScroll = this.scrollY;
+  }
+
+  const anchors = document.querySelectorAll(anchorClass);
+  const links = document.querySelectorAll(linkClass)
+  let intersecting = []
+  let callback = (entries) => {
+    entries.forEach(entry => {
+      const targetDiv = document.querySelector(`[href="#${entry.target.id}"]`);
+      if (entry.isIntersecting) {
+        intersecting.push(targetDiv)
+      } else {
+        intersecting = intersecting.filter((i) => `${entry.target.id}-link` !== i.id)
+      }
+    });
+    if (intersecting.length > 0) {
+      const curr = up === 1 ? intersecting.at(-1) : intersecting.at(0)
+      curr.classList.add(activeClass)
+      links.forEach((link) => {
+        if (link.id !== curr.id) link.classList.remove(activeClass)
+      })
+    }
+  };
+
+  const observer = new IntersectionObserver(callback);
+  anchors.forEach(div => observer.observe(div));
+</script>

@@ -6,9 +6,9 @@ layout: default
 <div class="container">
     <div class='wrapper about-wrapper'>
         <div class='about-content'>
-            <div>
+            <div class='about-me'>
                 <h1 class='about-header'>Hi,</h1>
-                <div class='about-me'>
+                <div>
                     {% for line in site.data.about.overview %}
                     <p>{{ line }}</p>
                     {% endfor %}
@@ -66,7 +66,7 @@ layout: default
             </div>
         </div>
         <div>
-            <a class='about-resume'><h4>Resume</h4>{%- include cta.svg -%}</a>
+            <a class='about-resume' href='/resume.pdf'><h4>Resume</h4>{%- include cta.svg -%}</a>
         </div>
     </div>
 </div>

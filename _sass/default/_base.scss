@@ -141,3 +141,15 @@ a {
   display: table;
   clear: both;
 }
+
+/**
+ * Smooth Scroll
+ */
+html {
+  scroll-behavior: smooth;
+}
+
+
+.hidden {
+  visibility: hidden;
+}

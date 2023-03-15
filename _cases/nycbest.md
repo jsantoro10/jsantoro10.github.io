@@ -1,29 +1,22 @@
 ---
 layout: case
-title: nonna
-description: 
-  - For a growing restaurant chain like Nonna’s with three locations throughout NYC, a **dedicated mobile app** seemed like a natural next step.
-  - We aimed to provide its customers with a quick way to **easily order and pick up** fresh, high quality Italian dishes in the midst of their busy schedules.
+title: nycbest
+description:
+  - NYC’s Best is an animal shelter with three locations in New York City. They are dedicated to rescuing, rehabilitating, and finding forever homes for homeless and abandoned cats, dogs, and rabbits.  - We aimed to provide its customers with a quick way to **easily order and pick up** fresh, high quality Italian dishes in the midst of their busy schedules.
+  - We aimed to provide its patrons with a quick way to **easily find and adopt a pet**.
 nextPage: NYC's Best
 overview:
-  deliverable: Dedicated mobile app
+  deliverable: Responsive website
   roles:
     - Concept
     - Research
     - Visuals
     - Interaction
-  duration: Sept - Dec 2022
-  tool: Figma
-  problem: Finding a restaurant with **good food**, **loyalty discounts**, and **reliable order estimates** is challenging for customers with unpredictable schedules in NYC.
+  duration: Dec 2022 - Feb 2023
+  tool: Adobe XD
+  problem: Available pet adoption websites have cluttered designs that **aren’t fully responsive, inefficient** or **unusable browsing features**, and **confusing information architecture**.
   solution:
-    tag: Create a dedicated mobile app with...
-    examples:
-      - example: Quick Pickup Ordering
-        image: solution1.svg
-      - example: Loyalty Discounts
-        image: solution2.svg
-      - example: Reliable Order Estimates + Tracking
-        image: solution3.svg
+    tag: Design a user-friendly responsive website by providing **clear navigation** and offering a **fast, efficient** pet search and adoption application process.
 research:
   description: To understand the users I was designing for and their needs, I conducted qualitative research through a **competitive audit**, **interviews**, **personas**, and **storyboarding**.
   questions:
@@ -33,58 +26,56 @@ research:
   target:
     description: The primary user group identified through my research was **working adults** and **families with unpredictable schedules** who don’t have time to meal prep.
   personas:
-    - name: Arya
-      age: 24
-      job: Software engineer
-      quote: "I always make the time to learn or try something new."
+    - name: Niamh
+      age: 35
+      job: Dental hygenist
+      quote: "I’m always thinking about new ways to spend quality time with my boys."
       image: portrait1.png
       goals:
-        - Find underrated restaurants
-        - Get promoted within a year
-        - Learn something new every day
+        - Save for son's education
+        - Find new movie each Friday
+        - Receive pay raise in a a year
       needs:
-        - Meny item pictures
-        - Updated wait time
-        - Online pickup ordering
-    - name: Horace
-      age: 45
-      job: ER nurse
-      quote: "I’m on my way to becoming my healthiest self so I can make my daughter proud."
+        - Skimmable pet profiles
+        - Filters for profile listings
+        - Clear adoption process
+    - name: Winston
+      age: 21
+      job: Student
+      quote: "I hold high standards for myself and the people I surround myself with."
       image: portrait2.png
       goals:
-        - Save for daughter's education
-        - Eat healthier meals
-        - Prioritize hobbies and his daughter
+        - Get straight A's this semester
+        - Land full-time job in the city
+        - Be more active each day
       needs:
-        - Dietary note option
-        - Online pickup ordering
-        - Live order tracking
-  user_journey:
-    title: Araya's User Journey
-    image: user_journey.svg
+        - Filters for pet characteristics
+        - First-time pet parent info
+        - Online contact options
   challenges:
-    - No menu item pictures
-    - No online order options
-    - No estimate for order completion
+    - Not assistive technology accessible
+    - No descriptive filters
+    - Poor information architecture
   opportunities:
-    - Optimize app for images
-    - Provide order estimate times
-    - Provide live order status tracking
+    - Optimize for assistive technologies
+    - Provide descriptive filters
+    - Clear information architecture
   competitive_analysis:
-    summary: Next, I compared the ordering experience of existing competitors’ apps. I selected two of the top App Store results for ‘Italian restaurant,’ along with an indirect competitor listed under ‘restaurant’ App Store results.
+    summary: Next, I compared the **pet adoption flow** on existing competitors’ sites. I selected **two direct competitors** from local animal shelters, along with **two indirect competitors** that offer services for pet owners.
     competitors:
       - competitor1.png
       - competitor2.png
       - competitor3.png
+      - competitor4.png
     pain_points:
       - No single sign-on (SSO)
       - No special instructions option
 ideation:
-  summary: Using the **Crazy Eights exercise**, I sketched out different iterations of the homepage with these user pain points and improvement opportunities in mind.
-  before: My initial sketches focused on shortcuts to key user goals featured on the homepage.
-  after: For the refined version, I prioritized a **quick and easy ordering process** with offers, popular dishes, and favorites featured.
+  summary: Next, I sketched out four different iterations of the homepage, with a focus on avoiding a text-heavy screen for a quicker browsing experience.
 wireframes:
   summary: As the initial design phase continued, I created digital wireframes based on peer feedback and findings from the user research.
+sitemap:
+  image: sitemap.png
 testing:
   notes:
     - I conducted **two rounds of usability studies**.

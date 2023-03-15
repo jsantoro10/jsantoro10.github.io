@@ -92,17 +92,14 @@
 
 .about-content {
   display: flex;
+  justify-content: space-between;
   @include media-query($on-palm) {
     flex-direction: column;
   }
 }
 
-.about-content > div {
-  flex-basis: 0;
-  flex-grow: 1;
-}
-
 .about-pic {
+  max-width: $spacing-unit * 17;
   position: relative;
   @include media-query($on-palm) {
     order: -1;
@@ -153,12 +150,21 @@
 }
 
 .about-me {
-  margin-top: 30%;
-  width: 70%;
+  width: 100%;
+  padding-right: $spacing-unit * 4;
+  max-width: $spacing-unit * 20;
 
-  @include media-query($on-palm) {
-    margin-top: 5%;
+  @include media-query($on-laptop) {
+    padding-right: $spacing-unit * 2;
   }
+}
+
+.about-me > div {
+  margin-top: $spacing-unit;
+}
+
+.about-me > div > p:not(:first-child) {
+  margin-top: $spacing-unit;
 }
 
 .about-experience {
@@ -198,9 +204,9 @@
 }
 
 .about-resume {
-  color: $text-color;
+  color: $text-color !important;
   font-size: 1.6rem;
-
+  
   :hover {
     cursor: pointer;
   }
@@ -215,23 +221,21 @@
  * Work
  */
 
+/**
+ * Work Basics
+ */
 .work-wrapper {
   padding: $spacing-unit 0;
   width: 50%;
 }
 
-.work-splash {
-  background-color: $grey-color-light;
+.work-wrapper > div:not(:last-child) {
+  margin-bottom: $spacing-unit;
 }
 
 .work-image {
-  max-width: 60%;
+  max-width: 70%;
   margin: 0 auto;
-}
-
-.work-logo {
-  padding-top: $spacing-unit * 0.5;
-  padding-bottom: $spacing-unit;
 }
 
 .work-image img {
@@ -239,65 +243,96 @@
   margin: 0 auto;
 }
 
-.work-title {
-  text-align: center;
-  margin-top: $spacing-unit;
-}
-
-.work-section-container > div {
-  margin-top: $spacing-unit * 2;
-}
-
-.work-section-container > div:first-child {
-  margin-top: 0;
+.work-section-container > div:nth-child(even) {
+  background-color: $background-secondary-color;
 }
 
 .work-cols {
   display: flex;
   justify-content: space-between;
+  gap: $spacing-unit * 2;
+  @include media-query($on-laptop) {
+    flex-direction: column;
+  }
 }
 
-.work-blurb {
-  background-color: $grey-color;
-  display: flex;
-  flex-direction: column;
-  padding: $spacing-unit;
+.work-cols-even > * {
+  flex-basis: 0;
+  flex-grow: 1;
 }
 
-.work-user-journey {
-  background-color: $grey-color;
-  height: $spacing-unit * 4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.work-bold {
+  font-weight: 700;
 }
 
-.work-analysis-logos {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+.work-header {
+  font-family: "Roboto Flex", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: bold;
+  font-size: 1.6rem;
 }
 
-.work-testing-protoype {
-  display: flex;
+.work-list {
+  list-style: url("/assets/case/bulletpoint.svg");
+  margin-left: $spacing-unit * .8;
+
+  @include media-query($on-laptop) {
+    margin-left: 0;
+  }
 }
 
-.work-testing-prototype-image {
-  width: 30%;
+.work-list > li {
+  padding-left: 5px;
 }
 
-.work-testing-protoype-tasks {
-  margin-left: $spacing-unit;
+.work-list > li:not(:last-child) {
+  margin-bottom: $spacing-unit *.5;
 }
 
-.work-testing-protoype-tasks > ul {
-  font-size: 0.9rem;
+.work-subheader {
+  color: $brand-color;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
+
+.work-quote {
+  font-style: italic;
+}
+
+.work-table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+.work-table td {
+  padding: $spacing-unit * .5 0;
+}
+
+.work-table-small td {
+  padding: $spacing-unit * .2 0;
+}
+
+.work-table-value {
+  width: 100%;
+  padding-left: 15px !important;
+  vertical-align: text-top;
+}
+
+.work-table-key {
+  border-right: 1px $brand-color solid;
+  vertical-align: text-top;
+  padding-right: 5px !important;
+  font-weight: 500;
+}
+
+/**
+ * Work Table of Contents
+ */
 
 .work-table-of-contents {
   position: fixed;
-  top: 30%;
+  top: 25%;
   left: 7%;
+  z-index: 9999;
 
   @include media-query($on-laptop) {
     display: none;
@@ -305,14 +340,220 @@
 }
 
 .work-table-of-contents li {
-  margin-bottom: $spacing-unit * .2;
+  margin-bottom: $spacing-unit * .3;
 }
 
 .work-table-of-contents a {
   color: $grey-color;
 }
 
-.work-takeaway {
+.work-table-of-contents-active {
+  text-decoration: underline;
+}
+
+/**
+ * Work Splash
+ */
+
+.work-splash {
+  background-color: $background-secondary-color;
+}
+
+.work-splash-icons {
+  position: relative;
+}
+
+.work-splash-icons > div {
   display: flex;
-  gap: $spacing-unit;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: $spacing-unit;
+  justify-content: space-between;
+}
+
+.work-splash-icon {
+  color: $text-color;
+}
+
+.work-splash-icon:hover {
+  cursor: pointer;
+}
+
+.work-splash-icon-rev svg {
+  transform: rotate(180deg);
+}
+
+.work-splash-logo {
+  padding-top: $spacing-unit * 0.5;
+}
+
+.work-splash-logo img {
+  max-height: $spacing-unit * 2;
+}
+
+/** Work Overview
+ *
+ */
+
+.work-overview-container > div:not(:first-child) {
+  margin-top: $spacing-unit * 1;
+}
+
+.work-overview-solutions > div {
+  text-align: center;
+}
+
+/**
+ * Work Research
+ */
+.work-research-blurb {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: $spacing-unit * .5 0;
+}
+
+.work-research-blurb img {
+  border-radius: 50%;
+  width: 60%;
+}
+
+.work-research-blurb > div {
+  position: absolute;
+  bottom: 20%;
+  left: 30%;
+  color: white;
+}
+
+.work-research-blurb > div > p {
+  margin-bottom: 0;
+  font-size: 0.8rem;
+}
+
+.work-research-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-unit * .5;
+}
+
+.work-research-logos > img {
+  height: $spacing-unit * 1;
+}
+
+.work-research-questions {
+  width: $spacing-unit * 7;
+  font-weight: 600;
+}
+
+.work-research-pain-points {
+  min-width: $spacing-unit * 8;
+}
+
+.work-research-persona-table .work-table-key {
+  border-right: 0;
+}
+
+.work-research-cols-border {
+  gap: 0;
+}
+
+.work-research-cols-border > div:first-child {
+  padding-right: $spacing-unit;
+  position: relative;
+}
+
+.work-research-cols-border > div:first-child:after {
+  content : "";
+  width: 1px;
+  height: 85%;
+  position: absolute;
+  right: 0;
+  top: 5%;
+  border-right: 1px $brand-color solid;
+}
+
+.work-research-cols-border > div:last-child {
+  padding-left: $spacing-unit;
+}
+
+.work-research-persona-table .work-list {
+  margin-bottom: 0;
+}
+
+.work-research-persona-table td {
+  padding: 0;
+}
+
+.work-research-persona-table tr:not(:last-child) td {
+  padding-bottom: $spacing-unit * .5;
+}
+
+
+.work-research-journey-image {
+  width: 100%;
+}
+
+/**
+ * Work Designs
+ */
+
+.work-designs-0 > .work-design-img {
+    order: -1;
+    @include media-query($on-laptop) {
+      order: 0
+    }
+}
+
+.work-designs-0 > .work-design-gap {
+  order: 1;
+  @include media-query($on-laptop) {
+    order: 0
+  }
+}
+
+.work-design-side {
+  width: 70%;
+}
+
+.work-designs-container {
+  gap: $spacing-unit * 2;
+  align-items: center;
+}
+
+.work-designs-container:not(:last-child) {
+  margin-bottom: $spacing-unit;
+}
+
+/**
+ * Work Testing
+ */
+
+.work-testing-table .work-table-key {
+  min-width: $spacing-unit * 1.7;
+}
+
+.work-testing-body {
+  align-items: center;
+}
+
+.work-testing-image img {
+  max-width: 70%;
+}
+
+.work-testing-details {
+  min-width: $spacing-unit * 8;
+}
+
+/**
+ * Work Ideation
+ */
+
+.work-ideation-diagram {
+  align-items: center;
+}
+
+.work-ideation-diagram > div {
+  flex-basis: 0;
+  flex-grow: 1;
 }
