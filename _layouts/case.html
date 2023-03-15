@@ -18,9 +18,11 @@ layout: default
         <div class='wrapper work-wrapper'>
             <h2 id='overview'></h2>
             <div class='work-image'>
-                <img src='/assets/cook.png' />
+                <img src='/assets/{{ page.title }}/prototype.png' />
             </div>
-            <h1 class='work-title'>{{ page.title }}</h1>
+            <div class='work-image work-logo'>
+                <img src='/assets/{{ page.title }}/logo.png' />
+            </div>
             <p>{{ page.description }}</p>
         </div>
     </div>
@@ -51,7 +53,7 @@ layout: default
             <div class='work-cols'>
                 <div>
                     <h2>The Problem</h2>
-                    <p>{{ page.overview.problem }}</p>
+                    <p>{{ page.overview.problem | markdownify }}</p>
                 </div>
                 <div>
                     <h2>The Solution</h2>
@@ -68,7 +70,7 @@ layout: default
             <h2 id='research'>Research</h2>
             <div class='work-cols'>
                 <div>
-                    <p>{{ page.research.description }}</p>
+                    <p>{{ page.research.description | markdownify }}</p>
                 </div>
                 <div>
                     <ul>
@@ -79,71 +81,77 @@ layout: default
                 </div>
             </div>
             <h4>Target User Groups</h4>
-            <p>{{ page.research.target.description }}</p>
+            <p>{{ page.research.target.description | markdownify }}</p>
             <div class='work-cols'>
+                {% for persona in page.research.personas %}
                 <div>
                     <div class='work-blurb'>
-                        <span>Persona #1</span>
-                        <span>Name</span>
-                        <span>Quote</span>
-                        <span>Blurb</span>
-                        <span>Age</span>
-                        <span>Occupation</span>
+                        <span>{{ persona.name }}</span>
+                        <span>{{ persona.quote }}</span>
+                        <span>{{ persona.age }}</span>
+                        <span>{{ persona.job }}</span>
                     </div>
                     <p>Goals: </p>
+                    <ul>
+                        {% for goal in persona.goals %}
+                        <li>{{ goal }}</li>
+                        {% endfor %}
+                    </ul>
                     <p>Needs: </p>
-                    <p>Frustrations:</p>
+                    <ul>
+                        {% for need in persona.needs %}
+                        <li>{{ need }}</li>
+                        {% endfor %}
+                    </ul>
                 </div>
-                <div>
-                    <div class='work-blurb'>
-                        <span>Persona #1</span>
-                        <span>Name</span>
-                        <span>Quote</span>
-                        <span>Blurb</span>
-                        <span>Age</span>
-                        <span>Occupation</span>
-                    </div>
-                    <p>Goals: </p>
-                    <p>Needs: </p>
-                    <p>Frustrations:</p>
-                </div>
+                {% endfor %}
             </div>
             <div class='work-user-journey'>
                 User journey map
             </div>
             <div class='work-cols'>
-                <p>Key challenges</p>
-                <p>Investment opportunities</p>
+                <div>
+                    <p>Key challenges</p>
+                    <ul>
+                        {% for challenge in page.research.challenges %}
+                        <li>{{ challenge }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div>
+                    <p>Investment opportunities</p>
+                    <ul>
+                        {% for opportunity in page.research.opportunities %}
+                        <li>{{ opportunity }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
             <div>
                 <p>Competitive Analysis</p>
                 <div class='work-cols'>
                     <div>
-                        <p>1-3-sentence(s) about how I chose competitors</p>
+                        <p>{{ page.research.competitive_analysis.summary }}</p>
                         <div class='work-analysis-logos'>
-                            <span>Logo #1</span>
-                            <span>Logo #2</span>
-                            <span>Logo #3</span>
-                            <span>Logo #4</span>
-                            <span>Logo #5</span>
+                            {% for competitor in page.research.competitive_analysis.competitors %}
+                            <img src='/assets/{{page.title}}/{{competitor}}'>
+                            {% endfor %}
                         </div>
                     </div>
                     <div>
                         <p>Key pain points list</p>
-                        <ol>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ol>
+                        <ul>
+                            {% for point in page.research.competitive_analysis.pain_points %}
+                            <li>{{ point }}</li>
+                            {% endfor %}
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
         <div>
             <h2 id='ideation'>Ideation</h2>
-            <p>1-3-sentence(s) about ideation process I took + why</p>
+            <p>{{ page.ideation.summary | markdownify }}</p>
             <p>Assumptions/Project vision list</p>
             <p>Sitemap/Information Architecture</p>
             <img src='/assets/kali.jpg'>
@@ -165,19 +173,22 @@ layout: default
         </div>
         <div>
             <h2 id='wireframes'>Wireframes</h2>
-            <p>1-3-sentence(s) about ideation process I took + why</p>
+            <p>{{ page.wireframes.summary }}</p>
+            <img src='/assets/{{page.title}}/wireframe.png'>
         </div>
         <div>
             <h2 id='testing'>Testing</h2>
             <div class='work-cols'>
                 <div>
-                    <p>1-3-sentence(s) about user study details</p>
+                    {% for note in page.testing.notes %}
+                    <p>{{ note | markdownify }}</p>
+                    {% endfor %}
                 </div>
                 <div>
-                    <p>Study type</p>
-                    <p>Location</p>
-                    <p>Participants</p>
-                    <p>Length</p>
+                    <p>Study type</p><span>{{ page.testing.study_type }}</span>
+                    <p>Location</p><span>{{ page.testing.location }}</span>
+                    <p>Participants</p><span>{{ page.testing.participants }}</span>
+                    <p>Length</p><span>{{ page.testing.length }}</span>
                 </div>
             </div>
             <div class='work-testing-protoype'>
@@ -185,89 +196,58 @@ layout: default
                     <img src='/assets/cook.png'>
                 </div>
                 <div class='work-testing-protoype-tasks'>
-                    <p>Title</p>
+                    <p>{{ page.testing.test.name }}</p>
                     <ul>
-                        <li>Task 1</li>
-                        <li>Task 2</li>
-                        <li>Task 3</li>
-                        <li>Task 4</li>
-                        <li>Task 5</li>
+                        {% for task in page.testing.test.tasks %}
+                        <li>{{ task }}</li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
             <div>
-                <p>Findings</p>
-                <div class='work-cols'>
-                    <div>
-                        <h3>Finding 1</h3>
-                        <p>1-sentence description</p>
-                    </div>
-                    <div>
-                        <h3>Finding 2</h3>
-                        <p>1-sentence description</p>
-                    </div>
-                    <div>
-                        <h3>Finding 3</h3>
-                        <p>1-sentence description</p>
-                    </div>
-                </div>
+                <p>Insights</p>
+                <ul>
+                    {% for insight in page.testing.insights %}
+                    <li>{{ insight }}</li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
         <div>
             <h2 id='finaldesigns'>Final Designs</h2>
             <div>
-
+                {% for design in page.final_designs %}
                 <div class='work-cols'>
                     <div>
-                        <img src='/assets/cook.png'>
+                        <img src='/assets/{{page.title}}/{{design.image}}'>
                     </div>
                     <div>
-                        <h3>Feature</h3>
-                        <p>1-3 sentences about feature + how it addresses pain points/challenges</p>
+                        <h3>{{ design.title }}</h3>
+                        <p>{{ design.summary }}</p>
                     </div>
                 </div>
-                <div class='work-cols'>
-                    <div>
-                        <h3>Feature</h3>
-                        <p>1-3 sentences about feature + how it addresses pain points/challenges</p>
-                    </div>
-                    <div>
-                        <img src='/assets/cook.png'>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <p>Design Guidelines</p>
+                {% endfor %}
             </div>
         </div>
         <div>
             <h2 id='takeaways'>Takeaways</h2>
-            <div class='work-cols'>
-                <div>
-                    <p>1-2 sentence(s) intro about takeaways</p>
-                </div>
-                <div class='work-cols'>
-                    <p>Impact</p>
-                    <ul>
-                        <li>Notable quote(s) from participants during testing</li>
-                        <li>Notable quote(s) from participants during testing</li>
-                    </ul>
-                </div>
-            </div>
+            <p>{{ page.takeaways.summary | markdownify }}</p>
+            <p>{{ page.takeaways.quote.text }}</p>
+            <p>{{ page.takeaways.quote.quoted }}</p>
             <div>
+                {% for lesson in page.takeaways.lessons %}
                 <div class='work-takeaway'>
-                    <p>Takeaway 1</p>
-                    <p>2-3 sentences about each</p>
+                    <p>{{ lesson.lesson }}</p>
+                    <p>{{ lesson.learning }}</p>
                 </div>
-                <div class='work-takeaway'>
-                    <p>Takeaway 1</p>
-                    <p>2-3 sentences about each</p>
-                </div>
-                <div class='work-takeaway'>
-                    <p>Takeaway 1</p>
-                    <p>2-3 sentences about each</p>
-                </div>
+                {% endfor %}
             </div>
+            <p>Next Steps:</p>
+            <ul>
+                {% for step in page.takeaways.next_steps %}
+                <li>{{ step }}</li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
 </div>

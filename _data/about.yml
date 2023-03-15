@@ -1,0 +1,42 @@
+overview:
+  - Sentence about who I am as a designer
+  - Sentence about my educational background + work experience
+  - Sentence about my hobbies + passions outside of work
+  - Would love to hear from you + contact info line
+
+education:
+  - title: Google UX Design Professional Certificate
+    note: 7 Courses, 200+ hours of coursework
+    date: Sep 2022 - Mar 2023
+  - title: New York University
+    note: BS in Applied Psychology + Global Public Health Minor in Sociology
+    date: Sep 2016 - Dec 2019
+  - title: New York University Accra
+    note: Coursework in Research Methods I + II, Epidemiology, Health Policy, Community Psychology
+    date: Sep 2017 - Dec 2017
+
+experience:
+  - title: TEKsystems
+    role: Technical Recruiter
+    date: Jun - Sep 2022
+  - title: Ana Luisa
+    role: Community Management Associate
+    date: Jun 2021 - May 2022
+  - title: Memorial Sloan Kettering Cancer Center
+    role: Care Coordinator
+    date: Mar - Dec 2020
+
+design:
+  - User-centered design
+  - Equity-focused design
+  - User research
+  - Personas
+  - Storyboarding
+  - Wireframing
+  - Prototyping
+  - User testing
+
+technical:
+  - Figma
+  - Adobe XD
+  - Sketch

@@ -9,81 +9,58 @@ layout: default
             <div>
                 <h1 class='about-header'>Hi,</h1>
                 <div class='about-me'>
-                    <p>
-                        Sentence about who I am as a designer
-                    </p>
-                    <p>
-                        Sentence about my educational background + work experience
-                    </p>
-                    <p>
-                        Sentence about my hobbies + passions outside of work
-                    </p>
-                    <p>
-                        Would love to hear from you + contact info line
-                    </p>
+                    {% for line in site.data.about.overview %}
+                    <p>{{ line }}</p>
+                    {% endfor %}
                 </div>
             </div>
-            <div class='about-pic'>
-                <img src='/assets/julia.png' />
+            <div>
+                <div class='about-pic'>
+                    <div>
+                        <img src='/assets/about/julia.jpg' />
+                    </div>
+                    <div id="foreground" class='about-pic-foreground'>
+                    </div>
+                    <input type="range" min="0" max="100" value="50" class="about-pic-slider" name='slider' id="slider">
+                </div>
             </div>
         </div>
         <div>
             <div class='about-experience'>
                 <div>
                     <h3>Education</h3>
+                    {% for education in site.data.about.education %}
                     <div class='about-experience-group'>
-                        <p class='about-title'>Google UX Design Professional Certificate</p>
-                        <p>7 Courses, 200+ hours of coursework</p>
-                        <p class='about-date'>Sep 2022 - Mar 2023</p>
+                        <p class='about-title'>{{ education.title }}</p>
+                        <p>{{ education.note }}</p>
+                        <p class='about-date'>{{ education.date }}</p>
                     </div>
-                    <div class='about-experience-group'>
-                        <p class='about-title'>New York University</p>
-                        <p>BS in Applied Psychology + Global Public Health Minor in Sociology</p>
-                        <p class='about-date'>Sep 2016 - Dec 2019</p>
-                    </div>
-                    <div class='about-experience-group'>
-                        <p class='about-title'>New York University Accra</p>
-                        <p>Coursework in Research Methods I + II, Epidemiology, Health Policy, Community Psychology</p>
-                        <p class='about-date'>Sep 2017 - Dec 2017</p>
-                    </div>
+                    {% endfor %}
                 </div>
                 <div>
                     <h3>Experience</h3>
+                    {% for experience in site.data.about.experience %}
                     <div class='about-experience-group'>
-                        <p class='about-title'>TekSystems</p>
-                        <p>Technical Recruiter</p>
-                        <p class='about-date'>Jun - Sep 2022</p>
+                        <p class='about-title'>{{ experience.title }}</p>
+                        <p>{{ experience.role }}</p>
+                        <p class='about-date'>{{ experience.date }}</p>
                     </div>
-                    <div class='about-experience-group'>
-                        <p class='about-title'>Ana Luisa</p>
-                        <p>Community Management Associate</p>
-                        <p class='about-date'>Jun 2021 - May 2022</p>
-                    </div>
-                    <div class='about-experience-group'>
-                        <p class='about-title'>Memorial Sloan Kettering Cancer Center</p>
-                        <p>Care Coordinator</p>
-                        <p class='about-date'>Mar - Dec 2020</p>
-                    </div>
+                    {% endfor %}
                 </div>
                 <div>
                     <h3>Design Skills</h3>
                     <ul>
-                        <li>User-centered design</li>
-                        <li>Equity-focused design</li>
-                        <li>User research</li>
-                        <li>Personas</li>
-                        <li>Storyboarding</li>
-                        <li>Wireframing</li>
-                        <li>Prototyping</li>
-                        <li>User testing</li>
+                        {% for skill in site.data.about.design %}
+                        <li>{{ skill }}</li>
+                        {% endfor %}
                     </ul>
                 </div>
                 <div>
                     <h3>Technical Skills</h3>
                     <ul>
-                        <li>Figma</li>
-                        <li>Adobe XD</li>
-                        <li>Sketch</li>
+                        {% for skill in site.data.about.technical %}
+                        <li>{{ skill }}</li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
@@ -93,3 +70,13 @@ layout: default
         </div>
     </div>
 </div>
+
+<script>
+  const foreground = document.getElementById("foreground")
+  const slider = document.getElementById("slider")
+
+  slider.addEventListener("input", (e) => {
+    const pos = e.target.value;
+    foreground.style.width = `${pos}%`
+  })
+</script>
