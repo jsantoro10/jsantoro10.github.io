@@ -1,0 +1,18 @@
+<div class='work-cols'>
+    <div>
+        <p class='work-bold'>Key Challenges:</p>
+        <ul class='work-list'>
+            {% for challenge in page.research.challenges %}
+            <li>{{ challenge }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <p class='work-bold'>Investment Opportunities:</p>
+        <ul class='work-list'>
+            {% for opportunity in page.research.opportunities %}
+            <li>{{ opportunity }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

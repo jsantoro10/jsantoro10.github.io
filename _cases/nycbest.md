@@ -2,8 +2,9 @@
 layout: case
 title: nycbest
 description:
-  - NYC’s Best is an animal shelter with three locations in New York City. They are dedicated to rescuing, rehabilitating, and finding forever homes for homeless and abandoned cats, dogs, and rabbits.  - We aimed to provide its customers with a quick way to **easily order and pick up** fresh, high quality Italian dishes in the midst of their busy schedules.
+  - NYC’s Best is an animal shelter with three locations in New York City. They are dedicated to rescuing, rehabilitating, and finding forever homes for homeless and abandoned cats, dogs, and rabbits.
   - We aimed to provide its patrons with a quick way to **easily find and adopt a pet**.
+backLink: /cases/nonna
 nextPage: NYC's Best
 overview:
   deliverable: Responsive website
@@ -18,13 +19,13 @@ overview:
   solution:
     tag: Design a user-friendly responsive website by providing **clear navigation** and offering a **fast, efficient** pet search and adoption application process.
 research:
-  description: To understand the users I was designing for and their needs, I conducted qualitative research through a **competitive audit**, **interviews**, **personas**, and **storyboarding**.
+  description: To understand the users I was designing for and their needs, I conducted qualitative research through a **competitive audit**, **empathy maps**, **interviews**, and **personas**.
   questions:
     - Who are our users?
     - What are their goals?
-    - In what context are they experiencing the app?
+    - What features are needed for users to achieve these goals?
   target:
-    description: The primary user group identified through my research was **working adults** and **families with unpredictable schedules** who don’t have time to meal prep.
+    description: The primary user group identified through my research was **working adults with families** and **early career professionals** who don’t have time to read through each pet profile.
   personas:
     - name: Niamh
       age: 35
@@ -33,8 +34,8 @@ research:
       image: portrait1.png
       goals:
         - Save for son's education
-        - Find new movie each Friday
-        - Receive pay raise in a a year
+        - Find new activity to do with sons
+        - Read every day
       needs:
         - Skimmable pet profiles
         - Filters for profile listings
@@ -67,15 +68,18 @@ research:
       - competitor2.png
       - competitor3.png
       - competitor4.png
-    pain_points:
-      - No single sign-on (SSO)
-      - No special instructions option
 ideation:
   summary: Next, I sketched out four different iterations of the homepage, with a focus on avoiding a text-heavy screen for a quicker browsing experience.
+  diagram:
+    image: ideation.png
+    description: For the refined version, I prioritized a **quick and easy way to search pet profiles** with filters like location and pet type to help users save time.
 wireframes:
-  summary: As the initial design phase continued, I created digital wireframes based on peer feedback and findings from the user research.
+  summary: For my digital wireframes, I prioritized **multiple ways to enter the user flow** through landmarks, such as navigation and search.
+  images:
+    - wireframe.png
+    - wireframe2.png
 sitemap:
-  image: sitemap.png
+  summary: "**Difficulty with website navigation** was a primary pain point for users, so I aimed to make the information architecture **simple and intuitive**. I created the sitemap with the common structure used by existing animal shelters in mind."
 testing:
   notes:
     - I conducted **two rounds of usability studies**.
@@ -110,10 +114,10 @@ final_designs:
     summary: I added live order tracking, with each step of the process listed, so that users with busy schedules could time their pickup accurately.
     image: design4.gif
 takeaways:
-  summary: This was my **first portfolio project** in the Google UX Design certificate program, as well as my **first experience designing with Figma**. Throughout Courses 2-5, I began practicing and implementing the principles I was learning about. Watching my designs come to life and receiving user feedback was an **extremely rewarding and insightful process**.
+  summary: "This was my **first portfolio project** in the Google UX Design certificate program, as well as my **first experience designing with Figma**. Throughout Courses 2-5, I began practicing and implementing the principles I was learning about. Watching my designs come to life and receiving user feedback was an **extremely rewarding and insightful process**."
   lessons:
-    - lesson: Navigation
-      learning: I learned that prioritizing the user means understanding the existing navigational patterns and information architecture that they are familiar with.
+    - lesson: Color Theory
+      learning: I learned how much of an impact the color palette has on the overall impression and energy of a site. After changing the initial color scheme to a more vibrant purple, the site felt more suited to the modern, tailored-to-you concept I had in mind for NYC’s Best.
     - lesson: Accessibility
       learning: I learned that designing for people who use assistive technologies improves the user experience for all users through icons, bottom navigation bars, and an accessible color palette.
     - lesson: Labels

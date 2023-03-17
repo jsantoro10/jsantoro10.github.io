@@ -12,11 +12,13 @@ $header-font-family: Josefin Sans, sans-serif, -apple-system, BlinkMacSystemFont
 
 $spacing-unit:     30px !default;
 
-$text-color:       #111 !default;
+$text-color:       rgba(69, 69, 69, 1) !default;
 $background-color: #FFFFFF !default;
-$background-secondary-color: #F6F6F6 !default;
+$background-secondary-color: #F5F5F5 !default;
 
-$brand-color:      #67A267 !default;
+$brand-color:      rgba(129, 174, 157, 1) !default;
+$brand-color-light: rgba(97, 152, 130, 0.25)  !default;
+$brand-color-dark: rgba(19, 93, 70, 1) !default;
 
 $grey-color:       #878787 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
@@ -27,8 +29,8 @@ $table-text-align: left !default;
 // Width of the content area
 $content-width:    90vw !default;
 
-$on-palm:          600px !default;
-$on-laptop:        800px !default;
+$on-palm:          800px !default;
+$on-laptop:        1200px !default;
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -50,5 +52,6 @@ $on-laptop:        800px !default;
 // Import partials.
 @import "default/base",
 "default/layout",
-"default/pages"
+"default/pages",
+"default/cases"
 ;

@@ -1,0 +1,23 @@
+<div>
+    <h4 class='work-subheader'>Competitive Analysis</h4>
+    <div class='work-cols work-cols-wide'>
+        <div class='work-markdown'>
+            <p>{{ page.research.competitive_analysis.summary | markdownify }}</p>
+            <div class='work-research-logos'>
+                {% for competitor in page.research.competitive_analysis.competitors %}
+                <img src='/assets/{{page.title}}/{{competitor}}'>
+                {% endfor %}
+            </div>
+        </div>
+        {% if page.research.competitive_analysis.pain_points %}
+        <div>
+            <p class='work-bold'>Pain Points</p>
+            <ul class='work-list work-research-pain-points'>
+                {% for point in page.research.competitive_analysis.pain_points %}
+                <li>{{ point }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</div>

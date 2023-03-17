@@ -4,7 +4,9 @@ title: nonna
 description: 
   - For a growing restaurant chain like Nonna’s with three locations throughout NYC, a **dedicated mobile app** seemed like a natural next step.
   - We aimed to provide its customers with a quick way to **easily order and pick up** fresh, high quality Italian dishes in the midst of their busy schedules.
-nextPage: NYC's Best
+nextPage:
+  title: NYC's Best
+  link: /cases/nycbest
 overview:
   deliverable: Dedicated mobile app
   roles:
@@ -22,7 +24,7 @@ overview:
         image: solution1.svg
       - example: Loyalty Discounts
         image: solution2.svg
-      - example: Reliable Order Estimates + Tracking
+      - example: Reliable Order Estimates
         image: solution3.svg
 research:
   description: To understand the users I was designing for and their needs, I conducted qualitative research through a **competitive audit**, **interviews**, **personas**, and **storyboarding**.
@@ -43,7 +45,7 @@ research:
         - Get promoted within a year
         - Learn something new every day
       needs:
-        - Meny item pictures
+        - Menu item pictures
         - Updated wait time
         - Online pickup ordering
     - name: Horace
@@ -69,9 +71,9 @@ research:
   opportunities:
     - Optimize app for images
     - Provide order estimate times
-    - Provide live order status tracking
+    - Provide live order tracking
   competitive_analysis:
-    summary: Next, I compared the ordering experience of existing competitors’ apps. I selected two of the top App Store results for ‘Italian restaurant,’ along with an indirect competitor listed under ‘restaurant’ App Store results.
+    summary: Next, I compared the **ordering experience** of existing competitors’ apps. I selected **two direct competitors** from the top App Store results for ‘Italian restaurant,’ along with an **indirect competitor** listed under the results for ‘restaurant.’
     competitors:
       - competitor1.png
       - competitor2.png
@@ -81,10 +83,12 @@ research:
       - No special instructions option
 ideation:
   summary: Using the **Crazy Eights exercise**, I sketched out different iterations of the homepage with these user pain points and improvement opportunities in mind.
-  before: My initial sketches focused on shortcuts to key user goals featured on the homepage.
+  before: My initial sketches focused on **shortcuts to key user goals** featured on the homepage.
   after: For the refined version, I prioritized a **quick and easy ordering process** with offers, popular dishes, and favorites featured.
 wireframes:
   summary: As the initial design phase continued, I created digital wireframes based on peer feedback and findings from the user research.
+  images:
+    - wireframe.png
 testing:
   notes:
     - I conducted **two rounds of usability studies**.
@@ -103,7 +107,7 @@ testing:
   insights:
     - Users want easy access to the **full menu**
     - Users want to use **familiar navigation styles** (e.g. scrolling and searching) on the homepage
-    - Users want to order with **as little steps** involved as possible
+    - Users want to order with **as little steps** as possible
     - Users want easy access to **current and past orders**
 final_designs:
   - title: Single Sign-On and 2FA

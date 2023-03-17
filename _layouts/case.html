@@ -2,12 +2,17 @@
 layout: default
 ---
 
+<link rel="stylesheet" href="/assets/{{page.title}}/style.css">
+
 <div class="container" xmlns="http://www.w3.org/1999/html">
     <div class='work-table-of-contents'>
         <ul>
             <li><a id="overview-link" class='work-table-of-contents-link' href='#overview'>Overview</a></li>
             <li><a id="research-link" class='work-table-of-contents-link' href='#research'>Research</a></li>
             <li><a id="ideation-link" class='work-table-of-contents-link' href='#ideation'>Ideation</a></li>
+            {% if page.sitemap %}
+            <li><a id="sitemap-link" class='work-table-of-contents-link' href='#sitemap'>Sitemap</a></li>
+            {% endif %}
             <li><a id="wireframes-link" class='work-table-of-contents-link' href='#wireframes'>Wireframes</a></li>
             <li><a id="testing-link" class='work-table-of-contents-link' href='#testing'>Testing</a></li>
             <li><a id="finaldesigns-link" class='work-table-of-contents-link' href='#finaldesigns'>Final Designs</a>
@@ -15,33 +20,33 @@ layout: default
             <li><a id="takeaways-link" class='work-table-of-contents-link' href='#takeaways'>Takeaways</a></li>
         </ul>
     </div>
-    <div class='work-splash'>
-        <div class='wrapper work-splash-icons'>
-            <div>
-                <a class='work-splash-icon'>
-                    <span class='work-splash-icon-rev'>{% include cta.svg %}</span><span> Back</span>
-                </a>
-                <a class='work-splash-icon'>
-                    <span>Next: {{ page.nextPage }} </span>
-                    <span>{% include cta.svg %}</span>
-                </a>
-            </div>
-        </div>
-        <div class='wrapper work-wrapper'>
-            <div class='work-image'>
-                <img src='/assets/{{ page.title }}/prototype.png' />
-            </div>
-            <div class='work-image work-splash-logo'>
-                <img src='/assets/{{ page.title }}/logo.png' />
-            </div>
-        </div>
-    </div>
     <div class='work-section-container'>
+        <div class='work-splash'>
+            <div class='wrapper work-splash-icons'>
+                <div>
+                    <a class='work-splash-link' href='{{ page.backLink }}'>
+                        <span class='work-splash-icon-rev work-svg'>{% include cta.svg %}</span><span
+                            class='work-splash-link-text'> Back</span>
+                    </a>
+                    <a class='work-splash-link' href='{{ page.nextPage.link }}'>
+                        <span class='work-splash-link-text'>Next: {{ page.nextPage.title }} </span>
+                        <span class='work-svg'>{% include cta.svg %}</span>
+                    </a>
+                </div>
+            </div>
+            <div class='wrapper work-wrapper'>
+                <div class='work-image'>
+                    <img src='/assets/{{ page.title }}/prototype.png' />
+                </div>
+                <div class='work-image work-splash-logo'>
+                    <img src='/assets/{{ page.title }}/logo.png' />
+                </div>
+            </div>
+        </div>
         <!--Overview-->
         <div>
-            <h2 class='work-link hidden' id='overview'></h2>
-            <div class='work-overview-container wrapper work-wrapper'>
-                <div class='work-cols'>
+            <div class='wrapper work-wrapper'>
+                <div class='work-cols work-overview-descriptions'>
                     <div>
                         <p class='work-bold'>Deliverable</p>
                         <p>{{ page.overview.deliverable }}</p>
@@ -63,26 +68,28 @@ layout: default
                         <p>{{ page.overview.tool }}</p>
                     </div>
                 </div>
-                <div>
-                    <h2 class='work-header'>Project Vision</h2>
-                    {% for line in page.description %}
-                    <p>{{ line | markdownify }}</p>
-                    {% endfor %}
-                </div>
-                <div>
-                    <h2 class='work-header'>The Problem</h2>
-                    <p>{{ page.overview.problem | markdownify }}</p>
-                </div>
-                <div>
-                    <h2 class='work-header'>The Solution</h2>
-                    <p>{{ page.overview.solution.tag }}</p>
-                    <div class='work-cols work-cols-even work-overview-solutions'>
-                        {% for solution in page.overview.solution.examples %}
-                        <div>
-                            <img src='/assets/{{page.title}}/{{solution.image}}'>
-                            <p>{{ solution.example }}</p>
-                        </div>
+                <h2 class='work-link work-header' id='overview'>Overview</h2>
+                <div class='work-overview-container'>
+                    <div>
+                        {% for line in page.description %}
+                        <p>{{ line | markdownify }}</p>
                         {% endfor %}
+                    </div>
+                    <div>
+                        <h4 class='work-subheader'>The Problem</h4>
+                        <p>{{ page.overview.problem | markdownify }}</p>
+                    </div>
+                    <div>
+                        <h4 class='work-subheader'>The Solution</h4>
+                        <p>{{ page.overview.solution.tag | markdownify }}</p>
+                        <div class='work-cols work-cols-even work-overview-solutions'>
+                            {% for solution in page.overview.solution.examples %}
+                            <div>
+                                <img src='/assets/{{page.title}}/{{solution.image}}'>
+                                <p class='work-bold'>{{ solution.example }}</p>
+                            </div>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -92,7 +99,7 @@ layout: default
             <div class='wrapper work-wrapper'>
                 <h2 class='work-link work-header' id='research'>Research</h2>
                 <div class='work-cols'>
-                    <div>
+                    <div class='work-markdown'>
                         <p>{{ page.research.description | markdownify }}</p>
                     </div>
                     <div>
@@ -105,7 +112,7 @@ layout: default
                 </div>
                 <h4 class='work-subheader'>Target User Groups</h4>
                 <p>{{ page.research.target.description | markdownify }}</p>
-                <div class='work-cols work-cols-even work-research-cols-border'>
+                <div class='work-cols work-cols-even work-research-personas'>
                     {% for persona in page.research.personas %}
                     <div>
                         <div class='work-research-blurb'>
@@ -147,50 +154,18 @@ layout: default
         </div>
         <div>
             <div class='wrapper work-wrapper'>
+                {% if page.research.user_journey %}
                 <div>
                     <h4 class='work-subheader'>{{ page.research.user_journey.title }}</h4>
                     <img class='work-research-journey-image'
                          src='/assets/{{ page.title }}/{{page.research.user_journey.image}}'>
                 </div>
-                <div class='work-cols'>
-                    <div>
-                        <p class='work-bold'>Key Challenges:</p>
-                        <ul class='work-list'>
-                            {% for challenge in page.research.challenges %}
-                            <li>{{ challenge }}</li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    <div>
-                        <p class='work-bold'>Investment Opportunities:</p>
-                        <ul class='work-list'>
-                            {% for opportunity in page.research.opportunities %}
-                            <li>{{ opportunity }}</li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div>
-                <div>
-                    <h4 class='work-subheader'>Competitive Analysis</h4>
-                    <div class='work-cols'>
-                        <div>
-                            <p>{{ page.research.competitive_analysis.summary }}</p>
-                            <div class='work-research-logos'>
-                                {% for competitor in page.research.competitive_analysis.competitors %}
-                                <img src='/assets/{{page.title}}/{{competitor}}'>
-                                {% endfor %}
-                            </div>
-                        </div>
-                        <div>
-                            <p class='work-bold'>Pain Points</p>
-                            <ul class='work-list work-research-pain-points'>
-                                {% for point in page.research.competitive_analysis.pain_points %}
-                                <li>{{ point }}</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                {%- include cases/work-research-challenges.html -%}
+                {%- include cases/work-research-analysis.html -%}
+                {% else %}
+                {%- include cases/work-research-analysis.html -%}
+                {%- include cases/work-research-challenges.html -%}
+                {% endif %}
             </div>
         </div>
         <!--Ideation-->
@@ -198,27 +173,55 @@ layout: default
             <div class='wrapper work-wrapper'>
                 <h2 class='work-link work-header' id='ideation'>Ideation</h2>
                 <p>{{ page.ideation.summary | markdownify }}</p>
-                <div class='work-cols work-ideation-diagram'>
+                {% if page.ideation.before and page.ideation.after %}
+                <div class='work-cols work-ideation-diagram work-cols-wide'>
+                    <figure class='work-ideation-diagram-section'>
+                        <div>
+                            <img src='/assets/{{page.title}}/ideation_before.png'>
+                            <figcaption>{{ page.ideation.before | markdownify }}</figcaption>
+                        </div>
+                    </figure>
+                    <span class='work-ideation-arrow work-svg'>{% include cta.svg %}</span>
+                    <figure class='work-ideation-diagram-section'>
+                        <div>
+                            <img src='/assets/{{page.title}}/ideation_after.png'>
+                            <figcaption>{{ page.ideation.after | markdownify }}</figcaption>
+                        </div>
+                    </figure>
+                </div>
+                {% endif %}
+                {% if page.ideation.diagram %}
+                <div class='work-cols work-cols-even work-ideation-single'>
                     <div>
-                        <img src='/assets/{{page.title}}/ideation_before.png'>
+                        <img src='/assets/{{page.title}}/{{page.ideation.diagram.image}}'>
                     </div>
-                    <span>{% include cta-colored.svg %}</span>
-                    <div>
-                        <img src='/assets/{{page.title}}/ideation_after.png'>
+                    <div class='work-markdown'>
+                        <p>{{ page.ideation.diagram.description | markdownify }}</p>
                     </div>
                 </div>
-                <div class='work-cols'>
-                    <p>{{ page.ideation.before }}</p>
-                    <p>{{ page.ideation.after }}</p>
-                </div>
+                {% endif %}
             </div>
         </div>
+        <!--Sitemap-->
+        {% if page.sitemap %}
+        <div>
+            <div class='wrapper work-wrapper'>
+                <h2 class='work-link work-header' id='sitemap'>Sitemap</h2>
+                <p>{{ page.sitemap.summary | markdownify }}</p>
+                <img src='/assets/{{page.title}}/sitemap.png'>
+            </div>
+        </div>
+        {% endif %}
         <!--Wireframes-->
         <div>
             <div class='wrapper work-wrapper'>
                 <h2 class='work-link work-header' id='wireframes'>Wireframes</h2>
-                <p>{{ page.wireframes.summary }}</p>
-                <img src='/assets/{{page.title}}/wireframe.png'>
+                <p>{{ page.wireframes.summary | markdownify }}</p>
+                <div class='work-wireframe-images'>
+                    {% for image in page.wireframes.images %}
+                    <img src='/assets/{{page.title}}/{{image}}'>
+                    {% endfor %}
+                </div>
             </div>
         </div>
         <!--Testing-->
@@ -286,8 +289,8 @@ layout: default
                 <h2 class='work-link work-header' id='finaldesigns'>Final Designs</h2>
                 {% endif %}
                 <div class='work-cols work-designs-container work-designs-{{forloop.index0 | modulo: 2}}'>
-                    <div class='work-design-side work-design-gap'></div>
-                    <div>
+                    <div class='work-design-gap'></div>
+                    <div class='work-design-summary-{{forloop.index0 | modulo: 2}}'>
                         <h4 class='work-subheader'>{{ design.title }}</h4>
                         <p>{{ design.summary }}</p>
                     </div>
