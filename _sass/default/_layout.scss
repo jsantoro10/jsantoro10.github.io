@@ -1,11 +1,20 @@
 /**
  * Site header
  */
-.site-header {
+#site-header {
   border-bottom: 1px solid $grey-color-light;
   padding: $spacing-unit * 0.2 0;
 
-  box-shadow: 0 4px 4px 0 rgba(220, 220, 220, 0.25);}
+  box-shadow: 0 4px 4px 0 rgba(220, 220, 220, 0.25);
+  width: 100%;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+  background-color: white;
+}
 
 .header-wrapper {
   display: flex;
@@ -56,6 +65,8 @@
 .site-footer {
   padding: $spacing-unit 0;
   box-shadow: 0 -4px 4px 0 rgba(220, 220, 220, 0.25);
+  border-top: 1px solid $grey-color-light;
+  background-color: white;
 }
 
 .footer-wrapper {

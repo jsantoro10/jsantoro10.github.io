@@ -2,81 +2,105 @@
 permalink: /index.html
 layout: default
 ---
+{% for case in site.cases %}
+<link rel='prefetch' as='image' href='assets/{{case.name}}/prototype.png' />
+{% endfor %}
 
 <div>
-    <div class='home-splash'>
-        <div class='wrapper'>
-            <div>
-                <h1 class='home-splash-title'>Julia Santoro</h1>
-                <p class='home-splash-tag'>concise tagline about kind of designer I am</p>
-            </div>
-            <div class='home-splash-cta-block'>
-                <div></div>
-                <div class='home-splash-cta'>
-                    <div>Resume</div>
-                    <div>About</div>
+    <div id='home-cover'></div>
+    <div id="home-splash">
+        <div class='home-splash-wrapper home-wrapper'>
+            <div class='home-splash-section'>
+                <div id='home-splash-draw'>
+                    <h1 class='home-splash-title'>Hi, I'm Julia</h1>
+                    <div class='home-splash-arrow'>
+                        <img src='/assets/arrow.png'>
+                    </div>
+                    <div id='home-splash-bike'>
+                        {%- include home/bike.svg -%}
+                    </div>
                 </div>
+                <div class='home-splash-text home-splash-text-bottom'>
+                    <p>
+                        {{ site.tagline1 | markdownify }}
+                    </p>
+                </div>
+            </div>
+            <div class='home-splash-section'>
+                <div>
+                    <div class='home-splash-text'>
+                        <p>
+                            {{ site.tagline2 | markdownify }}
+                        </p>
+                    </div>
+                </div>
+                <div class='home-splash-img-container'>
+                    <div class='home-splash-img'>
+                        <img src='/assets/city.png' />
+                        <span class='home-splash-text'>📍 Based in NYC</span>
+                    </div>
+                </div>
+            </div>
+            <div class='home-splash-cta'>
+                <ul>
+                    <li><a href='#work'>View work</a></li>
+                    <li>
+                        <a href='/resume.pdf'>Resume</a>
+                    </li>
+                    <li><a href='/about'>About</a></li>
+                </ul>
             </div>
         </div>
     </div>
-    <div class='home-project'>
-        <div class='wrapper'>
-            <div class='home-project-img'>
-                <img src='assets/kali.jpg' />
-            </div>
-            <div class='home-project-container'>
-                <div>
-                    <h2>Project Title</h2>
-                    <p>Concise >6-word description</p>
+    <div class='home-projects'>
+        <h1 id="work" class='hidden'>Work</h1>
+        {% for case in site.cases %}
+        <div class='home-project-container'>
+            <div class='home-project home-project-{{case.name}}'>
+                <div class='home-project-inner home-wrapper'>
+                    <div class='home-project-img'>
+                        <img src='assets/{{case.name}}/prototype.png' />
+                    </div>
+                    <div class='home-project-description'>
+                        <div>
+                            <h2 class='home-project-title'>{{ case.title }}</h2>
+                        </div>
+                        <p>
+                            {{ case.tagline }}
+                        </p>
+                        <form action="{{ case.url }}">
+                            <input class='home-project-button' type="submit" value="{{ case.button }}" />
+                        </form>
+                    </div>
                 </div>
-                <p class='home-project-desc'>
-                    Concise of responsibilities/keywords
-                    (responsive web app design,
-                    UX research,
-                    UX design,
-                    visual design)
-                </p>
             </div>
         </div>
+        {% endfor %}
     </div>
-    <div class='home-project'>
-        <div class='wrapper'>
-            <div class='home-project-img'>
-                <img src='assets/kali.jpg' />
-            </div>
-            <div class='home-project-container'>
-                <div>
-                    <h2>Project Title</h2>
-                    <p>Concise >6-word description</p>
-                </div>
-                <p class='home-project-desc'>
-                    Concise of responsibilities/keywords
-                    (responsive web app design,
-                    UX research,
-                    UX design,
-                    visual design)
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class='home-project'>
-        <div class='wrapper'>
-            <div class='home-project-img'>
-                <img src='assets/kali.jpg' />
-            </div>
-            <div class='home-project-container'>
-                <div>
-                    <h2>Project Title</h2>
-                    <p>Concise >6-word description</p>
-                </div>
-                <p class='home-project-desc'>
-                    Concise of responsibilities/keywords
-                    (responsive web app design,
-                    UX research,
-                    UX design,
-                    visual design)
-                </p>
-            </div>
-        </div>
+    <div class='home-footer'>
+        <a id='scroll-top'>Back to top</a>
     </div>
 </div>
+
+<script>
+  const scrollTop = document.getElementById('scroll-top');
+  scrollTop.addEventListener("click", () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  });
+
+  window.addEventListener('load', function () {
+    const bike = document.getElementById('home-splash-bike');
+    const cover = document.getElementById('home-cover');
+    const bikeRect = bike.getBoundingClientRect();
+
+    // const
+    const bikeLeft = bikeRect.left;
+    const bikeTop = bikeRect.top - 70;
+
+    cover.style.setProperty('--cover-left', `${bikeLeft}px`)
+    cover.style.setProperty('--cover-top', `${bikeTop}px`)
+    cover.style.setProperty('--cover-width', `${bikeRect.width}px`)
+    cover.style.setProperty('--cover-height', `${bikeRect.height}px`)
+  })
+</script>

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<link rel="stylesheet" href="/assets/{{page.title}}/style.css">
+<link rel="stylesheet" href="/assets/{{page.name}}/style.css">
 
 <div class="container" xmlns="http://www.w3.org/1999/html">
     <div class='work-table-of-contents'>
@@ -36,10 +36,10 @@ layout: default
             </div>
             <div class='wrapper work-wrapper'>
                 <div class='work-image'>
-                    <img src='/assets/{{ page.title }}/prototype.png' />
+                    <img src='/assets/{{ page.name }}/prototype.png' />
                 </div>
                 <div class='work-image work-splash-logo'>
-                    <img src='/assets/{{ page.title }}/logo.png' />
+                    <img src='/assets/{{ page.name }}/logo.png' />
                 </div>
             </div>
         </div>
@@ -85,7 +85,7 @@ layout: default
                         <div class='work-cols work-cols-even work-overview-solutions'>
                             {% for solution in page.overview.solution.examples %}
                             <div>
-                                <img src='/assets/{{page.title}}/{{solution.image}}'>
+                                <img src='/assets/{{page.name}}/{{solution.image}}'>
                                 <p class='work-bold'>{{ solution.example }}</p>
                             </div>
                             {% endfor %}
@@ -116,7 +116,7 @@ layout: default
                     {% for persona in page.research.personas %}
                     <div>
                         <div class='work-research-blurb'>
-                            <img src='/assets/{{page.title}}/{{persona.image}}'>
+                            <img src='/assets/{{page.name}}/{{persona.image}}'>
                             <div>
                                 <p>{{ persona.name }}, <span>{{ persona.age }}</span></p>
                                 <p>{{ persona.job }}</p>
@@ -158,7 +158,7 @@ layout: default
                 <div>
                     <h4 class='work-subheader'>{{ page.research.user_journey.title }}</h4>
                     <img class='work-research-journey-image'
-                         src='/assets/{{ page.title }}/{{page.research.user_journey.image}}'>
+                         src='/assets/{{ page.name }}/{{page.research.user_journey.image}}'>
                 </div>
                 {%- include cases/work-research-challenges.html -%}
                 {%- include cases/work-research-analysis.html -%}
@@ -177,14 +177,14 @@ layout: default
                 <div class='work-cols work-ideation-diagram work-cols-wide'>
                     <figure class='work-ideation-diagram-section'>
                         <div>
-                            <img src='/assets/{{page.title}}/ideation_before.png'>
+                            <img src='/assets/{{page.name}}/ideation_before.png'>
                             <figcaption>{{ page.ideation.before | markdownify }}</figcaption>
                         </div>
                     </figure>
                     <span class='work-ideation-arrow work-svg'>{% include cta.svg %}</span>
                     <figure class='work-ideation-diagram-section'>
                         <div>
-                            <img src='/assets/{{page.title}}/ideation_after.png'>
+                            <img src='/assets/{{page.name}}/ideation_after.png'>
                             <figcaption>{{ page.ideation.after | markdownify }}</figcaption>
                         </div>
                     </figure>
@@ -193,7 +193,7 @@ layout: default
                 {% if page.ideation.diagram %}
                 <div class='work-cols work-cols-even work-ideation-single'>
                     <div>
-                        <img src='/assets/{{page.title}}/{{page.ideation.diagram.image}}'>
+                        <img src='/assets/{{page.name}}/{{page.ideation.diagram.image}}'>
                     </div>
                     <div class='work-markdown'>
                         <p>{{ page.ideation.diagram.description | markdownify }}</p>
@@ -208,7 +208,7 @@ layout: default
             <div class='wrapper work-wrapper'>
                 <h2 class='work-link work-header' id='sitemap'>Sitemap</h2>
                 <p>{{ page.sitemap.summary | markdownify }}</p>
-                <img src='/assets/{{page.title}}/sitemap.png'>
+                <img src='/assets/{{page.name}}/sitemap.png'>
             </div>
         </div>
         {% endif %}
@@ -219,7 +219,7 @@ layout: default
                 <p>{{ page.wireframes.summary | markdownify }}</p>
                 <div class='work-wireframe-images'>
                     {% for image in page.wireframes.images %}
-                    <img src='/assets/{{page.title}}/{{image}}'>
+                    <img src='/assets/{{page.name}}/{{image}}'>
                     {% endfor %}
                 </div>
             </div>
@@ -257,7 +257,7 @@ layout: default
                 </div>
                 <div class='work-cols work-testing-body'>
                     <div class='work-testing-image'>
-                        <img src='/assets/{{page.title}}/{{page.testing.image}}'>
+                        <img src='/assets/{{page.name}}/{{page.testing.image}}'>
                     </div>
                     <div>
                         <h4 class='work-subheader'>Thinking Aloud Test</h4>
@@ -295,7 +295,7 @@ layout: default
                         <p>{{ design.summary }}</p>
                     </div>
                     <div class='work-design-side work-design-img'>
-                        <img src='/assets/{{page.title}}/{{design.image}}'>
+                        <img src='/assets/{{page.name}}/{{design.image}}'>
                     </div>
                 </div>
             </div>

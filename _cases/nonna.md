@@ -1,6 +1,9 @@
 ---
 layout: case
-title: nonna
+name: nonna
+title: Nonna's Restaurant
+tagline: For the first project in the Google UX Design Professional Certificate program, I designed a seamless online ordering experience to encourage customer retention.
+button: Mobile App
 description: 
   - For a growing restaurant chain like Nonna’s with three locations throughout NYC, a **dedicated mobile app** seemed like a natural next step.
   - We aimed to provide its customers with a quick way to **easily order and pick up** fresh, high quality Italian dishes in the midst of their busy schedules.
