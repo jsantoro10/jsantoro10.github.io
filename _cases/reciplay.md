@@ -5,20 +5,21 @@ title: Reciplay
 tagline: For the final project in the Google UX Design program, I created a cookbook tool to empower users who are new to technology.
 button: Cross-Platform
 description: 
-  - For a growing restaurant chain like Nonna’s with three locations throughout NYC, a **dedicated mobile app** seemed like a natural next step.
-  - We aimed to provide its customers with a quick way to **easily order and pick up** fresh, high quality Italian dishes in the midst of their busy schedules.
+  - For the final project in the Google UX Design Professional Certificate program, I created a cookbook tool for users who are new to technology.
+  - My client, Reciplay, is dedicated to creating a cookbook tool that inspires and empowers its users to enjoy the process of cooking and trying new recipes.
+backLink: /cases/nycbest
 nextPage:
-  title: NYC's Best
-  link: /cases/nycbest
+  title: Nonna's
+  link: /cases/nonna
 overview:
-  deliverable: Dedicated mobile app
+  deliverable: Dedicated mobile app<br>Responsive website
   roles:
     - Concept
     - Research
     - Visuals
     - Interaction
-  duration: Sept - Dec 2022
-  tool: Figma
+  duration: Feb - Mar 2023
+  tool: Sketch
   problem: Finding a restaurant with **good food**, **loyalty discounts**, and **reliable order estimates** is challenging for customers with unpredictable schedules in NYC.
   solution:
     tag: Create a dedicated mobile app with...

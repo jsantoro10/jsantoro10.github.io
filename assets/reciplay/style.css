@@ -1,0 +1,8 @@
+:root {
+    --main-color-light: rgba(255, 237, 186, 1);
+    --main-color-dark: rgba(59, 169, 19, 1);
+}
+
+.work-list {
+    list-style: url("/assets/nonna/bulletpoint.svg");
+}

@@ -117,7 +117,7 @@
 
   @include media-query($on-palm) {
     flex-direction: column;
-    gap: $spacing-unit;
+    gap: $spacing-unit * .5;
   }
 }
 
@@ -173,7 +173,7 @@
   font-size: 1.7rem;
 
   @include media-query($on-palm) {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -213,11 +213,21 @@
   }
 }
 
+.home-splash-caption {
+  @include media-query($on-palm) {
+    font-size: 1rem;
+  }
+}
+
 .home-splash-cta {
   margin-top: $spacing-unit * 1;
 
   @include media-query($on-palm) {
     margin-top: $spacing-unit;
+  }
+
+  @media screen and (max-height: 750px) {
+    margin-top: $spacing-unit * -4;
   }
 }
 

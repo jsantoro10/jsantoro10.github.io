@@ -8,7 +8,9 @@ description:
   - NYC’s Best is an animal shelter with three locations in New York City. They are dedicated to rescuing, rehabilitating, and finding forever homes for homeless and abandoned cats, dogs, and rabbits.
   - We aimed to provide its patrons with a quick way to **easily find and adopt a pet**.
 backLink: /cases/nonna
-nextPage: NYC's Best
+nextPage:
+  title: Reciplay
+  link: /cases/reciplay
 overview:
   deliverable: Responsive website
   roles:

@@ -7,6 +7,7 @@ button: Mobile App
 description: 
   - For a growing restaurant chain like Nonna’s with three locations throughout NYC, a **dedicated mobile app** seemed like a natural next step.
   - We aimed to provide its customers with a quick way to **easily order and pick up** fresh, high quality Italian dishes in the midst of their busy schedules.
+backLink: /#work
 nextPage:
   title: NYC's Best
   link: /cases/nycbest
