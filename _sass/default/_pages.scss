@@ -87,6 +87,10 @@
   top: $spacing-unit * 2.4;
   left: 0;
   width: 100%;
+
+  @media screen and (max-height: 500px) {
+    position: relative;
+  }
 }
 
 .home-splash-wrapper {
@@ -106,6 +110,10 @@
   margin-bottom: $spacing-unit * 2;
 
   @include media-query($on-palm) {
+    margin-bottom: $spacing-unit;
+  }
+
+  @media screen and (max-height: 750px) {
     margin-bottom: $spacing-unit;
   }
 }
@@ -176,6 +184,10 @@
   @include media-query($on-palm) {
     font-size: 1.2rem;
   }
+
+  @media screen and (max-height: 750px) {
+    font-size: 1.2rem;
+  }
 }
 
 .home-splash-text p {
@@ -187,7 +199,11 @@
   margin-top: $spacing-unit * 5;
 
   @include media-query($on-palm) {
-    margin-top: 0;
+    margin-top: 0 !important;
+  }
+
+  @media screen and (max-height: 860px) {
+    margin-top: $spacing-unit * 2;
   }
 }
 
@@ -212,6 +228,11 @@
     height: $spacing-unit * 4;
     width: $spacing-unit * 4;
   }
+
+  @media screen and (max-height: 860px) {
+    height: $spacing-unit * 5;
+    width: $spacing-unit * 5;
+  }
 }
 
 .home-splash-caption {
@@ -227,8 +248,12 @@
     margin-top: $spacing-unit;
   }
 
+  @media screen and (max-height: 750px) and (max-width: $on-palm) {
+    margin-top: $spacing-unit * -4 !important;
+  }
+
   @media screen and (max-height: 750px) {
-    margin-top: $spacing-unit * -4;
+    margin-top: $spacing-unit * -2;
   }
 }
 
@@ -249,6 +274,11 @@
   position: sticky;
   top: $spacing-unit * 2.3;
   height: auto;
+  min-height: 500px;
+
+  @media screen and (max-height: 500px) {
+    position: relative;
+  }
 }
 
 .home-project {
@@ -265,9 +295,17 @@
   padding: $spacing-unit * 5 $spacing-unit;
   gap: $spacing-unit;
 
+  @media screen and (max-height: 500px) {
+    max-height: none;
+  }
+
   @include media-query($on-palm) {
     padding: $spacing-unit * 3 $spacing-unit;
     justify-content: center;
+  }
+
+  @media screen and (max-height: 860px) {
+    padding: $spacing-unit * 2 $spacing-unit;
   }
 }
 
@@ -296,6 +334,10 @@
 .home-project-title {
   font-size: 2.5rem;
   font-family: $header-font-family;
+
+  @media screen and (max-height: 860px) {
+    font-size: 2rem;
+  }
 }
 
 .home-project-description {
@@ -309,9 +351,12 @@
 
 
 .home-project-button {
+  -webkit-appearance: none;
+  color: $text-color;
   font-family: $base-font-family;
   font-weight: 700;
   font-size: 1rem;
+  line-height: $base-line-height;
   border: 0;
   background-color: $background-color;
   border-radius: $spacing-unit * .3;
