@@ -479,6 +479,7 @@
 }
 
 .work-ideation-diagram-section img {
+  max-height: $spacing-unit * 10;
   display: block;
   margin: 0 auto;
 }
