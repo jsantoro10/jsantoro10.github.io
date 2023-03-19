@@ -53,28 +53,30 @@ layout: default
         </div>
     </div>
     <h1 id="work" class='hidden'>Work</h1>
-    {% for case in site.cases %}
-    <div class='home-project-container'>
-        <div class='home-project home-project-{{case.name}}'>
-            <div class='home-project-inner home-wrapper'>
-                <div class='home-project-img'>
-                    <img src='assets/{{case.name}}/prototype.png' />
-                </div>
-                <div class='home-project-description'>
-                    <div>
-                        <h2 class='home-project-title'>{{ case.title }}</h2>
+    <div class='home-projects'>
+        {% for case in site.cases %}
+        <div class='home-project-container'>
+            <div class='home-project home-project-{{case.name}}'>
+                <div class='home-project-inner home-wrapper'>
+                    <div class='home-project-img'>
+                        <img src='assets/{{case.name}}/prototype.png' />
                     </div>
-                    <p>
-                        {{ case.tagline }}
-                    </p>
-                    <form action="{{ case.url }}">
-                        <input class='home-project-button' type="submit" value="View Case Study" />
-                    </form>
+                    <div class='home-project-description'>
+                        <div>
+                            <h2 class='home-project-title'>{{ case.title }}</h2>
+                        </div>
+                        <p>
+                            {{ case.tagline }}
+                        </p>
+                        <form action="{{ case.url }}">
+                            <input class='home-project-button' type="submit" value="View Case Study" />
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
     <div class='home-footer'>
         <a id='scroll-top'>Back to top</a>
     </div>
