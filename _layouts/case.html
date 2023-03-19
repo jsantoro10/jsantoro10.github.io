@@ -334,9 +334,30 @@ layout: default
             </div>
         </div>
     </div>
+    <div>
+        <div class='wrapper'>
+            <div class='work-bottom-actions'>
+                <a class='work-splash-link' href='{{ page.backLink }}'>
+                    <span class='work-splash-icon-rev work-svg'>{% include cta.svg %}</span><span
+                        class='work-splash-link-text'> Back</span>
+                </a>
+                <span id='scroll-top'>Back to top</span>
+                <a class='work-splash-link' href='{{ page.nextPage.link }}'>
+                    <span class='work-splash-link-text'>Next: {{ page.nextPage.title }} </span>
+                    <span class='work-svg'>{% include cta.svg %}</span>
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
+  const scrollTop = document.getElementById('scroll-top');
+  scrollTop.addEventListener("click", () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  });
+  
   const anchorClass = '.work-link'
   const linkClass = '.work-table-of-contents-link'
   const activeClass = 'work-table-of-contents-active'

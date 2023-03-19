@@ -380,9 +380,13 @@
   background-color: white;
 }
 
-.home-footer a {
+.home-footer span {
   text-decoration: underline;
   text-align: center;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 /**
