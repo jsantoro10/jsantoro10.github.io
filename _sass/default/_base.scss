@@ -9,7 +9,6 @@ dl, dd, ol, ul, figure {
 }
 
 
-
 /**
  * Basic styling
  */
@@ -52,6 +51,10 @@ ul, ol, dl, figure,
  */
 main {
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+
+  @include media-query($on-palm) {
+    max-width: 100vw;
+  }
 }
 
 
@@ -135,6 +138,12 @@ a {
     padding-right: $spacing-unit / 2;
     padding-left: $spacing-unit / 2;
   }
+
+  @include media-query($on-palm) {
+    max-width: 100vw;
+    padding-right: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+  }
 }
 
 
@@ -159,8 +168,4 @@ html {
 .hidden {
   visibility: hidden;
   margin: 0;
-}
-
-.container {
-  margin-top: $spacing-unit * 2.4;
 }

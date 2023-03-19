@@ -8,12 +8,14 @@
   box-shadow: 0 4px 4px 0 rgba(220, 220, 220, 0.25);
   width: 100%;
 
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   z-index: 9999;
 
   background-color: white;
+
+  max-width: 100vw;
 }
 
 .header-wrapper {
@@ -31,6 +33,8 @@
 
 .site-title {
   float: left;
+  width: 100%;
+  max-width: 179px;
 
   &,
   &:visited {
@@ -84,10 +88,18 @@
   display: flex;
   justify-content: flex-end;
   gap: $spacing-unit * .5;
+  margin-bottom: 0;
 }
 
 .footer-socials > li {
   display: inline-block;
+}
+
+.footer-notes {
+  margin-bottom: 0;
+  @include media-query($on-palm) {
+    font-size: 0.8rem;
+  }
 }
 
 .footer-notes li:not(:last-child) {

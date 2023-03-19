@@ -95,10 +95,19 @@
 
   padding-top: $spacing-unit * 2;
   padding-bottom: $spacing-unit * 2.5;
+
+  @include media-query($on-palm) {
+    padding-top: $spacing-unit * .5;
+    padding-bottom: 0;
+  }
 }
 
 .home-splash-wrapper .home-splash-section:first-child {
   margin-bottom: $spacing-unit * 2;
+
+  @include media-query($on-palm) {
+    margin-bottom: $spacing-unit;
+  }
 }
 
 .home-splash-section {
@@ -108,6 +117,7 @@
 
   @include media-query($on-palm) {
     flex-direction: column;
+    gap: $spacing-unit;
   }
 }
 
@@ -126,18 +136,33 @@
 .home-splash-title {
   margin-bottom: 0;
   margin-top: $spacing-unit;
+  white-space: nowrap;
+
+  @include media-query($on-palm) {
+    font-size: 1.6rem;
+  }
 }
 
 .home-splash-arrow {
-  width:$spacing-unit * 3;
+  width: $spacing-unit * 3;
   margin-left: $spacing-unit * .5;
   margin-top: $spacing-unit * -.3;
+
+  @include media-query($on-palm) {
+    width: $spacing-unit * 2;
+    margin-top: 0;
+  }
 }
 
 #home-splash-bike {
   width: $spacing-unit * 7;
   height: $spacing-unit * 6;
   position: relative;
+
+  @include media-query($on-palm) {
+    width: $spacing-unit * 4.5;
+    height: $spacing-unit * 4.5;
+  }
 }
 
 .home-splash-bike svg {
@@ -146,6 +171,10 @@
 
 .home-splash-text {
   font-size: 1.7rem;
+
+  @include media-query($on-palm) {
+    font-size: 1.3rem;
+  }
 }
 
 .home-splash-text p {
@@ -161,17 +190,9 @@
   }
 }
 
-.home-splash-title {
-  white-space: nowrap;
-}
-
 .home-splash-img-container {
   display: flex;
   justify-content: flex-end;
-
-  @include media-query($on-palm) {
-    //justify-content: center;
-  }
 }
 
 .home-splash-img {
@@ -187,8 +208,8 @@
   margin: 0 auto;
 
   @include media-query($on-palm) {
-    height: $spacing-unit * 5;
-    width: $spacing-unit * 5;
+    height: $spacing-unit * 4;
+    width: $spacing-unit * 4;
   }
 }
 
@@ -214,6 +235,7 @@
 
 .home-projects {
   margin-top: $spacing-unit * 1;
+  width: 100vw;
 }
 
 .home-project-container {
@@ -232,6 +254,11 @@
   z-index: 1;
   height: 100%;
   width: 100%;
+
+  @include media-query($on-palm) {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .home-project-inner {
@@ -239,16 +266,34 @@
   flex-direction: row;
   align-items: center;
   height: 100%;
+
+  @include media-query($on-palm) {
+    flex-direction: column;
+    align-self: center;
+    height: auto;
+  }
 }
 
 .home-project-description {
   width: 25%;
   padding: 0 $spacing-unit * 2;
+
+  @include media-query($on-palm) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
 }
 
 .home-project-title {
   font-size: 1.7rem;
   margin-bottom: $spacing-unit * 2;
+
+  @include media-query($on-palm) {
+    margin: $spacing-unit 0;
+  }
 }
 
 .home-project-description > p {
@@ -258,6 +303,10 @@
 .home-project-img {
   flex-basis: 0;
   flex-grow: 1;
+
+  @include media-query($on-palm) {
+    flex-grow: 0;
+  }
 }
 
 .home-project-button {
@@ -272,6 +321,8 @@
 }
 
 .home-footer {
+  position: sticky;
+  width: 100vw;
   padding: $spacing-unit 0;
   display: flex;
   justify-content: center;
@@ -305,6 +356,10 @@
 
 .about-wrapper {
   padding-top: $spacing-unit * 2;
+
+  @include media-query($on-palm) {
+    padding-top: $spacing-unit * .5;
+  }
 }
 
 .about-wrapper > div {
@@ -324,7 +379,7 @@
   position: relative;
   @include media-query($on-palm) {
     order: -1;
-    margin-bottom: $spacing-unit;
+    margin-top: $spacing-unit;
   }
 }
 
@@ -376,7 +431,7 @@
   max-width: $spacing-unit * 20;
 
   @include media-query($on-palm) {
-    padding-right: $spacing-unit * 2;
+    padding-right: 0;
   }
 }
 

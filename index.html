@@ -36,7 +36,7 @@ layout: default
                 </div>
                 <div class='home-splash-img-container'>
                     <div class='home-splash-img'>
-                        <img src='/assets/city.png' />
+                        <img src='/assets/city.png' alt='city pic' />
                         <span class='home-splash-text'>📍 Based in NYC</span>
                     </div>
                 </div>
@@ -83,6 +83,12 @@ layout: default
 </div>
 
 <script>
+  const cover = document.getElementById("home-cover")
+  if (window.location.href.includes("work")) {
+    console.log("hi")
+    cover.style.display = 'none';
+  }
+
   const scrollTop = document.getElementById('scroll-top');
   scrollTop.addEventListener("click", () => {
     document.body.scrollTop = 0;
