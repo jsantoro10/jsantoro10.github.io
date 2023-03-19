@@ -6,3 +6,43 @@
 .work-list {
     list-style: url("/assets/nycbest/bulletpoint.svg");
 }
+
+.work-designs-container {
+    flex-direction: column;
+}
+
+.work-designs-0 > .work-design-img {
+    order: -1;
+}
+
+.work-designs-1 > .work-design-img {
+    order: -1;
+}
+
+.work-designs-0 > .work-design-gap {
+    order: 1;
+}
+
+.work-design-summary-0 {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: 0;
+}
+
+.work-design-summary-1 {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: 0;
+}
+
+.work-design-gap {
+    display: none;
+}
+
+.work-testing-body {
+    flex-direction: column;
+}
+
+.work-testing-image img {
+    max-width: 100% !important;
+}

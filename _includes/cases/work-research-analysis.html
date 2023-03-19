@@ -5,7 +5,7 @@
             <p>{{ page.research.competitive_analysis.summary | markdownify }}</p>
             <div class='work-research-logos'>
                 {% for competitor in page.research.competitive_analysis.competitors %}
-                <img src='/assets/{{page.title}}/{{competitor}}'>
+                <img src='/assets/{{page.name}}/{{competitor}}'>
                 {% endfor %}
             </div>
         </div>

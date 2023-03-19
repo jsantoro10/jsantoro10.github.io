@@ -1,4 +1,3 @@
----
 layout: case
 name: reciplay
 title: Reciplay
@@ -116,4 +115,3 @@ takeaways:
   next_steps:
     - Conduct follow-up usability testing on the responsive website.
     - Ideate on new features like incorporating timestamped portions of a video tutorial into the cooking mode.
----

@@ -81,10 +81,18 @@ layout: default
 </div>
 
 <script>
+  history.scrollRestoration = "manual";
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop;
+  }
+
   const cover = document.getElementById("home-cover")
   if (window.location.href.includes("work")) {
-    console.log("hi")
     cover.style.display = 'none';
+  } else {
+    document.body.style.overflow = 'hidden';
+    window.setTimeout(() => document.body.style.overflow = 'visible', 2000)
   }
 
   const scrollTop = document.getElementById('scroll-top');
