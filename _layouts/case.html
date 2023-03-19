@@ -36,10 +36,10 @@ layout: default
             </div>
             <div class='wrapper work-wrapper'>
                 <div class='work-image'>
-                    <img src='/assets/{{ page.name }}/prototype.png' />
+                    <img src='/assets/{{ page.name }}/prototype.png' alt='{{page.name}} banner' />
                 </div>
                 <div class='work-image work-splash-logo'>
-                    <img src='/assets/{{ page.name }}/logo.png' />
+                    <img src='/assets/{{ page.name }}/logo.png' alt='{{page.name}} logo' />
                 </div>
             </div>
         </div>
@@ -85,7 +85,7 @@ layout: default
                         <div class='work-cols work-cols-even work-overview-solutions'>
                             {% for solution in page.overview.solution.examples %}
                             <div>
-                                <img src='/assets/{{page.name}}/{{solution.image}}'>
+                                <img src='/assets/{{page.name}}/{{solution.image}}' alt='solution'>
                                 <p class='work-bold'>{{ solution.example }}</p>
                             </div>
                             {% endfor %}
@@ -116,7 +116,7 @@ layout: default
                     {% for persona in page.research.personas %}
                     <div>
                         <div class='work-research-blurb'>
-                            <img src='/assets/{{page.name}}/{{persona.image}}'>
+                            <img src='/assets/{{page.name}}/{{persona.image}}' alt='persona portrait'>
                             <div>
                                 <p>{{ persona.name }}, <span>{{ persona.age }}</span></p>
                                 <p>{{ persona.job }}</p>
@@ -162,7 +162,7 @@ layout: default
                 <div>
                     <h4 class='work-subheader'>{{ page.research.user_journey.title }}</h4>
                     <img class='work-research-journey-image'
-                         src='/assets/{{ page.name }}/{{page.research.user_journey.image}}'>
+                         src='/assets/{{ page.name }}/{{page.research.user_journey.image}}' alt='user journey'>
                 </div>
                 {%- include cases/work-research-challenges.html -%}
                 {%- include cases/work-research-analysis.html -%}
@@ -181,14 +181,14 @@ layout: default
                 <div class='work-cols work-ideation-diagram work-cols-wide'>
                     <figure class='work-ideation-diagram-section'>
                         <div>
-                            <img src='/assets/{{page.name}}/ideation_before.png'>
+                            <img src='/assets/{{page.name}}/ideation_before.png' alt='ideation before'>
                             <figcaption>{{ page.ideation.before | markdownify }}</figcaption>
                         </div>
                     </figure>
                     <span class='work-ideation-arrow work-svg'>{% include cta.svg %}</span>
                     <figure class='work-ideation-diagram-section'>
                         <div>
-                            <img src='/assets/{{page.name}}/ideation_after.png'>
+                            <img src='/assets/{{page.name}}/ideation_after.png' alt='ideation after'>
                             <figcaption>{{ page.ideation.after | markdownify }}</figcaption>
                         </div>
                     </figure>
@@ -197,7 +197,7 @@ layout: default
                 {% if page.ideation.diagram %}
                 <div class='work-cols work-cols-even work-ideation-single'>
                     <div>
-                        <img src='/assets/{{page.name}}/{{page.ideation.diagram.image}}'>
+                        <img src='/assets/{{page.name}}/{{page.ideation.diagram.image}}' alt='ideation diagram'>
                     </div>
                     <div class='work-markdown'>
                         <p>{{ page.ideation.diagram.description | markdownify }}</p>
@@ -212,7 +212,7 @@ layout: default
             <div class='wrapper work-wrapper'>
                 <h2 class='work-link work-header' id='sitemap'>Sitemap</h2>
                 <p>{{ page.sitemap.summary | markdownify }}</p>
-                <img src='/assets/{{page.name}}/sitemap.png'>
+                <img src='/assets/{{page.name}}/sitemap.png' alt='sitemap'>
             </div>
         </div>
         {% endif %}
@@ -223,7 +223,7 @@ layout: default
                 <p>{{ page.wireframes.summary | markdownify }}</p>
                 <div class='work-wireframe-images'>
                     {% for image in page.wireframes.images %}
-                    <img src='/assets/{{page.name}}/{{image}}'>
+                    <img src='/assets/{{page.name}}/{{image}}' alt='wireframe'>
                     {% endfor %}
                 </div>
             </div>
@@ -261,7 +261,7 @@ layout: default
                 </div>
                 <div class='work-cols work-testing-body'>
                     <div class='work-testing-image'>
-                        <img src='/assets/{{page.name}}/{{page.testing.image}}'>
+                        <img src='/assets/{{page.name}}/{{page.testing.image}}' alt='testing'>
                     </div>
                     <div>
                         <h4 class='work-subheader'>Thinking Aloud Test</h4>
@@ -299,7 +299,7 @@ layout: default
                         <p>{{ design.summary }}</p>
                     </div>
                     <div class='work-design-side work-design-img'>
-                        <img src='/assets/{{page.name}}/{{design.image}}'>
+                        <img src='/assets/{{page.name}}/{{design.image}}' alt='design'>
                     </div>
                 </div>
             </div>
