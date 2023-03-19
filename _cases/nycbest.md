@@ -2,7 +2,7 @@
 layout: case
 name: nycbest
 title: NYC's Best
-tagline: For the second project in the Google UX Design program, I reimagined the pet adoption flow for an animal shelter to make it more accessible and straightforward.
+tagline: Accessible and straightforward pet adoption site
 button: Responsive Web App
 description:
   - NYC’s Best is an animal shelter with three locations in New York City. They are dedicated to rescuing, rehabilitating, and finding forever homes for homeless and abandoned cats, dogs, and rabbits.

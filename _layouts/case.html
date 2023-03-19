@@ -122,9 +122,12 @@ layout: default
                                 <p>{{ persona.job }}</p>
                             </div>
                         </div>
-                        <p class='work-quote'>"{{ persona.quote }}"</p>
+                        {% if persona.quote != blank %}
+                        <p class='work-quote'>{{ persona.quote }}</p>
+                        {% endif %}
                         <div>
                             <table class='work-table work-research-persona-table'>
+                                {% if persona.goals %}
                                 <tr>
                                     <td class='work-table-key'>Goals:</td>
                                     <td class='work-table-value'>
@@ -135,6 +138,7 @@ layout: default
                                         </ul>
                                     </td>
                                 </tr>
+                                {% endif %}
                                 <tr>
                                     <td class='work-table-key'>Needs:</td>
                                     <td class='work-table-value'>

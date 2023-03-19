@@ -5,7 +5,7 @@
 .home-wrapper {
   padding-left: $spacing-unit * 2;
   padding-right: $spacing-unit * 2;
-  max-width: 1200px;
+  max-width: $max-width;
   margin: 0 auto;
 
   @include media-query($on-palm) {
@@ -136,6 +136,7 @@
 .home-splash-title {
   margin-bottom: 0;
   margin-top: $spacing-unit;
+  font-weight: 700;
   white-space: nowrap;
 
   @include media-query($on-palm) {
@@ -243,91 +244,81 @@
  * Projects
  */
 
-.home-projects {
-  margin-top: $spacing-unit * 1;
-  width: 100vw;
-}
-
 .home-project-container {
-  height: 100vh;
-  min-height: 600px;
-  max-height: 1000px;
   background-color: white;
   position: sticky;
   top: $spacing-unit * 2.3;
+  height: auto;
 }
 
 .home-project {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  height: 100%;
   width: 100%;
-
-  @include media-query($on-palm) {
-    display: flex;
-    align-items: center;
-  }
 }
 
 .home-project-inner {
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 100%;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  padding: $spacing-unit * 5 $spacing-unit;
+  gap: $spacing-unit;
 
   @include media-query($on-palm) {
-    flex-direction: column;
-    align-self: center;
-    height: auto;
+    padding: $spacing-unit * 3 $spacing-unit;
+    justify-content: center;
   }
+}
+
+.home-project-inner > * {
+  flex-basis: 0;
 }
 
 .home-project-description {
-  width: 25%;
-  padding: 0 $spacing-unit * 2;
-
-  @include media-query($on-palm) {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-  }
-}
-
-.home-project-title {
-  font-size: 1.7rem;
-  margin-bottom: $spacing-unit * 2;
-
-  @include media-query($on-palm) {
-    margin: $spacing-unit 0;
-  }
-}
-
-.home-project-description > p {
-  margin-bottom: $spacing-unit * 1.5;
+  text-align: center;
 }
 
 .home-project-img {
-  flex-basis: 0;
-  flex-grow: 1;
-
-  @include media-query($on-palm) {
-    flex-grow: 0;
-  }
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  max-height: 60%;
+  margin: 0 auto;
 }
+
+.home-project-img img {
+  max-height: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.home-project-title {
+  font-size: 2.5rem;
+  font-family: $header-font-family;
+}
+
+.home-project-description {
+  color: white;
+}
+
+.home-project-description > p {
+  margin-bottom: $spacing-unit * 1;
+  font-size: 1.3rem;
+}
+
 
 .home-project-button {
   font-family: $base-font-family;
   font-weight: 700;
-  color: $grey-text-color;
   font-size: 1rem;
   border: 0;
   background-color: $background-color;
   border-radius: $spacing-unit * .3;
   padding: $spacing-unit * .4 $spacing-unit * 1.4;
+}
+
+.home-project-button:hover {
+  cursor: pointer;
 }
 
 .home-footer {
@@ -349,15 +340,14 @@
  */
 
 .home-project-nonna {
-  background: conic-gradient(from 180deg at 50% 50%, rgba(162, 226, 202, 0) -121.93deg, rgba(158, 213, 192, 0.927083) 19.46deg, #A2E2CA 38.35deg, #A2E2CA 65.59deg, rgba(162, 226, 202, 0) 238.07deg, rgba(158, 213, 192, 0.927083) 379.46deg);
-}
+  background: linear-gradient(to right bottom, #c3ebdb, #bce7d6, #b5e2d1, #aedecc, #a7dac7, #9cd3be, #91ccb5, #86c5ac, #74b99e, #62ac8f, #50a081, #3d9473);}
 
 .home-project-nycbest {
-  background-color: #BD8CE8ED;
+  background: linear-gradient(90deg, rgba(170,133,246,1) 0%, rgb(204, 185, 248) 65%, rgba(230,220,251,1) 100%);
 }
 
 .home-project-reciplay {
-  background-color: rgba(255, 237, 186, 1);
+  background: linear-gradient(90deg, rgba(250,241,216,1) 0%, rgb(250, 208, 101) 35%, rgb(253, 198, 51) 100%);
 }
 
 /**
@@ -366,6 +356,7 @@
 
 .about-wrapper {
   padding-top: $spacing-unit * 2;
+  max-width: $max-width;
 
   @include media-query($on-palm) {
     padding-top: $spacing-unit * .5;
@@ -384,8 +375,13 @@
   }
 }
 
-.about-pic {
+.about-pic-container {
   max-width: $spacing-unit * 17;
+  margin: 0 auto;
+}
+
+.about-pic {
+  width: 100%;
   position: relative;
   @include media-query($on-palm) {
     order: -1;
@@ -414,19 +410,24 @@
   outline: none;
   margin: 0;
   transition: all .2s;
+  overflow-y: hidden;
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
-    appearance: none;
-    width: 3px;
-    background: white;
+    height: $spacing-unit * 100;
+    width: $spacing-unit * 2;
+    background-color: transparent;
+    box-shadow: none;
     cursor: pointer;
   }
   &::-moz-range-thumb {
-    width: 6px;
-    height: 600px;
     background: white;
     cursor: pointer;
   }
+}
+
+.about-pic-caption span {
+  font-style: italic;
+  font-weight: 700;
 }
 
 .about-header {

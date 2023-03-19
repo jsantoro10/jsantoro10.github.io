@@ -24,6 +24,7 @@
   justify-content: space-between;
 
   min-height: $spacing-unit * 1.865;
+  max-width: $max-width;
 }
 
 .header-wrapper > * {
@@ -77,6 +78,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: $max-width;
 }
 
 .footer-wrapper  > ul {
