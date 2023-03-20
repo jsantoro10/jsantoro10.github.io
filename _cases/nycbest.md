@@ -9,8 +9,8 @@ description:
   - We aimed to provide its patrons with a quick way to **easily find and adopt a pet**.
 backLink: /cases/nonna
 nextPage:
-  title: About Me
-  link: /about
+  title: Reciplay
+  link: /cases/reciplay
 overview:
   deliverable: Responsive website
   roles:

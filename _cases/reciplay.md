@@ -1,3 +1,4 @@
+---
 layout: case
 name: reciplay
 title: Reciplay
@@ -7,8 +8,8 @@ description:
   - My client, Reciplay, is dedicated to creating a cookbook tool that inspires and empowers its users to enjoy the process of cooking and trying new recipes.
 backLink: /cases/nycbest
 nextPage:
-  title: Nonna's
-  link: /cases/nonna
+  title: About me
+  link: /about
 overview:
   deliverable: Dedicated mobile app<br>Responsive website
   roles:
@@ -115,3 +116,4 @@ takeaways:
   next_steps:
     - Conduct follow-up usability testing on the responsive website.
     - Ideate on new features like incorporating timestamped portions of a video tutorial into the cooking mode.
+---

@@ -122,7 +122,7 @@ layout: default
                                 <p>{{ persona.job }}</p>
                             </div>
                         </div>
-                        {% if persona.quote != blank %}
+                        {% if persona.quote != null %}
                         <p class='work-quote'>"{{ persona.quote }}"</p>
                         {% endif %}
                         <div>
@@ -357,7 +357,7 @@ layout: default
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   });
-  
+
   const anchorClass = '.work-link'
   const linkClass = '.work-table-of-contents-link'
   const activeClass = 'work-table-of-contents-active'
