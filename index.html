@@ -6,9 +6,8 @@ layout: default
 <link rel='prefetch' as='image' href='assets/{{case.name}}/prototype.png' />
 {% endfor %}
 
-<div>
-    <div id='home-cover'></div>
-    <div id="home-splash">
+<div id='home'>
+    <div id='home-splash'>
         <div class='home-splash-wrapper home-wrapper'>
             <div class='home-splash-section'>
                 <div id='home-splash-draw'>
@@ -87,12 +86,12 @@ layout: default
     document.documentElement.scrollTop;
   }
 
-  const cover = document.getElementById("home-cover")
+  const cover = document.getElementById("home-cover");
   if (window.location.href.includes("work")) {
     cover.style.display = 'none';
   } else {
     document.body.style.overflow = 'hidden';
-    window.setTimeout(() => document.body.style.overflow = 'visible', 2000)
+    window.setTimeout(() => document.body.style.overflow = 'visible', 2000);
   }
 
   const scrollTop = document.getElementById('scroll-top');
@@ -103,17 +102,27 @@ layout: default
 
   const bike = document.getElementById('home-splash-bike');
   window.addEventListener('load', function () {
-    const cover = document.getElementById('home-cover');
-    const bikeRect = bike.getBoundingClientRect();
+    const drawing = document.getElementById('home-splash-draw');
+    const home = document.getElementById('home');
+    const bikeRect = drawing.getBoundingClientRect();
+    const splashRect = home.getBoundingClientRect();
 
     // const
-    const bikeLeft = bikeRect.left;
-    const bikeTop = bikeRect.top - 70;
+    const top = bikeRect.top - splashRect.top;
+    const right = splashRect.right - bikeRect.right;
+    const bottom = splashRect.bottom - bikeRect.bottom;
+    const left = bikeRect.left - splashRect.left;
 
-    cover.style.setProperty('--cover-left', `${bikeLeft}px`)
-    cover.style.setProperty('--cover-top', `${bikeTop}px`)
-    cover.style.setProperty('--cover-width', `${bikeRect.width}px`)
-    cover.style.setProperty('--cover-height', `${bikeRect.height}px`)
+    const centerX = (bikeRect.left + (bikeRect.width / 2)) - splashRect.left;
+    const centerY = (bikeRect.top + (bikeRect.height / 2)) - splashRect.top;
+    const initialRadius = Math.max(bikeRect.width, bikeRect.height) / 2;
+    const finalRadius = Math.max(splashRect.width, splashRect.height);
+
+    // splash.style.clipPath = `circle(150px at ${centerX}px ${centerY}px)`
+    home.style.clipPath = `inset(${top}px ${right}px ${bottom}px ${left}px)`
+    home.style.setProperty('--splash-clip-init', `circle(${initialRadius}px at ${centerX}px ${centerY}px)`)
+    home.style.setProperty('--splash-clip-end', `circle(${finalRadius}px at ${centerX}px ${centerY}px)`)
+    home.style.animationPlayState = 'running';
   })
 
   bike.addEventListener('click', () => {

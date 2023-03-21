@@ -14,67 +14,22 @@
   }
 }
 
-#home-cover {
-  z-index: 9999;
-  position: absolute;
-  top: $spacing-unit * 2.4;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color: transparent;
-  overflow: hidden;
-  animation: hide 0.1s linear;
-  animation-delay: 1.9s;
-  animation-fill-mode: forwards;
-  -webkit-animation-fill-mode: forwards;
-}
-
-@keyframes hide {
-  0% {
-
-  }
-  100% {
-    display: none;
-    z-index: -999999;
-  }
-}
-
-#home-cover:after {
-  content: '';
-  position: absolute;
-  left: var(--cover-left);
-  top: var(--cover-top);
-  width: var(--cover-width);
-  height: var(--cover-height);
-  box-shadow: 0 0 0 100000px white;
-
-  animation: open 1s ease-in;
-  animation-fill-mode: forwards;
-  -webkit-animation-fill-mode: forwards;
+#home {
+  animation: open 1s linear;
   animation-delay: 1s;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
 }
 
 @keyframes open {
   0% {
+    clip-path: var(--splash-clip-init);
   }
-  20% {
-    border-radius: 100%;
-  }
-  90% {
-    left: -150vw;
-    top: -150vh;
-    width: 300vw;
-    height: 300vh;
-    border-radius: 100%;
+  99% {
+    clip-path: var(--splash-clip-end);
   }
   100% {
-    left: -150vw;
-    top: -150vh;
-    width: 300vw;
-    height: 300vh;
-    display: none;
-    z-index: -99999;
-    border-radius: 100%;
+    clip-path: none;
   }
 }
 
