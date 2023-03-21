@@ -101,8 +101,8 @@ layout: default
     document.documentElement.scrollTop = 0;
   });
 
+  const bike = document.getElementById('home-splash-bike');
   window.addEventListener('load', function () {
-    const bike = document.getElementById('home-splash-bike');
     const cover = document.getElementById('home-cover');
     const bikeRect = bike.getBoundingClientRect();
 
@@ -114,5 +114,9 @@ layout: default
     cover.style.setProperty('--cover-top', `${bikeTop}px`)
     cover.style.setProperty('--cover-width', `${bikeRect.width}px`)
     cover.style.setProperty('--cover-height', `${bikeRect.height}px`)
+  })
+
+  bike.addEventListener('click', () => {
+    window.location.href = "/bike";
   })
 </script>

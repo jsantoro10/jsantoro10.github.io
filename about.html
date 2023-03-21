@@ -16,7 +16,7 @@ layout: default
                 <h1 class='about-header'>Hi,</h1>
                 <div>
                     {% for line in site.data.about.overview %}
-                    <p>{{ line }}</p>
+                    <p>{{ line | markdownify }}</p>
                     {% endfor %}
                 </div>
             </div>

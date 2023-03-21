@@ -1,0 +1,179 @@
+.bike-wrapper {
+  max-width: $max-width;
+  padding-top: $spacing-unit;
+
+  box-sizing: border-box;
+
+  overflow-x: hidden;
+  -ms-overflow-x: hidden;
+
+  min-width: 350px;
+}
+
+#bike {
+  position: relative;
+  width: 100%;
+  z-index: 999;
+}
+
+#bike svg {
+  width: 200px;
+}
+
+#bike .bike-wheel-spin {
+  animation: spin 1.5s linear infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation-play-state: paused;
+}
+
+#race-track {
+  width: 200vw;
+  min-width: 350px;
+  height: $spacing-unit * 2;
+  border: 4px solid $grey-color;
+  border-left: 0;
+  border-right: 0;
+  margin-top: $spacing-unit * -1.3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  animation: move 3s linear infinite;
+  animation-play-state: paused;
+
+  transform-origin: center top;
+  transform: translate3d(-20vw, 0, 0);;
+}
+
+#race-track div {
+  background: linear-gradient(to right, $grey-color 0%, $grey-color 50%, transparent 50%, transparent 100%) repeat-x left bottom;
+  background-size: 20px 3px;
+  height: 3px;
+}
+
+@keyframes move {
+  100% {
+    transform: translate3d(-100vw, 0, 0);
+  }
+}
+
+.bike-animation {
+  position: relative;
+  padding-top: 50px;
+}
+
+#watch {
+  background-color: black;
+  width: 150px;
+  height: 150px;
+  border-radius: 30px;
+
+  position: absolute;
+  top: 0;
+  right: 30px;
+
+  font-size: 0.8rem;
+
+  @include media-query($on-palm) {
+    right: 10px;
+  }
+}
+
+#time {
+  color: #dcdcdc;
+
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+
+#start {
+  color: black;
+  background-color: rgb(197, 227, 72);
+  border-radius: 8px;
+  width: 90%;
+  height: 40px;
+  z-index: 1000;
+  border: 0;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  position: absolute;
+  bottom: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#start p {
+  margin-bottom: 0;
+  text-align: center;
+  line-height: 0.8rem;
+}
+
+#timer {
+  color: #dcdcdc;
+  font-size: 2rem;
+  position: absolute;
+  display: inline-block;
+  width: 85px;
+
+  left: 50%;
+  transform: translateX(-50%);
+  top: 33px;
+}
+
+.bike-stop {
+  display: none;
+}
+
+.bike-started .bike-stop {
+  display: block;
+}
+
+.bike-started .bike-record {
+  display: none;
+}
+
+.bike-images {
+  margin: $spacing-unit * 2 0;
+  display: flex;
+  gap: $spacing-unit;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.bike-image:hover {
+  cursor: pointer;
+}
+
+.bike-images > div {
+  max-width: 30%;
+  min-width: 300px;
+}
+
+#modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#modal-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: auto;
+  height: auto;
+  max-width: 95vw;
+  max-height: 80vh;
+}
