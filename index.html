@@ -7,8 +7,8 @@ layout: default
 {% endfor %}
 
 <div>
-    <div id='home-cover'></div>
-    <div id="home-splash">
+    <div id='home-cover' class='onload'></div>
+    <div id="home-splash" class='onload'>
         <div class='home-splash-wrapper home-wrapper'>
             <div class='home-splash-section'>
                 <div id='home-splash-draw'>
@@ -103,17 +103,22 @@ layout: default
 
   const bike = document.getElementById('home-splash-bike');
   window.addEventListener('load', function () {
+    const splash = document.getElementById('home-splash');
+    const drawing = document.getElementById('home-splash-draw');
     const cover = document.getElementById('home-cover');
-    const bikeRect = bike.getBoundingClientRect();
+    const bikeRect = drawing.getBoundingClientRect();
 
     // const
     const bikeLeft = bikeRect.left;
     const bikeTop = bikeRect.top - 70;
 
-    cover.style.setProperty('--cover-left', `${bikeLeft}px`)
-    cover.style.setProperty('--cover-top', `${bikeTop}px`)
-    cover.style.setProperty('--cover-width', `${bikeRect.width}px`)
-    cover.style.setProperty('--cover-height', `${bikeRect.height}px`)
+    cover.style.setProperty('--cover-left', `${bikeLeft}px`);
+    cover.style.setProperty('--cover-top', `${bikeTop}px`);
+    cover.style.setProperty('--cover-width', `${bikeRect.width}px`);
+    cover.style.setProperty('--cover-height', `${bikeRect.height}px`);
+
+    splash.classList.remove('onload');
+    cover.classList.remove('onload');
   })
 
   bike.addEventListener('click', () => {

@@ -169,3 +169,15 @@ html {
   visibility: hidden;
   margin: 0;
 }
+
+.onload {
+  animation: none !important;
+}
+
+.onload * {
+  animation: none !important;
+}
+
+.onload:after {
+  animation: none !important;
+}

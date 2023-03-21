@@ -52,6 +52,8 @@
   animation-fill-mode: forwards;
   -webkit-animation-fill-mode: forwards;
   animation-delay: 1s;
+
+  will-change: auto;
 }
 
 @keyframes open {
@@ -147,6 +149,11 @@
   font-weight: 700;
   white-space: nowrap;
 
+  opacity: 0;
+  animation: show 0.5s linear;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+
   @include media-query($on-palm) {
     font-size: 1.6rem;
   }
@@ -157,9 +164,23 @@
   margin-left: $spacing-unit * .5;
   margin-top: $spacing-unit * -.3;
 
+  opacity: 0;
+  animation: show 0.5s linear;
+  animation-delay: 0.8s;
+  animation-fill-mode: forwards;
+
   @include media-query($on-palm) {
     width: $spacing-unit * 2;
     margin-top: 0;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
