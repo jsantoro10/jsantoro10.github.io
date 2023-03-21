@@ -172,6 +172,16 @@
     width: $spacing-unit * 4.5;
     height: $spacing-unit * 4.5;
   }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#home-splash-bike .bike-wheel-spin {
+  animation: spin 3s ease-out;
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
 .home-splash-bike svg {
@@ -507,6 +517,10 @@
 
 .about-me > div > p:not(:first-child) {
   margin-top: $spacing-unit;
+}
+
+.about-me a {
+  text-decoration: underline;
 }
 
 .about-experience {

@@ -4,5 +4,113 @@ layout: default
 ---
 
 <div>
+    <div class='wrapper bike-wrapper'>
+        <div class='bike-animation'>
+            <div id='bike'>
+                {%- include home/bike.svg -%}
+            </div>
+            <div id='race-track'>
+                <div></div>
+            </div>
+            <div id='watch'>
+                <span id='time'></span>
+                <span id='timer'></span>
+                <button id='start'>
+                    <div class='bike-record'>
+                        Record
+                        <br>
+                        Outdoor Cycle
+                    </div>
+                    <div class='bike-stop'>
+                        End Exercise
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div class='bike-images'>
+            {% assign image_files = site.static_files | where: "image", true %}
+            {% for myimage in image_files %}
+            <div>
+                <img class='bike-image' src='{{ myimage.path }}' alt='bike pic' />
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 
+    <div id="modal">
+        <img id="modal-image" alt='bike pic'>
+    </div>
 </div>
+
+<script>
+  const time = document.getElementById("time");
+  const bikeWheels = document.querySelectorAll(".bike-wheel-spin");
+  const track = document.getElementById("race-track");
+
+  function startAnimation() {
+    for (let i = 0; i < bikeWheels.length; i++) {
+      bikeWheels[i].style.animationPlayState = 'running';
+    }
+    track.style.animationPlayState = 'running';
+  }
+
+  function stopAnimation() {
+    for (let i = 0; i < bikeWheels.length; i++) {
+      bikeWheels[i].style.animationPlayState = 'paused';
+    }
+    track.style.animationPlayState = 'paused';
+  }
+
+  function setTime() {
+    const datetime = new Date();
+    time.textContent = datetime.toLocaleTimeString().slice(0, -6);
+  }
+
+  setTime();
+  setInterval(setTime, 1000);
+
+  const timer = document.getElementById('timer');
+  let currTime = 0;
+
+  function setTimer() {
+    const seconds = Math.floor(currTime / 1000);
+    const milliseconds = (currTime % 1000) / 10;
+    timer.textContent = `${seconds < 10 ? '0' : ''}${seconds}:${milliseconds < 10 ? '0' : ''}${milliseconds}`
+  }
+
+  setTimer();
+
+  const start = document.getElementById("start")
+  let timerInterval = null;
+  start.addEventListener("click", () => {
+    if (!timerInterval) {
+      start.classList.add("bike-started")
+      startAnimation();
+      timerInterval = setInterval(() => {
+        currTime += 10;
+        setTimer();
+      }, 10)
+    } else {
+      start.classList.remove("bike-started")
+      stopAnimation();
+      currTime = 0;
+      clearInterval(timerInterval);
+      timerInterval = null;
+    }
+  })
+
+  const modal = document.getElementById('modal')
+  const modalImg = document.getElementById("modal-image");
+  const images = document.querySelectorAll('.bike-image');
+  for (let i = 0; i < images.length; i++) {
+    images[i].addEventListener('click', () => {
+      console.log(images[i])
+      modalImg.src = images[i].src;
+      modal.style.display = 'block';
+    })
+  }
+
+  modal.addEventListener('click', () => {
+    modal.style.display = 'none';
+  })
+</script>

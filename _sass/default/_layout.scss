@@ -16,6 +16,7 @@
   background-color: white;
 
   max-width: 100vw;
+  min-width: 350px;
 }
 
 .header-wrapper {
@@ -72,6 +73,8 @@
   box-shadow: 0 -4px 4px 0 rgba(220, 220, 220, 0.25);
   border-top: 1px solid $grey-color-light;
   background-color: white;
+
+  min-width: 350px;
 }
 
 .footer-wrapper {

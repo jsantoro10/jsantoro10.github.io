@@ -60,11 +60,6 @@
 //  }
 //}
 //
-.bike-wheel-spin {
-  animation: spin 3s ease-out;
-  transform-box: fill-box;
-  transform-origin: center;
-}
 
 @keyframes spin {
   0% {
@@ -86,14 +81,6 @@
 //  min-width: $spacing-unit * 5;
 //}
 //
-//@keyframes bike-move {
-//  0%, 20% {
-//    transform: translate3d(0, 0, 0);
-//  }
-//  100% {
-//    transform: translate3d(80%, 0, 0);
-//  }
-//}
 //
 //#bike svg {
 //  animation: bike-flip 10s linear infinite;
