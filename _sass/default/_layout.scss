@@ -2,8 +2,7 @@
  * Site header
  */
 #site-header {
-  border-bottom: 1px solid $grey-color-light;
-  padding: $spacing-unit * 0.2 0;
+  padding-top: $spacing-unit * 0.2;
 
   box-shadow: 0 4px 4px 0 rgba(220, 220, 220, 0.25);
   width: 100%;
@@ -46,20 +45,15 @@
 
 .site-nav {
   float: right;
-  line-height: $base-line-height * $base-font-size * 2;
   display: flex;
   justify-content: flex-end;
   font-family: $header-font-family;
+  gap: 20px;
 
   .page-link {
     color: $text-color;
     line-height: $base-line-height;
     font-size: 1.2rem;
-
-    // Gaps between nav items, but not on the last one
-    &:not(:last-child) {
-      margin-right: 20px;
-    }
   }
 }
 
