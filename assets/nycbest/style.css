@@ -1,48 +1,15 @@
 :root {
-    --main-color-light: rgba(132, 71, 255, 0.25);
-    --main-color-dark: rgba(105, 36, 245, 1);
+    --main-color-light: rgba(50, 98, 115, 0.25);
+    --main-color-dark: rgba(50, 88, 115, 1);
+    --splash-color: rgba(245, 195, 148, 1);
 }
 
 .work-list {
     list-style: url("/assets/nycbest/bulletpoint.svg");
 }
 
-.work-designs-container {
-    flex-direction: column;
-}
-
-.work-designs-0 > .work-design-img {
-    order: -1;
-}
-
-.work-designs-1 > .work-design-img {
-    order: -1;
-}
-
-.work-designs-0 > .work-design-gap {
-    order: 1;
-}
-
-.work-design-summary-0 {
-    margin-left: 0;
-    padding-left: 0;
-    border-left: 0;
-}
-
-.work-design-summary-1 {
-    margin-right: 0;
-    padding-right: 0;
-    border-right: 0;
-}
-
-.work-design-gap {
-    display: none;
-}
-
-.work-testing-body {
-    flex-direction: column;
-}
-
-.work-testing-image img {
-    max-width: 100% !important;
+.work-splash-image img {
+    max-height: 400px;
+    display: block;
+    margin: 0 auto;
 }

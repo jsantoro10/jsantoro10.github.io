@@ -2,18 +2,21 @@
 
 // Define defaults for each variable.
 
-$base-font-family: Inter, san-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$base-font-family: "Open Sans", san-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $base-font-size:   16px !default;
 $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
+
+$heading-font-family: "Barlow", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$subheading-font-family: "Lora", serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$list-font-family: "Song Myung", serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 
 $header-font-family: Josefin Sans, sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 
 $spacing-unit:     30px !default;
 
 $text-color:       rgba(69, 69, 69, 1) !default;
-$grey-text-color: rgba(134, 134, 134, 1) !default;
 $background-color: #FFFFFF !default;
 $background-secondary-color: #F5F5F5 !default;
 
@@ -27,11 +30,17 @@ $grey-color-dark:  darken($grey-color, 25%) !default;
 
 $table-text-align: left !default;
 
+$shadow-color: rgba(137, 133, 133, 0.25) !default;
+$image-shadow: 0 4px 10px 4px $shadow-color !default;
+
 // Width of the content area
 $content-width:    90vw !default;
 $max-width:        1200px !default;
 
+$on-tiny:          420px !default;
+$on-small:         550px !default;
 $on-palm:          800px !default;
+$on-tablet:        950px !default;
 $on-laptop:        1200px !default;
 
 // Use media queries like this:
