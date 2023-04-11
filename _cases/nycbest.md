@@ -9,7 +9,7 @@ description:
   - We aimed to provide its patrons with a quick way to **easily find and adopt a pet**.
 backLink: /cases/nonna
 nextPage:
-  title: About me
+  title: About
   link: /about
 banner:
   deliverable: Responsive website
