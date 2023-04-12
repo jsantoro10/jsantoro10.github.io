@@ -282,8 +282,12 @@
   color: $grey-color;
 }
 
+.work-table-of-contents a:hover {
+  text-decoration: none;
+}
+
 .work-table-of-contents-active {
-  text-decoration: underline;
+  border-bottom: 1px solid $grey-color;
 }
 
 /**
@@ -329,12 +333,6 @@
   transform: rotate(180deg);
 }
 
-.work-link-text {
-  //@include media-query($on-palm) {
-  //  display: none;
-  //}
-}
-
 /**
  * Work Splash
  */
@@ -364,7 +362,7 @@
 
 .work-details-logo {
   padding: $spacing-unit 0;
-  margin-bottom: $spacing-unit;
+  margin-bottom: $spacing-unit *.5;
 }
 
 .work-details-logo img {
@@ -799,4 +797,20 @@
   @include media-query($on-palm) {
     margin-bottom:  $spacing-unit * 3;
   }
+}
+
+/**
+ * Work Coming Soon
+ */
+
+.work-coming-soon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  padding: $spacing-unit * 5 0;
+
+  font-size: 3rem;
 }

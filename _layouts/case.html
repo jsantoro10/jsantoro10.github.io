@@ -73,6 +73,9 @@ layout: default
                 </div>
             </div>
         </div>
+        {% if page.hidden %}
+        <div class='work-coming-soon'>Coming Soon</div>
+        {% else %}
         <!--Overview-->
         <div class='work-section wrapper work-wrapper'>
             <h2 class='work-header' id='overview'>OVERVIEW</h2>
@@ -451,6 +454,7 @@ layout: default
     <div class='work-bottom-actions'>
         <span id='scroll-top'>Back to top</span>
     </div>
+    {% endif %}
 </div>
 
 <script>
