@@ -2,11 +2,9 @@
 layout: case
 name: nycbest
 title: NYC's Best
+description: Redefining the pet adoption process
 tagline: Redefining the pet adoption process
 button: Responsive Web App
-description:
-  - NYC’s Best is an animal shelter with three locations in New York City. They are dedicated to rescuing, rehabilitating, and finding forever homes for homeless and abandoned cats, dogs, and rabbits.
-  - We aimed to provide its patrons with a quick way to **easily find and adopt a pet**.
 backLink: /cases/nonna
 nextPage:
   title: Reciplay

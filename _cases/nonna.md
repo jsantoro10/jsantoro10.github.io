@@ -2,6 +2,7 @@
 layout: case
 name: nonna
 title: Nonna's
+description: Designing a stand-out food ordering app
 tagline: Designing a stand-out food ordering app
 button: Mobile App
 backLink: /#work

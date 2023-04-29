@@ -2,10 +2,8 @@
 layout: case
 name: reciplay
 title: Reciplay
+description: Empowering users new to technology
 tagline: Empowering users new to technology
-description: 
-  - For the final project in the Google UX Design Professional Certificate program, I created a cookbook tool for users who are new to technology.
-  - My client, Reciplay, is dedicated to creating a cookbook tool that inspires and empowers its users to enjoy the process of cooking and trying new recipes.
 backLink: /cases/nycbest
 solution_top: true
 nextPage:
