@@ -34,9 +34,9 @@ overview:
     title: Redesigning the adoption flow
     description:
       - paragraph: These pain points led me to to design a responsive website for a local pet adoption organization. Let’s call it NYC’s Best, a no-kill animal shelter with three locations in New York City. They are dedicated to rescuing, rehabilitating, and finding forever homes for homeless and abandoned cats, dogs, and rabbits.
-      - paragraph: To stand out in the market, I aimed to design a user-friendly, responsive website that features **clear navigation** and **an efficient search and adoption process**. Above all, I wanted it to be a positive experience that reflects the excitement of starting a new chapter in your life.
       - paragraph: “We’d like to help our patrons through the pet-finding process by **providing search options that mirror their own criteria.**”
         quote: true
+      - paragraph: To stand out in the market, I aimed to design a user-friendly, responsive website that features **clear navigation** and **an efficient search and adoption process**. Above all, I wanted it to be a positive experience that reflects the *excitement* of starting a new chapter in your life.
 research:
   description:
     - I began with secondary research on what criteria potential adopters use to search for a new pet. I learned that the criteria used varies between cat adopters and dog adopters. **Personality and behavior ranked highest for cat adopters**, while **dog adopters prioritized physical characteristics**, such as breed.
@@ -71,8 +71,9 @@ research:
         - competitor2.png
         - competitor3.png
         - competitor4.png
-    analysis: I rated each on aspects like desktop website experience, features, user flow, navigation, brand identity, and descriptiveness. **App or mobile website experience, accessibility, and user flow each received at least two ‘Needs work’ ratings**. Half of the competitors’ sites weren’t optimized for mobile or assistive technologies, preventing key information from being accessible at all. In addition, important information like adoptable cats or service availability was difficult to find on the site itself, involving multiple clicks and scrolling, or hidden until registration.
-  insight: Users need a fully responsive, assistive-technology friendly site with easy access to key information.
+    analysis: 
+        - I rated each on aspects like desktop website experience, features, user flow, navigation, brand identity, and descriptiveness. **App or mobile website experience, accessibility, and user flow each received at least two ‘Needs work’ ratings**. Half of the competitors’ sites weren’t optimized for mobile or assistive technologies, preventing key information from being accessible at all. In addition, important information like adoptable cats or service availability was difficult to find on the site itself, involving multiple clicks and scrolling, or hidden until registration.
+  insight: "**Users need a fully responsive, assistive-technology friendly site with easy access to key information.**"
 ideation:
   summary: Using **How Might We questions**, I brainstormed different approaches to rethinking the pet adoption flow.
   title: "How might we..."
@@ -105,12 +106,13 @@ ideation:
     - image: ideation_after2.png
       description: For the refined version (on the right), I prioritized a **quick and easy way to search pet profiles** using filters like location and pet type to help users save time.
 sitemap:
-  summary: "**Difficulty with website navigation** was a primary pain point for users, so I aimed to make the information architecture **simple and intuitive**. I created the sitemap with the common structure used by existing animal shelters in mind."
+  - summary: "**Difficulty with website navigation** was a primary pain point for users, so I aimed to make the information architecture **simple and intuitive**. I created the sitemap with the common structure used by existing animal shelters in mind."
+    image: sitemap.png
 wireframes:
   - summary: The first iteration of wireframes included features generated during the ideation exercises–**a search bar, 3-step breakdown of the adoption process, pet spotlights**. I included multiple ways to enter the adoption flow on the homepage through search, pet categories, and the top navigation bar.
     image: wireframe.png
   - image: wireframe1.png
-  - summary: "For the second iteration, I switched up the layout to make each section more visually engaging, digestible, and concise. I prioritized keeping pet spotlights above the fold because they feature the top criteria for both cat and dog adopters: personality and physical characteristics. I also got rid of the profile carousels categorized by personality in favor of displaying all profiles, supplemented by descriptive filters, to serve the needs of both cat and dog adopters."
+  - summary: "For the second iteration, I switched up the layout to make each section more **visually engaging, digestible, and concise**. I prioritized keeping pet spotlights above the fold because they feature the top criteria for both cat and dog adopters: personality and physical characteristics. I also got rid of the profile carousels categorized by personality in favor of displaying all profiles, supplemented by descriptive filters, to serve the needs of both cat and dog adopters."
     image: wireframe2.png
 testing:
   notes:
@@ -133,14 +135,16 @@ solution:
     - title: User Flow
       before: The usability study uncovered some aspects of the user flow that weren’t as intuitive as I had imagined. Firstly, the low-fidelity prototype featured an overlay previewing the profile for quick browsing, but users expressed confusion about not being directly taken to the profile from the listings page. Secondly, users were confused about whether to fill out the adoption application or schedule the Meet-and-Greet first.
       images:
-        - image: solution1.png
-          caption: Final design
+        - row:
+          - image: solution1.png
+            caption: Final design
       after: To address these user needs, I eliminated the unnecessary elements to make the user flow more streamlined and straightforward. I reordered the adoption process based on feedback that users would like to meet the pet before investing time in the adoption application. I then highlighted the two actions that a user may want to take at the top of the profile, and featured hyperlinks under the adoption process breakdown as well.
     - title: Adoption Application
       before: The overall feedback about the adoption application was that it was too long and involved too much scrolling. Users pointed out that there should be a way to select whether certain sections were applicable or not because it lengthened the application considerably.
       images:
-        - image: solution2.gif
-          caption: Final design
+        - row:
+          - image: solution2.gif
+            caption: Final design
       after: In addition to adding conditional questions that either skip or unfurl additional questions, I considered how to make the application more engaging. After cutting out the non-essential questions, I played with the color scheme and size of the response boxes to make the overall application more digestible and skimmable. For my final designs, I also added a progress bar with textual and visual cues to discourage drop-off.
 prototype:
   image: prototype.gif

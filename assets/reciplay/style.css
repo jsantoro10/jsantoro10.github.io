@@ -1,7 +1,7 @@
 :root {
-    --main-color-light: #FFC70040;
-    --main-color-dark: #FFC700;
-    --splash-color: #78AB6F;
+    --main-color-light: rgba(59, 169, 19, 0.25);
+    --main-color-dark: rgba(59, 169, 19, 1);
+    --splash-color: #B4D1AF;
 }
 
 .work-list {

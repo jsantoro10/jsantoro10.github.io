@@ -5,26 +5,28 @@ layout: default
 <link rel="stylesheet" href="/assets/{{page.name}}/style.css">
 
 <div class="work-container">
-    <div class='work-table-of-contents'>
-        <ul>
-            <li><a id="overview-link" class='work-table-of-contents-link' href='#overview'>Overview</a></li>
-            <li><a id="research-link" class='work-table-of-contents-link' href='#research'>Research</a></li>
-            <li><a id="ideation-link" class='work-table-of-contents-link' href='#ideation'>Ideation</a></li>
-            {% if page.sitemap %}
-            <li><a id="sitemap-link" class='work-table-of-contents-link' href='#sitemap'>Sitemap</a></li>
-            {% endif %}
-            <li><a id="wireframes-link" class='work-table-of-contents-link' href='#wireframes'>Wireframes</a></li>
-            <li><a id="testing-link" class='work-table-of-contents-link' href='#testing'>Testing</a></li>
-            <li><a id="solution-link" class='work-table-of-contents-link' href='#solution'>Solution</a>
-                {% if page.final_designs %}
-            <li><a id="finaldesigns-link" class='work-table-of-contents-link' href='#finaldesigns'>Final Designs</a>
-            </li>
-            {% endif %}
-            {% if page.prototype %}
-            <li><a id="prototype-link" class='work-table-of-contents-link' href='#prototype'>Prototype</a></li>
-            {% endif %}
-            <li><a id="takeaways-link" class='work-table-of-contents-link' href='#takeaways'>Takeaways</a></li>
-        </ul>
+    <div class='wrapper work-wrapper work-table-of-contents-wrapper'>
+        <div class='work-table-of-contents'>
+            <ul>
+                <li><a id="overview-link" class='work-table-of-contents-link' href='#overview'>Overview</a></li>
+                <li><a id="research-link" class='work-table-of-contents-link' href='#research'>Research</a></li>
+                <li><a id="ideation-link" class='work-table-of-contents-link' href='#ideation'>Ideation</a></li>
+                {% if page.sitemap %}
+                <li><a id="sitemap-link" class='work-table-of-contents-link' href='#sitemap'>Sitemap</a></li>
+                {% endif %}
+                <li><a id="wireframes-link" class='work-table-of-contents-link' href='#wireframes'>Wireframes</a></li>
+                <li><a id="testing-link" class='work-table-of-contents-link' href='#testing'>Testing</a></li>
+                <li><a id="solution-link" class='work-table-of-contents-link' href='#solution'>Solution</a>
+                    {% if page.final_designs %}
+                <li><a id="finaldesigns-link" class='work-table-of-contents-link' href='#finaldesigns'>Final Designs</a>
+                </li>
+                {% endif %}
+                {% if page.prototype %}
+                <li><a id="prototype-link" class='work-table-of-contents-link' href='#prototype'>Prototype</a></li>
+                {% endif %}
+                <li><a id="takeaways-link" class='work-table-of-contents-link' href='#takeaways'>Takeaways</a></li>
+            </ul>
+        </div>
     </div>
     <!-- Splash-->
     <div class='work-splash'>
@@ -96,15 +98,20 @@ layout: default
                             {% if example.rounded %}
                             {% assign style = style | append: " work-img-list-img-rounded" %}
                             {% endif %}
+                            {% if example.small %}
+                            {% assign style = style | append: " work-img-list-img-small" %}
+                            {% endif %}
                             {% if example.caption %}
                             {% assign style = style | append: " work-captioned-image" %}
                             {% endif %}
+                            {% if example.image %}
                             <div class='{{style}}'>
                                 <img src='/assets/{{page.name}}/{{example.image}}' alt='problem example'>
                                 {% if example.caption %}
                                 <span>{{example.caption}}</span>
                                 {% endif %}
                             </div>
+                            {% endif %}
                             <div class='work-img-list-summary'>
                                 {{ example.description | markdownify }}
                             </div>
@@ -190,7 +197,9 @@ layout: default
                         <img src='/assets/{{page.name}}/{{competitor}}' alt='competitor'>
                         {% endfor %}
                     </div>
-                    <div>{{ page.research.competitive_analysis.analysis | markdownify }}</div>
+                    {% for block in page.research.competitive_analysis.analysis %}
+                    <div>{{ block | markdownify }}</div>
+                    {% endfor %}
                     <div class='work-research-insight'>{{ page.research.insight | markdownify }}</div>
                 </div>
             </div>
@@ -270,12 +279,14 @@ layout: default
                     <h4 class='work-subheader'>Information architecture</h4>
                 </div>
                 <div class='work-content'>
+                    {% for sitemap in page.sitemap %}
                     <div class='work-wireframe-images'>
-                        <img src='/assets/{{page.name}}/sitemap.png' alt='sitemap'>
+                        <img src='/assets/{{page.name}}/{{sitemap.image}}' alt='sitemap'>
                     </div>
                     <div>
-                        {{ page.sitemap.summary | markdownify }}
+                        {{ sitemap.summary | markdownify }}
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -289,8 +300,15 @@ layout: default
                 </div>
                 <div class='work-content'>
                     {% for wireframe in page.wireframes %}
-                    <div class='work-wireframe-images'>
+                    {% assign style = 'work-wireframe-images' %}
+                    {% if wireframe.caption %}
+                    {% assign style = style | append: " work-captioned-image" %}
+                    {% endif %}
+                    <div class='{{style}}'>
                         <img src='/assets/{{page.name}}/{{wireframe.image}}' alt='wireframe'>
+                        {% if wireframe.caption %}
+                        <span>{{ wireframe.caption }}</span>
+                        {% endif %}
                     </div>
                     <div>{{ wireframe.summary | markdownify }}</div>
                     {% endfor %}
@@ -332,7 +350,8 @@ layout: default
             </div>
         </div>
         <!--Solution-->
-        <div class='work-section wrapper work-wrapper'>
+        {% if page.solution %}
+        <div id='work-solution' class='work-section wrapper work-wrapper'>
             <h2 class='work-header' id='solution'>SOLUTION</h2>
             {% assign style = 'work-solution-splashes' %}
             {% if page.solution.images.size > 0 %}
@@ -348,7 +367,7 @@ layout: default
                 {% assign style = style | append: " work-captioned-image" %}
                 {% endif %}
                 <div class='{{style}}'>
-                    <img src='/assets/{{page.name}}/{{image.image}}' alt='final designs' />
+                    <img src='/assets/{{page.name}}/{{image.image}}' alt={{image.caption}} />
                     <span>{{image.caption}}</span>
                 </div>
                 {% endfor %}
@@ -362,14 +381,23 @@ layout: default
                     <div>
                         {{ example.before | markdownify }}
                     </div>
+                    {% for row in example.images %}
                     <div class='work-cols work-solution-images'>
-                        {% for image in example.images %}
-                        <div>
-                            <img class="work-solution-image" src='/assets/{{page.name}}/{{image.image}}'
+                        {% for image in row.row %}
+                        {% assign style = 'work-solution-image' %}
+                        {% if image.caption %}
+                        {% assign style = style | append: " work-captioned-image" %}
+                        {% endif %}
+                        <div class="{{style}}">
+                            <img src='/assets/{{page.name}}/{{image.image}}'
                                  alt='{{image.caption}}'>
+                            {% if image.caption %}
+                            <span>{{image.caption}}</span>
+                            {% endif %}
                         </div>
                         {% endfor %}
                     </div>
+                    {% endfor %}
                     <div>
                         {{ example.after | markdownify }}
                     </div>
@@ -377,6 +405,7 @@ layout: default
             </div>
             {% endfor %}
         </div>
+        {% endif %}
         <!--Final Designs-->
         {% if page.final_designs %}
         <div class='work-section wrapper work-wrapper'>
@@ -384,7 +413,11 @@ layout: default
             <div class='work-img-list work-final-designs'>
                 {% for design in page.final_designs %}
                 <div class='work-img-list-block'>
-                    <div class='work-img-list-img work-final-designs-img'>
+                    {% assign style = "work-img-list-img work-final-designs-img" %}
+                    {% if design.rounded %}
+                    {% assign style = style | append: " work-img-list-img-rounded" %}
+                    {% endif %}
+                    <div class='{{style}}'>
                         <img src='/assets/{{page.name}}/{{design.image}}' alt='problem example'>
                     </div>
                     <div class='work-img-list-summary'>

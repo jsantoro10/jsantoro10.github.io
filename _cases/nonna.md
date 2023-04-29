@@ -67,8 +67,9 @@ research:
       - competitor1.png
       - competitor2.png
       - competitor3.png
-    analysis: My analysis validated the challenges previously noted, in addition to revealing a **user preference for single sign-on**. I was surprised to find that many of the user reviews for the competitors’ apps noted a broken ordering flow. Unsurprisingly, users stopped using the app altogether once it lost value to them.
-  insight: Our users value efficiency, reliability, and customization.
+    analysis: 
+      - My analysis validated the challenges previously noted, in addition to revealing a **user preference for single sign-on**. I was surprised to find that many of the user reviews for the competitors’ apps noted a broken ordering flow. Unsurprisingly, users stopped using the app altogether once it lost value to them.
+  insight: "**Our users value efficiency, reliability, and customization.**"
 ideation:
   summary: Once I had a clear idea of the key challenges–and, in turn, the key improvement opportunities–I began sketching out different iterations of the homepage using the **Crazy Eights exercise**.
   examples: 
@@ -100,22 +101,24 @@ solution:
     - title: Intuitive Navigation
       before: Users noted that navigating the homepage wasn’t intuitive, so I eliminated the CTA buttons and considered different layouts to make the ordering flow as straightforward as possible.
       images:
-        - image: solution_1_1.png
-          caption: Second lo-fi iteration
-        - image: solution_1_2.png
-          caption: First mockup
-        - image: solution_1_3.png
-          caption: Third mockup
+        - row:
+          - image: solution_1_1.png
+            caption: Second lo-fi iteration
+          - image: solution_1_2.png
+            caption: First mockup
+          - image: solution_1_3.png
+            caption: Third mockup
       after: Instead of listing the full menu on the homepage, I opted for multiple access points from the homepage–through search, ‘See all’ CTA, and top categories. During the second usability study, users easily navigated through the homepage, with most directly adding to their cart from the ‘Favorites’ quick-add cards.
     - title: Order History
       before: Users had difficulty finding the checkout page during the first usability study, as the designs featured both a cart icon in the top right corner and an ‘Orders’ tab on the bottom navigation bar. To avoid confusion, I combined them into one by replacing the original icon for the ‘Orders’ tab with the cart icon. I also added visual cues for the filled cart icon and the ‘View Cart’ button to provide consistency for all clickable elements.
       images:
-        - image: solution_2_1.png
-          caption: First lo-fi iteration
-        - image: solution_2_2.png
-          caption: Final design - ‘Cart’ screen
-        - image: solution_2_3.png
-          caption: Final design - ‘Orders’ screen
+        - row: 
+          - image: solution_2_1.png
+            caption: First lo-fi iteration
+          - image: solution_2_2.png
+            caption: Final design - ‘Cart’ screen
+          - image: solution_2_3.png
+            caption: Final design - ‘Orders’ screen
       after: Following the second round of testing, I designed the ‘Orders’ screen, which I hadn’t included in the main user flow. Users wanted easy access to current and past orders so I created two tabs–’Cart’ and ‘Orders.’ The order history page displays a ‘Reorder’ button next to a completed order and a ‘Track’ button next to an active order.
 final_designs:
   - details: 

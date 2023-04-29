@@ -425,15 +425,15 @@
  */
 
 .home-project-nonna {
-  background-color: #B3D4C8
+  background-color: #B3D4C8;
 }
 
 .home-project-nycbest {
-  background-color: #F5C394;;
+  background-color: #B2CBD4;
 }
 
 .home-project-reciplay {
-  background-color: #78AB6F;
+  background-color: #B4D1AF;
 }
 
 /**
@@ -583,13 +583,10 @@
 .about-resume {
   color: $text-color !important;
   font-size: 1.6rem;
+  border-bottom: 2px solid $text-color;
 
-  :hover {
+  &:hover {
     cursor: pointer;
-  }
-
-  h4 {
-    display: inline-block;
-    margin-right: 10px;
+    text-decoration: none;
   }
 }
