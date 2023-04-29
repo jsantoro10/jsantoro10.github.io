@@ -66,3 +66,6 @@ defaults:
         image: true
 
 google_analytics: G-CEXY3YCKJD
+
+image: /assets/logo.png
+logo: /assets/logo.png
