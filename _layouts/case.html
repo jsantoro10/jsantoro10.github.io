@@ -30,16 +30,16 @@ layout: default
     </div>
     <!-- Splash-->
     <div class='work-splash'>
-        <div class='work-links'>
-            <div>
-                <a class='work-link' href='{{ page.backLink }}'>
-                    <span class='work-link-text'>Back</span>
-                </a>
-                <a class='work-link' href='{{ page.nextPage.link }}'>
-                    <span class='work-link-text'>Next: {{ page.nextPage.title }} </span>
-                </a>
-            </div>
-        </div>
+        <!--        <div class='work-links'>-->
+        <!--            <div>-->
+        <!--                <a class='work-link' href='{{ page.backLink }}'>-->
+        <!--                    <span class='work-link-text'>Back</span>-->
+        <!--                </a>-->
+        <!--                <a class='work-link' href='{{ page.nextPage.link }}'>-->
+        <!--                    <span class='work-link-text'>Next: {{ page.nextPage.title }} </span>-->
+        <!--                </a>-->
+        <!--            </div>-->
+        <!--        </div>-->
         <div class='wrapper work-wrapper'>
             <div class='work-splash-image'>
                 <img src='/assets/{{ page.name }}/banner.png' alt='{{page.name}} banner' />
@@ -354,7 +354,7 @@ layout: default
         <div id='work-solution' class='work-section wrapper work-wrapper'>
             <h2 class='work-header' id='solution'>SOLUTION</h2>
             {% assign style = 'work-solution-splashes' %}
-            {% if page.solution.images.size > 0 %}
+            {% if page.solution.images.size > 1 %}
             {% assign style = style | append: " work-solution-splashes-multi" %}
             {% endif %}
             <div class='{{style}}'>
@@ -482,6 +482,19 @@ layout: default
                     </ul>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class='work-bottom-descriptions'>
+        <div class='work-bottom-descriptions-inner work-wrapper work-cols'>
+            {% for case in site.cases %}
+            <div>
+                {% if case.title == page.title %}
+                <a class="work-bottom-descriptions-selected" href='{{case.url}}'>{{case.tagline}}</a>
+                {% else %}
+                <a href='{{case.url}}'>{{case.tagline}}</a>
+                {% endif %}
+            </div>
+            {% endfor %}
         </div>
     </div>
     <div class='work-bottom-actions'>

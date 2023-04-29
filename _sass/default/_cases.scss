@@ -10,6 +10,8 @@
   background-color: $background-color;
   position: relative;
   z-index: 1;
+
+  min-width: 350px;
 }
 
 .work-wrapper {
@@ -289,6 +291,10 @@
   margin: 0 auto;
   width: 94%;
   max-width: $max-width + $spacing-unit * 4;
+
+  @media (max-height: 600px) {
+    display: none;
+  }
 }
 
 .work-table-of-contents {
@@ -378,6 +384,8 @@
   align-items: center;
 
   box-shadow: 0 0 10px 4px $shadow-color inset;
+
+  min-width: 350px;
 }
 
 .work-splash-image {
@@ -604,16 +612,36 @@
 
 .work-research-logos {
   display: flex;
-  flex-wrap: wrap;
   gap: $spacing-unit;
+  flex-wrap: wrap;
   margin-top: $spacing-unit * .5;
+
+  @include media-query($on-palm) {
+    gap: $spacing-unit * .7;
+  }
+
+  @include media-query($on-small) {
+    gap: $spacing-unit * .6;
+  }
+
+  @include media-query($on-tiny) {
+    gap: $spacing-unit * .5;
+  }
 }
 
 .work-research-logos > img {
   height: $spacing-unit * 1.5;
 
+  @include media-query($on-laptop) {
+    height: $spacing-unit * 1.4;
+  }
+
+  @include media-query($on-small) {
+    height: $spacing-unit * 1.2;
+  }
+
   @include media-query($on-tiny) {
-    height: $spacing-unit * 1.3;
+    height: $spacing-unit * 1.1;
   }
 }
 
@@ -636,6 +664,7 @@
 .work-testing-image img {
   display: block;
   margin: 0 auto;
+  border-radius: 4px;
 }
 
 .work-testing-details {
@@ -744,12 +773,16 @@
   z-index: 1000;
 
   background-color: $background-color;
+
+  min-width: 350px;
 }
 
 .work-bottom-actions span {
-  text-decoration: underline;
+  padding-bottom: 3px;
+  border-bottom: 1px solid black;
   &:hover {
     cursor: pointer;
+    text-decoration: none;
   }
 }
 
@@ -788,6 +821,7 @@
 
 .work-solution-image img {
   box-shadow: $image-shadow;
+  border-radius: 4px;
 }
 
 .work-solution-images {
@@ -846,4 +880,40 @@
   padding: $spacing-unit * 5 0;
 
   font-size: 3rem;
+}
+
+/**
+ * Work Bottom Descriptions
+ */
+
+.work-bottom-descriptions {
+  padding: $spacing-unit * 3 0;
+  position: relative;
+  z-index: 1000;
+  background-color: white;
+
+  min-width: 350px;
+}
+
+.work-bottom-descriptions-inner {
+  justify-content: center !important;
+
+  margin: 0 auto;
+  @include media-query($on-palm) {
+    gap: $spacing-unit;
+    text-align: center;
+  }
+}
+
+.work-bottom-descriptions a {
+  padding-bottom: 3px;
+  font-size: 1.2rem;
+  &:hover {
+    text-decoration: none;
+    border-bottom: 1px solid black;
+  }
+}
+
+.work-bottom-descriptions-selected {
+  border-bottom: 1px solid black;
 }

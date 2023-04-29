@@ -1,8 +1,8 @@
 ---
 layout: case
 name: nonna
-title: Nonna's Restaurant
-tagline: Online ordering experience for a local restaurant
+title: Nonna's
+tagline: Designing a stand-out food ordering app
 button: Mobile App
 backLink: /#work
 nextPage:
@@ -96,7 +96,6 @@ testing:
 solution:
   images: 
     - image: design.png
-      caption: Final designs
   examples:
     - title: Intuitive Navigation
       before: Users noted that navigating the homepage wasn’t intuitive, so I eliminated the CTA buttons and considered different layouts to make the ordering flow as straightforward as possible.

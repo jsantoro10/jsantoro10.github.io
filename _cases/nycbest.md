@@ -2,7 +2,7 @@
 layout: case
 name: nycbest
 title: NYC's Best
-tagline: Accessible and straightforward pet adoption site
+tagline: Redefining the pet adoption process
 button: Responsive Web App
 description:
   - NYC’s Best is an animal shelter with three locations in New York City. They are dedicated to rescuing, rehabilitating, and finding forever homes for homeless and abandoned cats, dogs, and rabbits.

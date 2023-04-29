@@ -41,19 +41,42 @@
   &:visited {
     color: $grey-color-dark;
   }
+
+  @include media-query($on-small) {
+    max-width: 150px;
+  }
+
+  @include media-query($on-tiny) {
+    max-width: 140px;
+  }
 }
 
 .site-nav {
   float: right;
   display: flex;
   justify-content: flex-end;
-  font-family: $header-font-family;
-  gap: 20px;
+  gap: $spacing-unit * 1.5;
 
   .page-link {
     color: $text-color;
     line-height: $base-line-height;
     font-size: 1.2rem;
+
+    @include media-query($on-small) {
+      font-size: 1.1rem;
+    }
+
+    @include media-query($on-tiny) {
+      font-size: 1rem;
+    }
+  }
+
+  @include media-query($on-palm) {
+    gap: $spacing-unit;
+  }
+
+  @include media-query($on-tiny) {
+    gap: 12px;
   }
 }
 

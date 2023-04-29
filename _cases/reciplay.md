@@ -2,7 +2,7 @@
 layout: case
 name: reciplay
 title: Reciplay
-tagline: Cookbook tool to empower users who are new to technology
+tagline: Empowering users new to technology
 description: 
   - For the final project in the Google UX Design Professional Certificate program, I created a cookbook tool for users who are new to technology.
   - My client, Reciplay, is dedicated to creating a cookbook tool that inspires and empowers its users to enjoy the process of cooking and trying new recipes.
@@ -33,7 +33,7 @@ overview:
     title: A tailored solution
     description: 
       - paragraph: With these barriers in mind, I wanted to design a cookbook tool specifically for users who are new to technology. My goal was to create a cross-platform experience that inspires and empowers users to enjoy the process of cooking and trying new recipes. The solution would cover all parts of the cooking process, with features like **URL import** and **a cooking mode**. For this project, I focused on recipe saving and viewing for the main user flow.
-      - paragraph: “We’d like to create an empowering cookbook tool for users who are new to technology to save and view their favorite recipes.”
+      - paragraph: “We'd like to create an empowering cookbook tool for users who are new to technology that enables them **to save and view their favorite recipes in one place**”
         quote: true
 research:
   description: 
