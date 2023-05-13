@@ -1,14 +1,42 @@
 <header id='site-header' role="banner">
     <div class='wrapper header-wrapper'>
-        <div>
-            <a class='site-title' rel="author" href="/">
-                {%- include logo.svg -%}
-            </a>
+        <div class='navbar'>
+            <div>
+                <a class='site-title' rel="author" href="/">
+                    {%- include logo.svg -%}
+                </a>
+            </div>
+            <input type="checkbox" name="" id="navigation-hamburger" />
+            <label for='navigation-hamburger' class="hamburger-lines">
+                <span class="hamburger-line1"></span>
+                <span class="hamburger-line2"></span>
+                <span class="hamburger-line3"></span>
+            </label>
+            <nav class="site-nav">
+                <a class="page-link" href="/#work">Work</a>
+                <a class="page-link" href="/bike">A Tale of Two Wheels</a>
+                <a class="page-link" href="/about">About</a>
+                <a class="page-link" href="/resume.pdf" target='_blank'>Resume</a>
+            </nav>
         </div>
-        <nav class="site-nav">
-            <a class="page-link" href="/#work">Work</a>
-            <a class="page-link" href="/about">About</a>
-            <a class="page-link" href="/resume.pdf" target='_blank'>Resume</a>
-        </nav>
     </div>
+    <script>
+      const hamburger = document.getElementById('navigation-hamburger');
+      const nav = document.querySelector('.site-nav');
+      let hideTimeout = null;
+      hamburger.addEventListener('change', (e) => {
+        if (e.target.checked) {
+          nav.classList.remove('navigation-fade-out');
+          nav.classList.add('navigation-fade-in');
+          clearTimeout(hideTimeout);
+          nav.style.display = 'flex';
+        } else {
+          nav.classList.remove('navigation-fade-in');
+          nav.classList.add('navigation-fade-out');
+          hideTimeout = setTimeout(() => {
+            nav.style.display = 'none';
+          }, 220);
+        }
+      });
+    </script>
 </header>

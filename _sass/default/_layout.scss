@@ -19,23 +19,28 @@
 }
 
 .header-wrapper {
+  min-height: $spacing-unit * 1.865;
+  max-width: $max-width;
+
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  min-height: $spacing-unit * 1.865;
-  max-width: $max-width;
-}
-
-.header-wrapper > * {
-  flex-basis: 0;
   flex-grow: 1;
 }
 
 .site-title {
   float: left;
   width: 100%;
+  min-width: 179px;
   max-width: 179px;
+  position: relative;
+  z-index: 1000;
 
   &,
   &:visited {
@@ -61,25 +66,102 @@
     color: $text-color;
     line-height: $base-line-height;
     font-size: 1.2rem;
-
-    @include media-query($on-small) {
-      font-size: 1.1rem;
-    }
-
-    @include media-query($on-tiny) {
-      font-size: 1rem;
-    }
   }
 
   @include media-query($on-palm) {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    justify-content: flex-start;
+    padding-top: 100px;
     gap: $spacing-unit;
-  }
-
-  @include media-query($on-tiny) {
-    gap: 12px;
+    display: none;
   }
 }
 
+/**
+  * Mobile Navigation
+  */
+
+#navigation-hamburger {
+  position: absolute;
+  height: 25px;
+  width: 30px;
+  top: 18px;
+  right: 36px;
+  z-index: 5;
+  cursor: pointer;
+  display: none;
+  opacity: 0;
+
+  @include media-query($on-palm) {
+    display: block;
+  }
+}
+
+.hamburger-lines {
+  height: 20px;
+  width: 27px;
+  position: absolute;
+  top: 22px;
+  right: 40px;
+  z-index: 2;
+  flex-direction: column;
+  justify-content: space-between;
+
+  display: none;
+
+  @include media-query($on-palm) {
+    display: flex;
+  }
+}
+
+.hamburger-lines span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  border-radius: 1px;
+  background: black;
+}
+
+.hamburger-line1 {
+  transform-origin: 0 0;
+  transition: transform 0.4s ease-in-out;
+}
+
+.hamburger-line2 {
+  transition: transform 0.2s ease-in-out;
+}
+
+.hamburger-line3 {
+  transform-origin: 0 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+#navigation-hamburger:checked + .hamburger-lines .hamburger-line1 {
+  transform: rotate(45deg);
+}
+
+#navigation-hamburger:checked + .hamburger-lines .hamburger-line2 {
+  transform: scaleY(0);
+}
+
+#navigation-hamburger:checked + .hamburger-lines .hamburger-line3 {
+  transform: rotate(-45deg);
+}
+
+.navigation-fade-in {
+  animation: fade-in 0.2s ease-in-out;
+}
+
+.navigation-fade-out {
+  animation: fade-out 0.2s ease-in-out forwards;
+}
 
 
 /**
