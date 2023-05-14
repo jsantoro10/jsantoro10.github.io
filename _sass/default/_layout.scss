@@ -145,22 +145,28 @@
 
 #navigation-hamburger:checked + .hamburger-lines .hamburger-line1 {
   transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
 
 #navigation-hamburger:checked + .hamburger-lines .hamburger-line2 {
   transform: scaleY(0);
+  -webkit-transform: scaleY(0);
 }
 
 #navigation-hamburger:checked + .hamburger-lines .hamburger-line3 {
   transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
 }
 
 .navigation-fade-in {
   animation: fade-in 0.2s ease-in-out;
+  -webkit-animation: fade-in 0.2s ease-in-out;
 }
 
 .navigation-fade-out {
   animation: fade-out 0.2s ease-in-out forwards;
+  -webkit-animation: fade-out 0.2s ease-in-out forwards;
+
 }
 
 
