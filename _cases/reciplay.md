@@ -3,7 +3,7 @@ layout: case
 name: reciplay
 title: Reciplay
 description: Empowering users new to technology
-tagline: Empowering users new to technology
+tagline: "Empowering users new to technology&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
 backLink: /cases/nycbest
 solution_top: true
 nextPage:

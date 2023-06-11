@@ -71,7 +71,7 @@
 
   position: absolute;
   top: 0;
-  right: 30px;
+  right: -30px;
 
   font-size: 0.8rem;
 
@@ -139,11 +139,12 @@
 }
 
 .bike-images {
-  margin: $spacing-unit * 2 0;
   display: flex;
-  gap: $spacing-unit;
+  gap: $spacing-unit * .5;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
+
+  flex-grow: 2;
 }
 
 .bike-image:hover {
@@ -152,7 +153,7 @@
 
 .bike-images > div {
   max-width: 30%;
-  min-width: 300px;
+  min-width: 200px;
 }
 
 #modal {
@@ -176,4 +177,33 @@
   height: auto;
   max-width: 95vw;
   max-height: 80vh;
+}
+
+.bike-content {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-unit;
+
+  padding-bottom: $spacing-unit * 5;
+
+  @include media-query($on-palm) {
+      flex-direction: column;
+  }
+}
+
+.bike-content  > * {
+  flex-basis: 0;
+}
+
+.bike-description {
+  flex-grow: 1;
+  min-width: 300px;
+}
+
+.bike-description i {
+  font-weight: 500;
+}
+
+.bike-description > p:not(:last-child) {
+  margin-bottom: $spacing-unit;
 }

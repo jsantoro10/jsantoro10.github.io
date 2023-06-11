@@ -58,9 +58,6 @@ layout: default
         <div class='home-project-container'>
             <div class='home-project home-project-{{case.name}}'>
                 <div class='home-project-inner home-wrapper'>
-                    <div class='home-project-img'>
-                        <img src='assets/{{case.name}}/banner.png' alt='{{case.name}} banner' />
-                    </div>
                     <div class='home-project-description'>
                         <div>
                             <h2 class='home-project-title'>{{ case.title }}</h2>
@@ -68,7 +65,10 @@ layout: default
                         <p>
                             {{ case.tagline }}
                         </p>
-                        <a href='{{case.url}}' class='home-project-button'>View Case Study</a>
+                        <a href='{{case.url}}' class='home-project-button'><span>View case study</span></a>
+                    </div>
+                    <div class='home-project-img'>
+                        <img src='assets/{{case.name}}/banner.png' alt='{{case.name}} banner' />
                     </div>
                 </div>
             </div>
@@ -88,8 +88,10 @@ layout: default
   }
 
   const cover = document.getElementById("home-cover")
-  if (window.location.href.includes("work")) {
+  const workAnchor = document.getElementById('work');
+  if (window.location.href.includes("#work")) {
     cover.style.display = 'none';
+    workAnchor.scrollIntoView();
   } else {
     document.body.style.overflow = 'hidden';
     window.setTimeout(() => document.body.style.overflow = 'visible', 2000)
