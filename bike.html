@@ -29,47 +29,55 @@ layout: default
         </div>
         <br />
         <br />
-        <div>
-            <p>
-                <i>March 2020</i> – My first job out of college was at a cancer hospital. Along with an essential worker
-                badge,
-                I was given what would become my lifeline and passion–a free year-long Citibike membership.
-            </p>
-            <p>
-                For the first month after receiving it, I never activated it, citing some childhood incident from the
-                last time I ever biked as the reason. I chose instead to walk home from work, logging anywhere from 7 to
-                20 miles back to my Lower East Side apartment to see the desolate city streets that would someday be
-                recorded in history books.
-            </p>
-            <p>
-                Eventually, I unlocked my very first Citibike on one of those <i>I-just-want-to-go–home</i> kind of
-                days.
-            </p>
-            <p>
-                After a <i>lot</i> of fumbling, close calls, and falling, I finally managed to steer the 50-pound
-                Citibike in a
-                straight line for an extended period of time.
-            </p>
-            <p>
-                Ever obsessed with data, exploring the city, and a healthy amount of self-competition, I challenged
-                myself with each ride, logging 25-50 miles on my Apple Watch after work and on weekends.
-            </p>
-            <p>
-                When I moved apartments, my bike that I hadn’t touched in 10 years (literally) was brought down from
-                Boston and
-                I’ve been biking fee-free ever since.
-            </p>
-            <p>
-                TLDR; here are some pictures from my biking adventures throughout the boroughs. 🚴🏻‍♀️
-            </p>
-        </div>
-        <div class='bike-images'>
-            {% assign image_files = site.static_files | where: "image", true %}
-            {% for myimage in image_files %}
-            <div>
-                <img class='bike-image' src='{{ myimage.path }}' alt='bike pic' />
+        <div class='bike-content'>
+            <div class='bike-description'>
+                <p>
+                    <i>March 2020</i> –
+                </p>
+                <p>
+                    My first job out of college was at a cancer hospital. Along with an essential worker badge, I was
+                    given
+                    what would become my lifeline – a free, year-long Citibike membership.
+                </p>
+                <p>
+                    For the first month after receiving it, I never activated it – in truth, I hadn’t even stepped foot
+                    on a
+                    bike in a decade.
+                </p>
+                <p>
+                    I chose instead to walk from my Upper East Side workplace back home to the Lower East Side to see
+                    the
+                    desolate city streets that would someday be recorded in history books.
+                </p>
+                <p>
+                    One night, I decided to unlock my very first Citibike to skip the long walk home.
+                </p>
+                <p>
+                    After a <i>lot</i> of fumbling, close calls, and falling, I finally managed to steer the 50-pound
+                    Citibike
+                    in a
+                    straight line.
+                </p>
+                <p>
+                    My passion grew with each ride, logging 25+ miles every day after work and on weekends.
+                </p>
+                <p>
+                    A few months later, that same bike that I hadn’t stepped foot on in a decade was brought down from
+                    Boston, and I’ve been biking fee-free ever since.
+                </p>
+                <p>
+                    Here are some pictures from my biking adventures throughout the boroughs.
+                    🚴🏻‍♀️
+                </p>
             </div>
-            {% endfor %}
+            <div class='bike-images'>
+                {% assign image_files = site.static_files | where: "image", true %}
+                {% for myimage in image_files %}
+                <div>
+                    <img class='bike-image' src='{{ myimage.path }}' alt='bike pic' />
+                </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 

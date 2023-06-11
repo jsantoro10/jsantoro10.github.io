@@ -3,7 +3,7 @@ layout: case
 name: nycbest
 title: NYC's Best
 description: Redefining the pet adoption process
-tagline: Redefining the pet adoption process
+tagline: "Redefining the pet adoption process&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
 button: Responsive Web App
 backLink: /cases/nonna
 nextPage:
