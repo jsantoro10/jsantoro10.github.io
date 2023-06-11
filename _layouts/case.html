@@ -489,9 +489,9 @@ layout: default
             {% for case in site.cases %}
             <div>
                 {% if case.title == page.title %}
-                <a class="work-bottom-descriptions-selected" href='{{case.url}}'>{{case.tagline}}</a>
+                <a class="work-bottom-descriptions-selected" href='{{case.url}}'>{{case.description}}</a>
                 {% else %}
-                <a href='{{case.url}}'>{{case.tagline}}</a>
+                <a href='{{case.url}}'>{{case.description}}</a>
                 {% endif %}
             </div>
             {% endfor %}
