@@ -54,7 +54,8 @@ layout: default
     </div>
     <h1 id="work" class='hidden'>Work</h1>
     <div class='home-projects'>
-        {% for case in site.cases %}
+        {% assign ordered_cases = site.cases | sort:"order_number" %}
+        {% for case in ordered_cases %}
         <div class='home-project-container'>
             <div class='home-project home-project-{{case.name}}'>
                 <div class='home-project-inner home-wrapper'>

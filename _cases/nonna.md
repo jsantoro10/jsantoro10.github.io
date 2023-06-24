@@ -1,5 +1,6 @@
 ---
 layout: case
+order_number: 2
 name: nonna
 title: Nonna's
 description: "Designing a stand-out food ordering app"
@@ -19,14 +20,13 @@ banner:
   duration: Sept - Dec 2022
   tool: Figma
 overview:
-  problem: Ordering food online through an app like DoorDash or Uber Eats has become second nature for many of us. It’s quick, convenient, and simple–but **have you ever encountered an issue tracking an order through these third-party delivery apps?**
+  problem: "Ordering food online through an app like DoorDash or Uber Eats has become second nature for many of us. It’s quick, convenient, and simple -- but **have you ever encountered an issue tracking an order through these third-party delivery apps?**"
   examples:
-    - description: In some cases, restaurants handle the food delivery themselves so you don’t know when to expect your order, you’ll only be given a time frame of when it *should* arrive.
-      image: problem1.png
+    - image: problem1.png
       rounded: true
-    - description:  In other cases, there may be no couriers in the area to pick up your order from the restaurant.
-      image: problem2.png
+    - image: problem2.png
       rounded: true
+  row: true
   solution:
     title: Why not eliminate the middleman?
     description:
@@ -43,18 +43,18 @@ research:
   personas:
     - title: The New Grad
       age: 24
-      job: Software Engineer
+      job: Financial Analust
       image: portrait1.png
       description:
-        - Araya recently started a new career as a software engineer at a startup after finishing coding bootcamp. They use the time after work to learn new skills so they usually order food for dinner instead of cooking.
+        - Araya has been working as a financial analyst in NYC since graduating from college. They work late hours so they usually order dinner from the office or pick it up on the way home.
         - They get frustrated by the lack of information involved in the pickup process with apps like Seamless. They often arrive at the expected order completion time only to wait longer than expected.
     - title: The Multitasking Parent
       age: 45
       job: Nurse
       image: portrait2.png
       description:
-        - Horace is a nurse at a major hospital in the city. He recently had a health scare and has committed to cutting red meat out of his diet. His schedule can be unpredictable so he gets food from restaurants near the hospital.
-        - He prefers to order from the restaurant’s site but is often forced to choose another restaurant when there are no options to add notes to a menu item or the order itself.
+        - Horace is a single father working at a major hospital in the city. His schedule can be unpredictable so he prefers to order food from restaurants instead of getting groceries that may expire.
+        - He orders meals based on his daughter’s food preferences and schedule so he gets frustrated when there are no options to add notes or request cutlery.
   challenges:
     description: "After mapping out each step of these users’ journey, I discovered the following key challenges that weren’t addressed by third-party food delivery apps like Seamless and ChowNow:"
     list:

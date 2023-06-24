@@ -1,5 +1,6 @@
 ---
 layout: case
+order_number: 3
 name: nycbest
 title: NYC's Best
 description: Redefining the pet adoption process
@@ -19,19 +20,16 @@ banner:
   duration: Dec - Feb 2023
   tool: Adobe XD
 overview:
-  problem: "Finding our new furry best friend and family member is one of the biggest decisions we make in our lives, yet available pet adoption sites often fail to reflect that reality. Whether you’re experienced or a first-time pet parent, you likely have your own, unique criteria that you’re looking for. Yet, **why is it so difficult to browse pet adoption sites?**"
+  problem: "Finding our new furry best friend and family member is one of the biggest decisions we make in our lives, yet existing pet adoption sites often fail to reflect that reality. Whether you’re experienced or a first-time pet parent, you likely have your own, unique criteria that you’re looking for. So, **why is it so difficult to browse pet adoption sites?**"
   examples:
-    - description: It often takes multiple clicks, each opening a new tab, to even reach the list of adoptable pets. Aside from the amount of clicks needed, the information is also cluttered and overwhelming to skim.
-      image: example1.png
+    - image: example1.png
       caption: Layout of existing pet adoption site
       rounded: true
-    - description: These sites often only cater to a specific user context– those using a computer–and fail to consider the needs of those accessing from a phone or tablet.
-      image: example2.png
   list: true
   solution:
     title: Redesigning the adoption flow
     description:
-      - paragraph: These pain points led me to to design a responsive website for a local pet adoption organization. Let’s call it NYC’s Best, a no-kill animal shelter with three locations in New York City. They are dedicated to rescuing, rehabilitating, and finding forever homes for homeless and abandoned cats, dogs, and rabbits.
+      - paragraph: My pain points with cluttered, overwhelming pet adoption sites led me to to design a responsive website for a local pet adoption organization. Let’s call it NYC’s Best, a no-kill animal shelter with three locations in New York City. They are dedicated to rescuing, rehabilitating, and finding forever homes for homeless and abandoned cats, dogs, and rabbits.
       - paragraph: “We’d like to help our patrons through the pet-finding process by **providing search options that mirror their own criteria.**”
         quote: true
       - paragraph: To stand out in the market, I aimed to design a user-friendly, responsive website that features **clear navigation** and **an efficient search and adoption process**. Above all, I wanted it to be a positive experience that reflects the *excitement* of starting a new chapter in your life.
@@ -43,7 +41,7 @@ research:
   personas:
     - title: The Dog Adopter
       age: 28
-      job: Dental hygienist
+      job: Dental Hygienist
       image: portrait1.png
       description:
         - Niamh is a dental hygienist at a clinic in Detroit. She’s finally reached a place in her life where she feels more settled, with a stable job and relationship. She’s always wanted to adopt a dog but wanted to wait until she felt ready.
@@ -53,8 +51,8 @@ research:
       job: College Senior
       image: portrait2.png
       description:
-        - Winston is a senior in college living in Seattle. He didn’t grow up with pets but he’s interested in adopting a cat because he’s heard that cats are better for first-time pet parents.
-        - He doesn’t know where to start so he’s looked at multiple animal shelter sites but decided to just go to a shelter in person after seeing the limited filters, vague personality descriptions, and complex adoption processes.
+        - Winston is a senior in college living in Seattle. He’s interested in adopting a cat as a first-time pet parent.
+        - He’s not sure what characteristics to base his search on with the limited filters and vague personality descriptions on existing sites. He’d rather save time by going to the shelters themselves if it weren’t for unclear adoption processes.
   challenges:
     description: "I reframed the insights from the research as improvement opportunities for the NYC’s Best site:"
     list:

@@ -1,5 +1,6 @@
 ---
 layout: case
+order_number: 1
 name: reciplay
 title: Reciplay
 description: Empowering users new to technology
@@ -21,16 +22,14 @@ banner:
 overview:
   problem: "*What should I cook today?* &nbsp;The age-old question. Countless cookbook sites and apps have been created to address this dilemma in the digital age, **but do they really cater to every user?**"
   examples:
-    - description: Existing cookbook apps are often cluttered and difficult to navigate, with an overwhelming amount of information on each screen. These solutions were designed for users who are familiar with technology and who already have an understanding of how to navigate from screen to screen, what’s tappable and what’s not, and more.
-      image: example1.png
+    - image: example1.png
       rounded: true
       small: true
-    - description: For users who are new to technology, however, knowing what icons mean or how to even begin are significant barriers to using these apps.
   list: true
   solution:
     title: A tailored solution
     description: 
-      - paragraph: With these barriers in mind, I wanted to design a cookbook tool specifically for users who are new to technology. My goal was to create a cross-platform experience that inspires and empowers users to enjoy the process of cooking and trying new recipes. The solution would cover all parts of the cooking process, with features like **URL import** and **a cooking mode**. For this project, I focused on recipe saving and viewing for the main user flow.
+      - paragraph: For users who are new to technology, knowing what icons mean or how to even begin are significant barriers to using cookbook apps. I sought to design a cross-platform experience that inspires and empowers new technology users to enjoy the process of cooking and trying new recipes. The solution would cover all parts of the cooking process, with features like **URL import** and **a cooking mode**. For this project, I focused on recipe saving and viewing for the main user flow.
       - paragraph: “We'd like to create an empowering cookbook tool for users who are new to technology that enables them **to save and view their favorite recipes in one place**”
         quote: true
 research:
@@ -47,7 +46,7 @@ research:
       job: Retired
       image: portrait1.png
       description:
-        - Leo is a recently retired hairstylist living in Hoboken with their two cats. Now that they are retired, they’ve been trying new recipes from a cookbook. They usually write a list of the ingredients needed for a few recipes and buy them all in one trip.
+        - Leo is a recently retired hairstylist living in Hoboken. Now that they are retired, they’ve been trying new recipes from a cookbook. They usually write a list of the ingredients needed for a few recipes and buy them all in one trip.
         - They’d be open to learning how to use a cookbook app if it did all the tedious work for them, like calculating ingredient amounts and creating grocery lists.
     - title: The App User
       age: 75
@@ -130,6 +129,12 @@ solution:
             caption: First mockup - responsive site (tablet)
           - image: solution2_5.png
             caption: Final design - responsive site (tablet)
+        - row:
+          - image: solution2_6.png
+            caption: First mockup - responsive site (desktop)
+        - row:
+          - image: solution2_7.png
+            caption: Final design - responsive site (desktop)
       after: To simplify the cognitive load of navigation and orient the user, I created a homepage with tappable discovery interfaces and text and voice search options to provide users with multiple modes of discovery and interaction. I used this format for both the mobile app and the responsive site for a consistent cross-platform experience.
 final_designs:
   - details:

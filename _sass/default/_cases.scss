@@ -270,6 +270,33 @@
   }
 }
 
+.work-img-list-row {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-unit * 5;
+
+  @include media-query($on-palm) {
+    gap: $spacing-unit * 3;
+  }
+
+  @include media-query($on-tiny) {
+    flex-direction: column;
+    gap: $spacing-unit;
+  }
+}
+
+.work-img-list-row .work-img-list-block {
+  display: block;
+}
+
+.work-img-list-row .work-img-list-img {
+  min-width: 0;
+
+  @include media-query($on-tiny) {
+    margin: 0 auto;
+  }
+}
+
 // Captioned-Image
 
 .work-captioned-image {

@@ -91,6 +91,9 @@ layout: default
                     {% if page.overview.list %}
                     {% assign style = style | append: " work-img-list-linear" %}
                     {% endif %}
+                    {% if page.overview.row %}
+                    {% assign style = style | append: " work-img-list-row" %}
+                    {% endif %}
                     <div class='{{style}}'>
                         {% for example in page.overview.examples %}
                         <div class='work-img-list-block'>
@@ -486,7 +489,8 @@ layout: default
     </div>
     <div class='work-bottom-descriptions'>
         <div class='work-bottom-descriptions-inner work-wrapper work-cols'>
-            {% for case in site.cases %}
+            {% assign ordered_cases = site.cases | sort:"order_number" %}
+            {% for case in ordered_cases %}
             <div>
                 {% if case.title == page.title %}
                 <a class="work-bottom-descriptions-selected" href='{{case.url}}'>{{case.description}}</a>
