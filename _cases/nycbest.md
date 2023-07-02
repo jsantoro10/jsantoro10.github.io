@@ -84,7 +84,7 @@ ideation:
     - title: Change the status quo?
       image: ideation_figure2.png
       list: 
-        - 1-2-3 steps adoption process
+        - 1-2-3 step adoption process
         - Choose filters on homepage that matter most to you
         - Randomize results/profiles
         - Foster for a night
@@ -127,31 +127,79 @@ solution:
       shadow: true
     - image: design2.png
       shadow: true
+    - image: design3.png
+      full: true
   examples:
     - title: User Flow
-      before: The usability study uncovered some aspects of the user flow that weren’t as intuitive as I had imagined. Firstly, the low-fidelity prototype featured an overlay previewing the profile for quick browsing, but users expressed confusion about not being directly taken to the profile from the listings page. Secondly, users were confused about whether to fill out the adoption application or schedule the Meet-and-Greet first.
+      before: The usability study uncovered some aspects of the user flow that weren’t as intuitive as I had imagined. Firstly, the low-fidelity prototype featured an overlay previewing the profile for quick browsing, but users expressed confusion about not being directly taken to the profile from the listings page. Secondly, users were confused about whether to apply to adopt or schedule the meet-and-greet first from the pet profile page.
       images:
         - row:
-          - image: solution1.png
-            caption: Final design
-      after: To address these user needs, I eliminated the unnecessary elements to make the user flow more streamlined and straightforward. I reordered the adoption process based on feedback that users would like to meet the pet before investing time in the adoption application. I then highlighted the two actions that a user may want to take at the top of the profile, and featured hyperlinks under the adoption process breakdown as well.
+          - image: solution1_1.png
+            caption: First lo-fi iteration
+        - row:
+          - image: solution1_2.png
+            caption: First hi-fi iteration
+        - row:
+          - image: solution1_3.png
+            caption: Final design - 3-step adoption breakdown on homepage
+        - row:
+          - image: solution1_4.png
+            caption: Final design - Pet profile
+      after: For the final designs, I reworked the 3-step adoption process to make the user flow more straightforward. Since users would’ve liked to meet the pet before investing time in the adoption application, I added a feature I had thought of during the ideation stage–a quiz that matches you with pets that fit your criteria. Users can then schedule a meet-and-greet with any or all of the matches and fill out an adoption application in person or on the site.
     - title: Adoption Application
       before: The overall feedback about the adoption application was that it was too long and involved too much scrolling. Users pointed out that there should be a way to select whether certain sections were applicable or not because it lengthened the application considerably.
       images:
         - row:
-          - image: solution2.gif
-            caption: Final design
-      after: In addition to adding conditional questions that either skip or unfurl additional questions, I considered how to make the application more engaging. After cutting out the non-essential questions, I played with the color scheme and size of the response boxes to make the overall application more digestible and skimmable. For my final designs, I also added a progress bar with textual and visual cues to discourage drop-off.
-prototype:
-  image: prototype.gif
+          - image: solution2_1.png
+            caption: First lo-fi iteration
+        - row:
+          - image: solution2_2.png
+            caption: Third hi-fi iteration
+        - row:
+          - image: solution2_3.png
+            caption: Final design - Adoption application
+      after: To address these pain points, I modeled the adoption application after the pet matching quiz, capping it at ten questions. I kept only the essential open-response questions and added 2-5 response options for all other questions to make the filling out process more efficient and engaging. I also moved some of the questions from the adoption application to the pet matching quiz to account for contextual information needed to match users with the right pets. The user profile would then save this information, eliminating the need to ask the same questions twice.
+final_designs:
+  sidebar: true
+  designs:
+    - details:
+      - detail: Task 1
+        info: Take quiz to be matched with pets
+      - detail: Feature
+        info: 1-2-3 step adoption adoption process, pet matching quiz
+      - detail: Rationale
+        info: Both the user research and usability study revealed a need for a simple, straightforward user flow. From the homepage, users are directed to take a 10-question quiz that gauges their criteria and matches them with pets.
+      image: design1.gif
+      rounded: true
+      column: true
+    - details:
+      - detail: Task 2
+        info: View profile(s) and schedule meet-and-greet
+      - detail: Feature
+        info: Dating app-style profiles, online meet-and-greet scheduling
+      - detail: Rationale
+        info: Once users have created an account to view their matches, their information is saved and they can schedule a meet-and-greet in under two minutes. My user research also highlighted a preference for information that reflects their own criteria so each pet profile includes descriptive tags and Hinge-style prompts.
+      image: design2.gif
+      rounded: true
+      column: true
+    - details:
+      - detail: Task 3
+        info: Apply to adopt a pet
+      - detail: Feature
+        info: 10-question adoption application
+      - detail: Rationale
+        info: The usability study uncovered a need to rework the adoption process and redesign the application to decrease drop-off. After meeting their matches, users can then decide to apply to adopt either in-person or online. The adoption application mirrors the format of the pet matching quiz, with a few response options and minimal scrolling.
+      image: design3.gif
+      rounded: true
+      column: true
 takeaways:
-  summary: This was my second portfolio project in the Google UX Design certificate program, as well as my first experience designing with Adobe XD. Designing for bigger screen sizes for the first time felt very daunting initially, but I learned to appreciate the blank real estate and the value of white space.
-  lessons:
-    - lesson: Research
-      learning: I learned the importance of backing my designs with data from my research and the usability study. I felt a bit stuck when I first designed the application flow so the feedback from the usability study was essential in informing my approach for the next iteration of designs.
-    - lesson: Design Sprint
-      learning: I learned that defining what is and isn’t within the project scope is an essential aspect of designing under time constraints. Unlike the first portfolio project for the Google UX Design course, multiple steps of the design process were outlined in a week’s work. This structure gave me some experience tackling weekly design sprints.
-  next_steps:
-    - Conduct a third usability study to evaluate whether the pain points users experienced have been effectively addressed
-    - Conduct more user research to determine any new areas of need, such as customer reviews and pickup/delivery feedback
+    summary: This was my second portfolio project in the Google UX Design certificate program, as well as my first experience designing with Adobe XD. Designing for bigger screen sizes for the first time felt very daunting initially, but I learned to appreciate the blank real estate and the value of white space.
+    lessons:
+      - lesson: Research
+        learning: I learned the importance of backing my designs with data from my research and the usability study. I felt a bit stuck when I first designed the application flow so the feedback from the usability study was essential in informing my approach for the next iteration of designs.
+      - lesson: Design Sprint
+        learning: I learned that defining what is and isn’t within the project scope is an essential aspect of designing under time constraints. Unlike the first portfolio project for the Google UX Design course, multiple steps of the design process were outlined in a week’s work. This structure gave me some experience tackling weekly design sprints.
+    next_steps:
+      - Conduct a third usability study to evaluate whether the pain points users experienced have been effectively addressed
+      - Conduct more user research to determine any new areas of need, such as customer reviews and pickup/delivery feedback
 ---

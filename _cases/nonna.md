@@ -121,48 +121,49 @@ solution:
             caption: Final design - ‘Orders’ screen
       after: Following the second round of testing, I designed the ‘Orders’ screen, which I hadn’t included in the main user flow. Users wanted easy access to current and past orders so I created two tabs–’Cart’ and ‘Orders.’ The order history page displays a ‘Reorder’ button next to a completed order and a ‘Track’ button next to an active order.
 final_designs:
-  - details: 
-    - detail: Task 1
-      info: Sign up to create a new account
-    - detail: Feature
-      info: Single sign-on, 2-factor authentication
-    - detail: Rationale
-      info: "My competitive analysis revealed a user preference for single sign-on, so I provided single-sign on options and two-factor authentication for a quicker login/signup process."
-    image: design1.gif
-  - details:
-    - detail: Task 2
-      info: Select menu item and add to cart
-    - detail: Feature
-      info: ‘Quick-add’ cards, customization options
-    - detail: Rationale
-      info: The interviews highlighted users’ need for efficiency and customization options, so I featured shortcuts to order favorites and popular items from the homepage, as well as a ‘Special Instructions’ box on the item screen for any notes to the kitchen.
-    image: design2.gif
-  - details:
-    - detail: Task 3
-      info: Complete checkout for pickup order
-    - detail: Feature
-      info: Completion estimates, loyalty discounts
-    - detail: Rationale
-      info: Users wanted the ordering process to be smooth and reliable, so I included completion estimates for each order option. I also included a pop-up to display applicable loyalty discounts at checkout to encourage customer retention.
-    image: design3.gif
-  - details:
-    - detail: Task 4
-      info: Track order progress. Return home once completed.
-    - detail: Feature
-      info: Live order tracking, key info in order summary
-    - detail: Rationale
-      info: Users wanted to time their pickup to their schedule and have an easy handoff at the restaurant, so I included a live status bar along with key order information (customer name, order number, items) on the ‘Order Summary’ screen.
-    image: design4.gif
+  designs:
+    - details: 
+      - detail: Task 1
+        info: Sign up to create a new account
+      - detail: Feature
+        info: Single sign-on, 2-factor authentication
+      - detail: Rationale
+        info: "My competitive analysis revealed a user preference for single sign-on, so I provided single-sign on options and two-factor authentication for a quicker login/signup process."
+      image: design1.gif
+    - details:
+      - detail: Task 2
+        info: Select menu item and add to cart
+      - detail: Feature
+        info: ‘Quick-add’ cards, customization options
+      - detail: Rationale
+        info: The interviews highlighted users’ need for efficiency and customization options, so I featured shortcuts to order favorites and popular items from the homepage, as well as a ‘Special Instructions’ box on the item screen for any notes to the kitchen.
+      image: design2.gif
+    - details:
+      - detail: Task 3
+        info: Complete checkout for pickup order
+      - detail: Feature
+        info: Completion estimates, loyalty discounts
+      - detail: Rationale
+        info: Users wanted the ordering process to be smooth and reliable, so I included completion estimates for each order option. I also included a pop-up to display applicable loyalty discounts at checkout to encourage customer retention.
+      image: design3.gif
+    - details:
+      - detail: Task 4
+        info: Track order progress. Return home once completed.
+      - detail: Feature
+        info: Live order tracking, key info in order summary
+      - detail: Rationale
+        info: Users wanted to time their pickup to their schedule and have an easy handoff at the restaurant, so I included a live status bar along with key order information (customer name, order number, items) on the ‘Order Summary’ screen.
+      image: design4.gif
 takeaways:
-  summary: This was my first portfolio project in the Google UX Design certificate program, as well as my first experience designing with Figma. Throughout Courses 2-5, I began practicing and implementing the principles I was learning about. Watching my designs come to life and receiving user feedback was an extremely rewarding and insightful process. I also learned the hard way that documentation and organization are critical to the design process after I jumped into editing initial iterations, eager to address user concerns.
-  lessons:
-    - lesson: Navigation
-      learning: I learned that prioritizing the user means understanding the existing navigational patterns and information architecture that they are familiar with.
-    - lesson: Accessibility
-      learning: I learned that designing for people who use assistive technologies improves the user experience for all users through icons, bottom navigation bars, and an accessible color palette.
-    - lesson: Labels
-      learning: I learned that all button labels and CTAs should use language that is straightforward and understandable for users regardless of their familiarity with similar food ordering apps.
-  next_steps:
-    - Conduct a third usability study to evaluate whether the pain points users experienced have been effectively addressed
-    - Conduct more user research to determine any new areas of need
+    summary: This was my first portfolio project in the Google UX Design certificate program, as well as my first experience designing with Figma. Throughout Courses 2-5, I began practicing and implementing the principles I was learning about. Watching my designs come to life and receiving user feedback was an extremely rewarding and insightful process. I also learned the hard way that documentation and organization are critical to the design process after I jumped into editing initial iterations, eager to address user concerns.
+    lessons:
+      - lesson: Navigation
+        learning: I learned that prioritizing the user means understanding the existing navigational patterns and information architecture that they are familiar with.
+      - lesson: Accessibility
+        learning: I learned that designing for people who use assistive technologies improves the user experience for all users through icons, bottom navigation bars, and an accessible color palette.
+      - lesson: Labels
+        learning: I learned that all button labels and CTAs should use language that is straightforward and understandable for users regardless of their familiarity with similar food ordering apps.
+    next_steps:
+      - Conduct a third usability study to evaluate whether the pain points users experienced have been effectively addressed
+      - Conduct more user research to determine any new areas of need
 ---

@@ -137,41 +137,42 @@ solution:
             caption: Final design - responsive site (desktop)
       after: To simplify the cognitive load of navigation and orient the user, I created a homepage with tappable discovery interfaces and text and voice search options to provide users with multiple modes of discovery and interaction. I used this format for both the mobile app and the responsive site for a consistent cross-platform experience.
 final_designs:
-  - details:
-    - detail: Task 1
-      info: Select an action from the homepage.
-    - detail: Feature
-      info: Voice search, call/chat assistance
-    - detail: Rationale
-      info: Users can request a feature through voice commands, suggestions, or search history instead of navigating to it. When in need of assistance, users can consult the support page on each screen, for a list of FAQs and call/chat options.
-    image: design1.gif
-    rounded: true
-  - details:
-    - detail: Task 2
-      info: Import new online recipe with URL.
-    - detail: Feature
-      info: Textual response cues, jargon breakdown
-    - detail: Rationale
-      info: Users are guided through the import process with example responses and an info icon to see simple definitions for confusing terms. The import process is shortened into manageable sections, with the recipe information already pre-populated.
-    image: design2.gif
-    rounded: true
-  - details:
-    - detail: Task 3
-      info: View the saved recipe.
-    - detail: Feature
-      info: Contextual onboarding, action visualization
-    - detail: Rationale
-      info: Users are proactively introduced to the “Start Cooking” feature in context. The cooking mode screen then shows users how to rotate their phone before trying it themselves.
-    image: design3.gif
-    rounded: true
+  designs:
+    - details:
+      - detail: Task 1
+        info: Select an action from the homepage.
+      - detail: Feature
+        info: Voice search, call/chat assistance
+      - detail: Rationale
+        info: Users can request a feature through voice commands, suggestions, or search history instead of navigating to it. When in need of assistance, users can consult the support page on each screen, for a list of FAQs and call/chat options.
+      image: design1.gif
+      rounded: true
+    - details:
+      - detail: Task 2
+        info: Import new online recipe with URL.
+      - detail: Feature
+        info: Textual response cues, jargon breakdown
+      - detail: Rationale
+        info: Users are guided through the import process with example responses and an info icon to see simple definitions for confusing terms. The import process is shortened into manageable sections, with the recipe information already pre-populated.
+      image: design2.gif
+      rounded: true
+    - details:
+      - detail: Task 3
+        info: View the saved recipe.
+      - detail: Feature
+        info: Contextual onboarding, action visualization
+      - detail: Rationale
+        info: Users are proactively introduced to the “Start Cooking” feature in context. The cooking mode screen then shows users how to rotate their phone before trying it themselves.
+      image: design3.gif
+      rounded: true
 takeaways:
-    summary: I took the initiative to learn Sketch for this final portfolio project for the Google UX Design certificate program. Jumping into the design process with a tool not covered in the courses pushed me to learn the skills more intimately through trial-and-error. Designing for a user group with very different needs and contexts than my own challenged my preconceived notions about how navigation, discovery, and onboarding ‘should’ look.
-    lessons:
-      - lesson: Consistency
-        learning: I learned how invaluable consistency is when creating a cross-platform experience, particularly for users new to technology. When considering my users’ needs, I realized that I needed to rework the responsive site mockups to make the features and visuals consistent with the mobile app.
-      - lesson: Accessibility
-        learning: I learned that there is always more work to be done to make a truly accessible solution that serves my primary user group. If I had more time and a larger pool of participants for usability testing, I would add a settings page to customize screen contrast and text size.
-    next_steps:
-      - Conduct follow-up usability testing on the responsive website to determine any barriers that users new to technology face in the main user flow
-      - Ideate on new features like incorporating timestamped portions of a video tutorial into the cooking mode, ingredient look-up, and translation options
+      summary: I took the initiative to learn Sketch for this final portfolio project for the Google UX Design certificate program. Jumping into the design process with a tool not covered in the courses pushed me to learn the skills more intimately through trial-and-error. Designing for a user group with very different needs and contexts than my own challenged my preconceived notions about how navigation, discovery, and onboarding ‘should’ look.
+      lessons:
+        - lesson: Consistency
+          learning: I learned how invaluable consistency is when creating a cross-platform experience, particularly for users new to technology. When considering my users’ needs, I realized that I needed to rework the responsive site mockups to make the features and visuals consistent with the mobile app.
+        - lesson: Accessibility
+          learning: I learned that there is always more work to be done to make a truly accessible solution that serves my primary user group. If I had more time and a larger pool of participants for usability testing, I would add a settings page to customize screen contrast and text size.
+      next_steps:
+        - Conduct follow-up usability testing on the responsive website to determine any barriers that users new to technology face in the main user flow
+        - Ideate on new features like incorporating timestamped portions of a video tutorial into the cooking mode, ingredient look-up, and translation options
 ---

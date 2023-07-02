@@ -3,8 +3,6 @@
  */
 
 .home-wrapper {
-  padding-left: $spacing-unit * 2;
-  padding-right: $spacing-unit * 2;
   max-width: $max-width;
   margin: 0 auto;
 
@@ -101,12 +99,14 @@
   display: flex;
   flex-direction: column;
 
-  padding-top: $spacing-unit * 4;
-  padding-bottom: $spacing-unit * 2.5;
+  padding: $spacing-unit * 4 $spacing-unit * 2 $spacing-unit * 2.5;
+
+  @include media-query($on-tablet) {
+    padding: $spacing-unit $spacing-unit *.5 0;
+  }
 
   @include media-query($on-palm) {
-    padding-top: $spacing-unit * .5;
-    padding-bottom: 0;
+    padding: $spacing-unit * .5 $spacing-unit *.5 0;
   }
 
   @media screen and (max-height: 800px) {
@@ -166,6 +166,10 @@
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
 
+  @include media-query($on-tablet) {
+    font-size: 2rem;
+  }
+
   @include media-query($on-palm) {
     font-size: 1.6rem;
   }
@@ -205,6 +209,11 @@
   height: $spacing-unit * 6;
   position: relative;
 
+  @include media-query($on-tablet) {
+    width: $spacing-unit * 5.5;
+    height: $spacing-unit * 5.5;
+  }
+
   @include media-query($on-palm) {
     width: $spacing-unit * 4.5;
     height: $spacing-unit * 4.5;
@@ -228,6 +237,10 @@
 .home-splash-text {
   font-size: 1.65rem;
   font-weight: lighter;
+
+  @include media-query($on-tablet) {
+    font-size: 1.4rem;
+  }
 
   @include media-query($on-palm) {
     font-size: 1.2rem;
@@ -480,7 +493,7 @@
 }
 
 .home-project-nycbest {
-  background-color: #B2CBD4;
+  background-color: #C7E2F7;
 }
 
 .home-project-reciplay {

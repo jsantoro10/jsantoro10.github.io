@@ -366,6 +366,9 @@ layout: default
                 {% if image.shadow %}
                 {% assign style = style | append: " work-wireframe-images" %}
                 {% endif %}
+                {% if image.full %}
+                {% assign style = style | append: " work-solution-img-full" %}
+                {% endif %}
                 {% if image.caption %}
                 {% assign style = style | append: " work-captioned-image" %}
                 {% endif %}
@@ -413,29 +416,40 @@ layout: default
         {% if page.final_designs %}
         <div class='work-section wrapper work-wrapper'>
             <h2 class='work-header' id='finaldesigns'>FINAL DESIGNS</h2>
-            <div class='work-img-list work-final-designs'>
-                {% for design in page.final_designs %}
-                <div class='work-img-list-block'>
-                    {% assign style = "work-img-list-img work-final-designs-img" %}
-                    {% if design.rounded %}
-                    {% assign style = style | append: " work-img-list-img-rounded" %}
+            {% if page.final_designs.sidebar %}
+            <div class='work-sidebar'>
+                <div></div>
+                {% endif %}
+                <div class='work-img-list work-final-designs'>
+                    {% for design in page.final_designs.designs %}
+                    {% assign style = "work-img-list-block" %}
+                    {% if design.column %}
+                    {% assign style = style | append: " work-final-designs-column" %}
                     {% endif %}
                     <div class='{{style}}'>
-                        <img src='/assets/{{page.name}}/{{design.image}}' alt='problem example'>
+                        {% assign style = "work-img-list-img work-final-designs-img" %}
+                        {% if design.rounded %}
+                        {% assign style = style | append: " work-img-list-img-rounded" %}
+                        {% endif %}
+                        <div class='{{style}}'>
+                            <img src='/assets/{{page.name}}/{{design.image}}' alt='problem example'>
+                        </div>
+                        <div class='work-img-list-summary'>
+                            <table class='work-table'>
+                                {% for detail in design.details %}
+                                <tr>
+                                    <td class='work-table-key'>{{ detail.detail }}</td>
+                                    <td class='work-table-value'>{{ detail.info }}</td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
                     </div>
-                    <div class='work-img-list-summary'>
-                        <table class='work-table'>
-                            {% for detail in design.details %}
-                            <tr>
-                                <td class='work-table-key'>{{ detail.detail }}</td>
-                                <td class='work-table-value'>{{ detail.info }}</td>
-                            </tr>
-                            {% endfor %}
-                        </table>
-                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
+                {% if page.final_designs.sidebar %}
             </div>
+            {% endif %}
         </div>
         {% endif %}
         <!--Prototype-->
