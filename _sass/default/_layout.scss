@@ -62,12 +62,12 @@
   float: right;
   display: flex;
   justify-content: flex-end;
-  gap: $spacing-unit * 1.5;
+  gap: $spacing-unit * 1.1;
 
   .page-link {
     color: $text-color;
     line-height: $base-line-height;
-    font-size: 1.1rem;
+    font-size: 1rem;
 
     border-bottom: 1px solid $background-color;
 

@@ -206,6 +206,16 @@
   margin-bottom: 0;
 }
 
+.work-markdown ul {
+  list-style-type: disc;
+  padding-left: $spacing-unit * 1.5;
+  padding-top: $spacing-unit * 1;
+}
+
+.work-markdown li {
+  margin-bottom: $spacing-unit * .5;
+}
+
 // Image List
 
 .work-img-list-block {

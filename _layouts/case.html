@@ -121,6 +121,9 @@ layout: default
                         </div>
                         {% endfor %}
                     </div>
+                    {% for line in page.overview.after %}
+                    <div>{{ line | markdownify }}</div>
+                    {% endfor %}
                 </div>
             </div>
             <div class='work-sidebar'>
@@ -147,7 +150,7 @@ layout: default
                 </div>
                 <div class='work-content'>
                     {% for block in page.research.description %}
-                    <div>{{ block | markdownify }}</div>
+                    <div class='work-markdown'>{{ block | markdownify }}</div>
                     {% endfor %}
                     <div class='work-research-cards'>
                         {% for persona in page.research.personas %}
@@ -195,11 +198,19 @@ layout: default
                     {% for block in page.research.competitive_analysis.summary %}
                     <div>{{ block | markdownify }}</div>
                     {% endfor %}
+                    {% if page.research.competitive_analysis.competitors %}
                     <div class='work-research-logos'>
                         {% for competitor in page.research.competitive_analysis.competitors %}
                         <img src='/assets/{{page.name}}/{{competitor}}' alt='competitor'>
                         {% endfor %}
                     </div>
+                    {% endif %}
+                    {% if page.research.competitive_analysis.image %}
+                    <div class='work-wireframe-images'>
+                        <img src='/assets/{{page.name}}/{{page.research.competitive_analysis.image}}'
+                             alt='competitive analysis'>
+                    </div>
+                    {% endif %}
                     {% for block in page.research.competitive_analysis.analysis %}
                     <div>{{ block | markdownify }}</div>
                     {% endfor %}
@@ -303,6 +314,7 @@ layout: default
                 </div>
                 <div class='work-content'>
                     {% for wireframe in page.wireframes %}
+                    {% if wireframe.image %}
                     {% assign style = 'work-wireframe-images' %}
                     {% if wireframe.caption %}
                     {% assign style = style | append: " work-captioned-image" %}
@@ -313,6 +325,7 @@ layout: default
                         <span>{{ wireframe.caption }}</span>
                         {% endif %}
                     </div>
+                    {% endif %}
                     <div>{{ wireframe.summary | markdownify }}</div>
                     {% endfor %}
                 </div>
@@ -384,7 +397,7 @@ layout: default
                     <h4 class='work-subheader'>{{ example.title }}</h4>
                 </div>
                 <div class='work-content'>
-                    <div>
+                    <div class='work-markdown'>
                         {{ example.before | markdownify }}
                     </div>
                     {% for row in example.images %}
@@ -404,9 +417,9 @@ layout: default
                         {% endfor %}
                     </div>
                     {% endfor %}
-                    <div>
-                        {{ example.after | markdownify }}
-                    </div>
+                    {% for line in example.after %}
+                    <div>{{ line | markdownify }}</div>
+                    {% endfor %}
                 </div>
             </div>
             {% endfor %}

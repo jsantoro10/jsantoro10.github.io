@@ -26,16 +26,19 @@ overview:
       caption: Layout of existing pet adoption site
       rounded: true
   list: true
+  after: Existing sites are often cluttered, overwhelming to skim, and involve multiple clicks to find the adoptable pet profiles. In addition, most sites are not optimized for mobile and fail to consider the needs of users on the go.
   solution:
     title: Redesigning the adoption flow
     description:
-      - paragraph: My pain points with cluttered, overwhelming pet adoption sites led me to to design a responsive website for a local pet adoption organization. Let’s call it NYC’s Best, a no-kill animal shelter with three locations in New York City. They are dedicated to rescuing, rehabilitating, and finding forever homes for homeless and abandoned cats, dogs, and rabbits.
-      - paragraph: “We’d like to help our patrons through the pet-finding process by **providing search options that mirror their own criteria.**”
-        quote: true
-      - paragraph: To stand out in the market, I aimed to design a user-friendly, responsive website that features **clear navigation** and **an efficient search and adoption process**. Above all, I wanted it to be a positive experience that reflects the *excitement* of starting a new chapter in your life.
+      - paragraph: My pain points with these sites led me to to create a modernized, responsive site for a pet adoption organization.
+      - paragraph: I named it NYC’s Best, a no-kill animal shelter with three locations in New York City. They are dedicated to rescuing, rehabilitating, and finding forever homes for homeless and abandoned cats, dogs, and rabbits.
+      - paragraph: An overwhelming majority of adoption sites are outdated and inefficient. To stand out in the market, I aimed to design a sleek, user-friendly, responsive website that features **clear navigation** and an **efficient search and adoption process**. Above all, I wanted it to be a positive experience that reflects the *excitement* of starting a new chapter in your life.
 research:
   description:
-    - I began with secondary research on what criteria potential adopters use to search for a new pet. I learned that the criteria used varies between cat adopters and dog adopters. **Personality and behavior ranked highest for cat adopters**, while **dog adopters prioritized physical characteristics**, such as breed.
+    - >
+      I began with secondary research (Internet searches, articles) on what criteria potential adopters use to search for a new pet. I learned that the criteria used varies between cat adopters and dog adopters.
+       - Personality and behavior ranked highest for cat adopters.
+       - Dog adopters prioritized physical characteristics, such as breed.
     - Of the eight individuals I interviewed, I found that **meeting the pet in person was the ultimate deciding factor**, even for those who had already had their heart set on that specific pet prior to coming to the shelter.
     - "I created two personas based on these findings: **the dog adopter** and **cat adopter**."
   personas:
@@ -52,7 +55,7 @@ research:
       image: portrait2.png
       description:
         - Winston is a senior in college living in Seattle. He’s interested in adopting a cat as a first-time pet parent.
-        - He’s not sure what characteristics to base his search on with the limited filters and vague personality descriptions on existing sites. He’d rather save time by going to the shelters themselves if it weren’t for unclear adoption processes.
+        - He’s not sure what characteristics to base his search on with the limited filters and vague personality descriptions on existing sites. He’s interested in going to the shelters in person but the sites don’t provide a clear explanation about what he needs to prepare prior to visiting or adopting.
   challenges:
     description: "I reframed the insights from the research as improvement opportunities for the NYC’s Best site:"
     list:
@@ -62,13 +65,9 @@ research:
     summary:
         - After gaining an understanding of the user needs and context, I wanted to evaluate how existing animal shelters approached solving these user problems.
         - I selected **two direct competitors** among local animal shelters, along with **two indirect competitors** that offer services for pet owners.
-    competitors:
-        - competitor1.png
-        - competitor2.png
-        - competitor3.png
-        - competitor4.png
+    image: competitive_analysis.jpeg
     analysis: 
-        - I rated each on aspects like desktop website experience, features, user flow, navigation, brand identity, and descriptiveness. **App or mobile website experience, accessibility, and user flow each received at least two ‘Needs work’ ratings**. Half of the competitors’ sites weren’t optimized for mobile or assistive technologies, preventing key information from being accessible at all. In addition, important information like adoptable cats or service availability was difficult to find on the site itself, involving multiple clicks and scrolling, or hidden until registration.
+        - Half of the competitors’ sites were lacking in browsing features, mobile optimization, assistive technology accessibility, and information architecture. While some solved for the initial search, few accounted for the overall user flow and user context.
   insight: "**Users need a fully responsive, assistive-technology friendly site with easy access to key information.**"
 ideation:
   summary: Using **How Might We questions**, I brainstormed different approaches to rethinking the pet adoption flow.
@@ -77,39 +76,38 @@ ideation:
     - title: Amp up the good?
       image: ideation_figure1.png
       list: 
-        - Quiz to be matched with pets
-        - Pet spotlights for those at shelter longest
-        - Online scheduling to meet
-        - Dating-app-like pet profiles
+        - How might we match compatible adopters and adoptable pets?
+        - How might we make the process more enjoyable?
+        - How might we make the process more exciting?
     - title: Change the status quo?
       image: ideation_figure2.png
       list: 
-        - 1-2-3 step adoption process
-        - Choose filters on homepage that matter most to you
-        - Randomize results/profiles
-        - Foster for a night
+        - How might we streamline a potentially onerous process?
+        - How might we let adopters share their criteria?
+        - How might we accommodate first-time adopters?
     - title: Break the POV into pieces?
       image: ideation_figure3.png
       list: 
-        - Digestible pet profiles (map w/ shelter location)
-        - Standardized profile sections
-        - Share profile with shelter to be matched
-        - Processing status on pet profile
+        - How might we make pet profiles more engaging?
+        - How might we make pet profiles more engaging?
+        - How might we help adopters browse using their own criteria?
   after:
-    - description: "I then sketched out eight of these ideas using the **Crazy Eights exercise** to visualize how they would work:"
+    - description: "I addressed these questions using the **Crazy Eights exercise** to visualize some possible solutions:"
     - image: ideation_after1.png
-      description: Next, I sketched out four different iterations of the homepage, with a focus on avoiding a text-heavy screen for a quicker browsing experience. I also added some of my ideas from the above exercises, like **pet profile spotlights** and a **1-2-3 step adoption process**.
+      description: Next, I sketched out four different iterations of the homepage, with a focus on avoiding a text-heavy screen for a quicker browsing experience. I also added some of the ideas generated through the Crazy Eights exercise, like **pet profile spotlights** and a **1-2-3 step adoption process**.
     - image: ideation_after2.png
-      description: For the refined version (on the right), I prioritized a **quick and easy way to search pet profiles** using filters like location and pet type to help users save time.
+      description: For the refined version, I prioritized a **quick and easy way to search pet profiles** using filters (i.e. location and pet type) to help users save time.
 sitemap:
   - summary: "**Difficulty with website navigation** was a primary pain point for users, so I aimed to make the information architecture **simple and intuitive**. I created the sitemap with the common structure used by existing animal shelters in mind."
     image: sitemap.png
 wireframes:
-  - summary: The first iteration of wireframes included features generated during the ideation exercises–**a search bar, 3-step breakdown of the adoption process, pet spotlights**. I included multiple ways to enter the adoption flow on the homepage through search, pet categories, and the top navigation bar.
+  - summary: The first iteration of wireframes included features generated during the ideation exercises–**a search bar, 3-step breakdown of the adoption process, pet spotlights**.
     image: wireframe.png
+  - summary: I included multiple ways to enter the adoption flow on the homepage through search, pet categories, and the top navigation bar.
   - image: wireframe1.png
-  - summary: "For the second iteration, I switched up the layout to make each section more **visually engaging, digestible, and concise**. I prioritized keeping pet spotlights above the fold because they feature the top criteria for both cat and dog adopters: personality and physical characteristics. I also got rid of the profile carousels categorized by personality in favor of displaying all profiles, supplemented by descriptive filters, to serve the needs of both cat and dog adopters."
+  - summary: For the second iteration, I switched up the layout to make each section more **visually engaging, digestible, and concise**.
     image: wireframe2.png
+  - summary: I opted for profile cards to display all adoptable pets, with descriptive filter options, to serve the needs of both cat and dog adopters.
 testing:
   notes:
     - I conducted an **unmoderated usability study** with five participants to evaluate the low-fidelity prototype and **discover what specific challenges users face in the navigation and pet adoption process**.
@@ -131,23 +129,28 @@ solution:
       full: true
   examples:
     - title: User Flow
-      before: The usability study uncovered some aspects of the user flow that weren’t as intuitive as I had imagined. Firstly, the low-fidelity prototype featured an overlay previewing the profile for quick browsing, but users expressed confusion about not being directly taken to the profile from the listings page. Secondly, users were confused about whether to apply to adopt or schedule the meet-and-greet first from the pet profile page.
+      before: >
+        The usability study uncovered some aspects of the user flow that weren’t as intuitive as I had imagined.
+         - Users expressed confusion about the profile overlay, expecting to land on the profile after clicking on the card from the listings page.
+         - Users were confused about whether to apply to adopt or schedule the meet-and-greet first from the pet profile page.
       images:
-        - row:
-          - image: solution1_1.png
-            caption: First lo-fi iteration
-        - row:
-          - image: solution1_2.png
-            caption: First hi-fi iteration
-        - row:
-          - image: solution1_3.png
-            caption: Final design - 3-step adoption breakdown on homepage
-        - row:
-          - image: solution1_4.png
-            caption: Final design - Pet profile
-      after: For the final designs, I reworked the 3-step adoption process to make the user flow more straightforward. Since users would’ve liked to meet the pet before investing time in the adoption application, I added a feature I had thought of during the ideation stage–a quiz that matches you with pets that fit your criteria. Users can then schedule a meet-and-greet with any or all of the matches and fill out an adoption application in person or on the site.
-    - title: Adoption Application
-      before: The overall feedback about the adoption application was that it was too long and involved too much scrolling. Users pointed out that there should be a way to select whether certain sections were applicable or not because it lengthened the application considerably.
+         - row:
+           - image: solution1_1.png
+             caption: First lo-fi iteration
+         - row:
+           - image: solution1_2.png
+             caption: First hi-fi iteration
+         - row:
+           - image: solution1_3.png
+             caption: Final design - 3-step adoption breakdown on homepage
+         - row:
+           - image: solution1_4.png
+             caption: Final design - Pet profile
+      after: 
+           - Since users preferred to meet the pet before investing time in the adoption application, I reworked the 3-step adoption process to make the user flow more straightforward.
+           - I changed the first step to a ‘best fit’ quiz, an idea generated during the ideation stage, to ensure that you’re meeting pets that match your criteria.
+    - title: Adoption Process
+      before: The overall feedback about the adoption application was that it was too long and involved too much scrolling. Users would’ve liked to select whether certain sections were applicable or not because it lengthened the application considerably.
       images:
         - row:
           - image: solution2_1.png
@@ -158,7 +161,9 @@ solution:
         - row:
           - image: solution2_3.png
             caption: Final design - Adoption application
-      after: To address these pain points, I modeled the adoption application after the pet matching quiz, capping it at ten questions. I kept only the essential open-response questions and added 2-5 response options for all other questions to make the filling out process more efficient and engaging. I also moved some of the questions from the adoption application to the pet matching quiz to account for contextual information needed to match users with the right pets. The user profile would then save this information, eliminating the need to ask the same questions twice.
+      after: 
+          - To address these pain points, I modeled the adoption application after the pet matching quiz to make it more efficient and engaging.
+          - I kept only the essential open-response questions and added 2-5 response options for all other questions, given that the adopter’s personal information was already accounted for in the pet matching quiz.
 final_designs:
   sidebar: true
   designs:
@@ -200,6 +205,6 @@ takeaways:
       - lesson: Design Sprint
         learning: I learned that defining what is and isn’t within the project scope is an essential aspect of designing under time constraints. Unlike the first portfolio project for the Google UX Design course, multiple steps of the design process were outlined in a week’s work. This structure gave me some experience tackling weekly design sprints.
     next_steps:
-      - Conduct a third usability study to evaluate whether the pain points users experienced have been effectively addressed
-      - Conduct more user research to determine any new areas of need, such as customer reviews and pickup/delivery feedback
+      - Evaluate the success of the new site by tracking whether pet adoptions and number of account signups have increased, and whether time on task and drop-off rate have decreased
+      - Conduct a second usability study to evaluate whether the pain points users experienced have been effectively addressed
 ---

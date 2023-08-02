@@ -30,10 +30,8 @@ overview:
   solution:
     title: Why not eliminate the middleman?
     description:
-      - paragraph: For a growing restaurant chain with an established customer base, developing your own dedicated mobile app allows you to increase your profit margin, control the customer experience, and own customer insights.
-      - paragraph: My goal for this project was to design a mobile app for an Italian restaurant with this kind of profile. Enter Nonna’s Restaurant, an Italian restaurant with three locations in New York City.
-      - paragraph: “We’d like to provide our customers with a **quick way to easily order pickup/delivery in the midst of their busy schedules.**”
-        quote: true
+      - paragraph: For a growing restaurant chain with an established customer base, developing your own dedicated mobile app allows you to increase your profit margin, control the customer experience, and build customer loyalty.
+      - paragraph: With these goals in mind, I designed a mobile app for an Italian restaurant called Nonna’s Restaurant that would like to provide its customers with a quick way to easily order pickup/delivery from one of its three locations in NYC.
       - paragraph: In addition to pickup/delivery options and live order tracking, I wanted to ensure that the app included other features that could compete with existing food delivery apps, like **loyalty discounts** and **single sign-on**.
 research:
   description: 
@@ -56,20 +54,19 @@ research:
         - Horace is a single father working at a major hospital in the city. His schedule can be unpredictable so he prefers to order food from restaurants instead of getting groceries that may expire.
         - He orders meals based on his daughter’s food preferences and schedule so he gets frustrated when there are no options to add notes or request cutlery.
   challenges:
-    description: "After mapping out each step of these users’ journey, I discovered the following key challenges that weren’t addressed by third-party food delivery apps like Seamless and ChowNow:"
+    description: "I discovered the following improvement opportunities not addressed by third-party food delivery apps like Seamless and ChowNow:"
     list:
       - "Users want the **option to add notes to a menu item** or their overall order."
       - "Users want a **reliable pickup experience** with accurate status updates and an easy handoff."
   competitive_analysis:
     summary: 
-      - Now that I had an understanding of our target users’ experience with third-party delivery apps, I wanted to analyze the **ordering experience of restaurants with in-house delivery apps**.
-      - Using the App Store, I selected **two direct competitors** among the highest rated ‘Italian restaurant’ apps, along with **one indirect competitor** from the highest rated ‘restaurant’ apps. I looked at aspects like features, accessibility, user flow, and navigation, as well as App Store user reviews.
+      - Next, I evaluated the ordering experience of in-house delivery apps–**two direct competitors** among the highest rated ‘Italian restaurant’ apps, and **one indirect competitor** from the highest rated ‘restaurant’ apps.
     competitors:
       - competitor1.png
       - competitor2.png
       - competitor3.png
     analysis: 
-      - My analysis validated the challenges previously noted, in addition to revealing a **user preference for single sign-on**. I was surprised to find that many of the user reviews for the competitors’ apps noted a broken ordering flow. Unsurprisingly, users stopped using the app altogether once it lost value to them.
+      - While nearly all of the apps offered single-sign on options and loyalty discounts, user reviews revealed issues in the same areas as third-party delivery apps. For instance, two of the three apps featured a broken ordering flow, leading users to stop using the app altogether.
   insight: "**Our users value efficiency, reliability, and customization.**"
 ideation:
   summary: Once I had a clear idea of the key challenges–and, in turn, the key improvement opportunities–I began sketching out different iterations of the homepage using the **Crazy Eights exercise**.
@@ -108,18 +105,21 @@ solution:
             caption: First mockup
           - image: solution_1_3.png
             caption: Third mockup
-      after: Instead of listing the full menu on the homepage, I opted for multiple access points from the homepage–through search, ‘See all’ CTA, and top categories. During the second usability study, users easily navigated through the homepage, with most directly adding to their cart from the ‘Favorites’ quick-add cards.
+      after: 
+          - Instead of listing the full menu on the homepage, I opted for multiple access points from the homepage–through search, ‘See all’ CTA, and top categories. During the second usability study, users easily navigated through the homepage, with most directly adding to their cart from the ‘Favorites’ quick-add cards.
     - title: Order History
-      before: Users had difficulty finding the checkout page during the first usability study, as the designs featured both a cart icon in the top right corner and an ‘Orders’ tab on the bottom navigation bar. To avoid confusion, I combined them into one by replacing the original icon for the ‘Orders’ tab with the cart icon. I also added visual cues for the filled cart icon and the ‘View Cart’ button to provide consistency for all clickable elements.
+      before: Users had difficulty finding the checkout page during the first usability study, as the designs featured both a cart icon in the top right corner and an ‘Orders’ tab on the bottom navigation bar.
       images:
         - row: 
           - image: solution_2_1.png
             caption: First lo-fi iteration
-          - image: solution_2_2.png
+          - image: solution_2_2.jpeg
             caption: Final design - ‘Cart’ screen
-          - image: solution_2_3.png
+          - image: solution_2_3.jpeg
             caption: Final design - ‘Orders’ screen
-      after: Following the second round of testing, I designed the ‘Orders’ screen, which I hadn’t included in the main user flow. Users wanted easy access to current and past orders so I created two tabs–’Cart’ and ‘Orders.’ The order history page displays a ‘Reorder’ button next to a completed order and a ‘Track’ button next to an active order.
+      after: 
+          - To streamline the checkout process, I simplified the layout by replacing the original icon for the ‘Orders’ tab with the cart icon. I also added visual cues for the filled cart icon and the ‘View Cart’ button to provide consistency for all clickable elements.
+          - Following the second round of testing, I designed the ‘Orders’ screen and included a ‘Cart’ tab and an ‘Orders’ tab to provide users with easy access to manage current orders or reorder past ones.
 final_designs:
   designs:
     - details: 
@@ -155,7 +155,7 @@ final_designs:
         info: Users wanted to time their pickup to their schedule and have an easy handoff at the restaurant, so I included a live status bar along with key order information (customer name, order number, items) on the ‘Order Summary’ screen.
       image: design4.gif
 takeaways:
-    summary: This was my first portfolio project in the Google UX Design certificate program, as well as my first experience designing with Figma. Throughout Courses 2-5, I began practicing and implementing the principles I was learning about. Watching my designs come to life and receiving user feedback was an extremely rewarding and insightful process. I also learned the hard way that documentation and organization are critical to the design process after I jumped into editing initial iterations, eager to address user concerns.
+    summary: This was my first portfolio project in the Google UX Design Certificate program, as well as my first experience designing with Figma. Throughout Courses 2-5, I began practicing and implementing the principles I was learning about. Watching my designs come to life and receiving user feedback was an extremely rewarding and insightful process. I also learned the hard way how critical documentation and organization are to the design process.
     lessons:
       - lesson: Navigation
         learning: I learned that prioritizing the user means understanding the existing navigational patterns and information architecture that they are familiar with.
@@ -164,6 +164,7 @@ takeaways:
       - lesson: Labels
         learning: I learned that all button labels and CTAs should use language that is straightforward and understandable for users regardless of their familiarity with similar food ordering apps.
     next_steps:
-      - Conduct a third usability study to evaluate whether the pain points users experienced have been effectively addressed
-      - Conduct more user research to determine any new areas of need
+      - Evaluate the success of the app by tracking account signups, time on task, and task success rate
+      - Conduct more user research to determine any new areas of need, such as customer reviews and pickup/delivery feedback
+      - Conduct more user research to determine any new areas of need, such as customer reviews and pickup/delivery feedback
 ---

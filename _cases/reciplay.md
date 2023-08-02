@@ -26,19 +26,21 @@ overview:
       rounded: true
       small: true
   list: true
+  after:
+    - Many existing cookbook apps are not only cluttered and inefficient, but they also rely on patterns familiar to users with digital literacy, like how to navigate from screen to screen, what’s tappable and what’s not.
+    - For users who are new to technology, however, knowing what icons mean or how to even begin are significant barriers to using these apps.
   solution:
     title: A tailored solution
     description: 
-      - paragraph: For users who are new to technology, knowing what icons mean or how to even begin are significant barriers to using cookbook apps. I sought to design a cross-platform experience that inspires and empowers new technology users to enjoy the process of cooking and trying new recipes. The solution would cover all parts of the cooking process, with features like **URL import** and **a cooking mode**. For this project, I focused on recipe saving and viewing for the main user flow.
-      - paragraph: “We'd like to create an empowering cookbook tool for users who are new to technology that enables them **to save and view their favorite recipes in one place**”
-        quote: true
+      - paragraph: With these barriers in mind, I  I sought to design a cross-platform experience that inspires and empowers new technology users to enjoy the process of cooking and trying new recipes.
+      - paragraph: The solution covers all parts of the cooking process, with features like **URL import** and **a cooking mode**. For this project, I focused on recipe saving and viewing for the main user flow.
 research:
   description: 
-      - To learn more about the user context of those new to technology, I consulted Google’s resources on the <a href="https://nextbillionusers.google/" target="_blank">Next Billion Users</a> and <a href="https://digitalconfidence.design/" target="_blank">Designing for Digital Confidence</a>.
-      - Users with low digital confidence can quickly feel lost within an app and often turn to friends or family for help. They need relevant options and time to build their confidence and overcome the fear of doing something ‘wrong.’
-      - Next, I interviewed five individuals, ages 60-80, to understand this user group’s experience with cookbook tools–how they find and save new recipes and what features they would like to see in a digital cookbook tool.
-      - Of the five individuals I interviewed from various backgrounds, three used physical cookbooks, while the other two used their Facebook or New York Times accounts to save and view recipes.
-      - "Half of the individuals didn’t see the value of learning a new app if there were no issues with their current system. The other half would be open to learning a new app if there was no payment barrier and it took the mental work out of the cooking process."
+      - >
+        To learn more about the user context of those new to technology, I consulted Google’s resources on the <a href="https://nextbillionusers.google/" target="_blank">Next Billion Users</a> and <a href="https://digitalconfidence.design/" target="_blank">Designing for Digital Confidence</a>.
+         - Users with low digital confidence can quickly feel lost within an app and often turn to friends or family for help.
+         - They need relevant options and time to build their confidence and overcome the fear of doing something ‘wrong.’
+      - Through my interviews with five individuals, ages 60-80, I learned that most would be open to learning a new cookbook tool if it was free and took the mental work out of the cooking process.
       - "I created two personas based on the users I interviewed: the physical cookbook user and the app user."
   personas:
     - title: The Cookbook User
@@ -61,35 +63,31 @@ research:
         - Users want a cookbook tool that takes care of the **non-cooking tasks** for them.
         - Users want to be **guided through each feature** every time they use the app.
   competitive_analysis:
-    summary: Next, I evaluated the products of **three direct competitors** among the highest rated cookbook apps on the App Store, along with **one indirect competitor** that offers meal kits.
-    competitors:
-        - competitor1.png
-        - competitor2.png
-        - competitor3.png
-        - competitor4.png
+    summary: 
+        - I then selected **three direct competitors** among the highest rated cookbook apps on the App Store, along with **one indirect competitor** that offers meal kits.
+        - I used the <a href="https://digitalconfidence.design/tools/design-principle-cards" target="_blank">Design Principle Cards</a> from <a href="https://digitalconfidence.design/" target="_blank">Designing for Digital Confidence</a> to check whether each app accounted for users who are new to technology.
+    image: competitive_analysis.jpeg
     analysis: 
-        - I used the <a href="https://digitalconfidence.design/tools/design-principle-cards" target="_blank">Design Principle Cards</a> from <a href="https://digitalconfidence.design/" target="_blank">Designing for Digital Confidence</a> to check whether each app accounted for users who are new to technology. I found that **the majority of the apps did not include straightforward flows, multiple input forms, and clear guidance or support options**.
-        - I identified navigation, discovery, and onboarding as areas to be especially mindful of the target user context. In particular, users new to technology would benefit from features like **progress indicators, tips within the interface, text and voice input options**, and **pre-populated content**.
-  insight: Users with low digital confidence need a digital experience that **celebrates their wins, provides timely guidance**, and **offers multiple modes of interaction**.
+        - While most of the apps featured straightforward navigation, none fully addressed the needs of users new to technology in their discovery and onboarding flows. I identified features like **progress indicators, tips within the interface, text and voice input options** to include in my own designs that would address these needs.
+  insight: Users new to technology need an experience with **timely guidance** and **multiple modes of interaction**.
 ideation:
   summary: I drafted different homepage iterations by drawing on the <a href="https://digitalconfidence.design/tools/inspiration-tool" target="_blank">Inspiration Tool</a> from <a href="https://digitalconfidence.design/" target="_blank">Designing for Digital Confidence</a> to challenge my perspective.
   after: 
-    - description: Next, I created five paper wireframes from the mobile app homepage sketches. For the revised homepage on the far right, I included voice search, two options to add a new recipe, and a bottom navigation bar.
+    - description: Next, I created five paper wireframes from the mobile app homepage sketches. For the revised homepage, I included voice search, two ways to add a new recipe, and a bottom navigation bar.
       image: ideation1.png
     - description: I repeated the Crazy Eights exercise for the responsive site designs to consider how site users may have different needs than the mobile app users.
       image: ideation2.png
     - image: ideation3.png
 sitemap:
-  - summary: Users with low digital confidence can quickly feel lost and not know where they are within an app or site, so I tried to **simplify the content structure for the responsive site**. To keep the information architecture clear and consistent with the mobile app, I focused on displaying the key features with the most value for users. Each page focuses on demos and explanations of each feature to allow users to preview experiences before committing.
+  - summary: Users with low digital confidence can quickly feel lost and not know where they are within an app or site, so I **simplified the content structure and made it consistent across platforms**.
     image: sitemap1.png
-  - summary: The content structure is expanded to include the same features as the mobile app once users have logged into their account.
-    image: sitemap2.png
 wireframes:
-  - summary: New technology users need time to build their digital confidence, so I sectioned the import recipe process into manageable chunks, with the recipe information pre-populated from the URL. I incorporated “Back” and “Next” buttons on each screen of the import flow instead of relying on swiping and other navigational patterns more suited for users familiar with technology.
+  - summary: New technology users need time to build their digital confidence, so I sectioned the import recipe process into manageable chunks, with the recipe information pre-populated from the URL.
     image: wireframe1.png
+  - summary: I incorporated “Back” and “Next” buttons on each screen of the import flow instead of relying on swiping and other navigational patterns more suited for users familiar with technology.
   - image: wireframe2.png
     caption: Responsive mobile site wireframe
-  - summary: Next, I began drafting the responsive site wireframes, moving from the smallest screen size to the largest screen size. I kept some aspects, like the recipes list layout consistent with the mobile app. I also included some features based on the ideation exercises that would be specific to the responsive site use case, such as bulk recipe import.
+  - summary: I began drafting the responsive site wireframes, keeping some aspects, like the recipe list layout, consistent with the mobile app. I also included some features based on the ideation exercises that would be specific to the responsive site use case, such as bulk recipe import.
     image: wireframe3.png
     caption: Responsive desktop site wireframe
 testing:
@@ -113,7 +111,8 @@ solution:
             caption: Final design - ‘Import’ screen
           - image: solution1_3.png
             caption: Final design - ‘Link’ info screen
-      after: In addition to changing jargon to more accessible language, I added tips within the interface and access to help via a call or chat for in-the-moment guidance. Users can also click on the info icon for a visual and textual description for each question of the import process.
+      after:
+          - In addition to changing jargon to more accessible language, I added tips within the interface and access to help via a call or chat for in-the-moment guidance. Users can also click on the info icon for a visual and textual description for each question of the import process.
     - title: Navigation
       before: After reviewing the usability test feedback, I realized that my designs relied on users finding features via the UI. The participants of the usability test were able to enter the user flow due to specific prompts, but they may not have been able to navigate the app’s features otherwise.
       images:
@@ -135,7 +134,8 @@ solution:
         - row:
           - image: solution2_7.png
             caption: Final design - responsive site (desktop)
-      after: To simplify the cognitive load of navigation and orient the user, I created a homepage with tappable discovery interfaces and text and voice search options to provide users with multiple modes of discovery and interaction. I used this format for both the mobile app and the responsive site for a consistent cross-platform experience.
+      after: 
+          - To simplify the cognitive load of navigation and orient the user, I created a homepage with tappable discovery interfaces and text and voice search options to provide users with multiple modes of discovery and interaction. I used this format for both the mobile app and the responsive site for a consistent cross-platform experience.
 final_designs:
   designs:
     - details:
@@ -173,6 +173,7 @@ takeaways:
         - lesson: Accessibility
           learning: I learned that there is always more work to be done to make a truly accessible solution that serves my primary user group. If I had more time and a larger pool of participants for usability testing, I would add a settings page to customize screen contrast and text size.
       next_steps:
+        - Evaluate the success of the product by measuring time on task, task success rate, and user error rate
         - Conduct follow-up usability testing on the responsive website to determine any barriers that users new to technology face in the main user flow
         - Ideate on new features like incorporating timestamped portions of a video tutorial into the cooking mode, ingredient look-up, and translation options
 ---
